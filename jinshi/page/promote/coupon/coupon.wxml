@@ -1,0 +1,65 @@
+<!--page/promote/coupon/coupon.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>可用优惠券</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <!--
+<view class='banner'>
+  <view class="banner-use {{use ? 'f' : 'g'}}" bindtap='use'>未使用</view>
+  <view class="banner-unuse {{unuse ? 'f' : 'g'}}" bindtap='unuse'>已失效</view>
+</view>
+-->
+  <block wx:if="{{use}}">
+    <form bindsubmit="formSubmit" report-submit='true' bindreset="formReset">
+      <view class='{{iphonex?"code-iphonex":"code"}}'>
+        <input class='code-input' name='code' placeholder='输入兑换码' placeholder-class="plcace"></input>
+        <button class='code-button' formType="submit">兑换</button>
+      </view>
+    </form>
+    <view class='{{iphonex?"blank-box-iphonex":"blank-box"}}'></view>
+    <view wx:if="{{!loading}}">
+      <view class='list' style='background-image:url({{item.background}});background-size:cover;' wx:for="{{uselist}}" wx:key='index'>
+        <view class='price-top'>{{item.price}}</view>
+        <view class='price-bottom'>{{item.dl}}</view>
+        <view class='details-time'>{{item.time}}</view>
+        <view class='details-desrcibe'>{{item.describe}}</view>
+        <view class='details-button' wx:if='{{item.status === "OK"}}' data-item='{{item}}' data-coupon='{{item.coupon_id}}' data-fit='{{item.fit[0]}}' bindtap='{{status>0?"goUse":"goSelect"}}'>{{go}}</view>
+        <view class='details-button' wx:if='{{item.status === "NOT"}}' data-status='{{item.activeAt}}' bindtap='goUse'>未激活</view>
+      </view>
+      <view class='place-holder' wx:if="{{uselist.length === 0}}">
+        <image class='place-holder-img' src='https://cdn.jiyong365.com/littleren.png'></image>
+        <view class='place-holder-txt'>您还没有优惠券哟~</view>
+      </view>
+    </view>
+  </block>
+  <!-- <view wx:if="{{!loading}}">
+    <block wx:if="{{unuse}}">
+      <view class='unlist' wx:for="{{unuselist}}">
+        <view class='list-price'>
+          <view class='price-top'>{{item.price}}</view>
+          <view class='price-bottom'>{{item.dl}}</view>
+        </view>
+        <view class='list-details'>
+          <view class='details-time'>{{item.time}}</view>
+          <view class='details-desrcibe'>{{item.describe}}</view>
+          <view class='details-title'>已失效</view>
+        </view>
+      </view>
+    </block>
+  </view> -->
+  <view hidden="{{!loading}}">
+    <template is="loading" data="{{gif}}" />
+  </view>
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

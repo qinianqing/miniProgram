@@ -1,0 +1,73 @@
+<!--page/order/payresult/payresult.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>支付结果</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <!-- <view class='notice'>{{notice}}</view> -->
+  <view class='mark'>
+    <image class='success' src='https://cdn.jiyong365.com/%E6%9C%AA%E6%A0%87%E9%A2%98-2-01-01.png'></image>
+    <view class='success-title'>付款成功</view>
+    <view class='parcel-notice'>{{parcelNotice}}</view>
+  </view>
+  <view class='btn-box'>
+    <view class='go' bindtap='checkOrder'>查看订单</view>
+    <view class='go' bindtap='continueBuy'>返回首页</view>
+  </view>
+  <view class='gap'></view>
+  <view class='invite-share' wx:if='{{canShare}}' catchtap='inviteFriend'>
+    <image src="https://cdn.jiyong365.com/dsdsdsds.png"></image>
+  </view>
+  <view class='gap'></view>
+  <view class='message'>
+    <view class='address-box'>
+      <view class='contact'>配送地址：</view>
+      <view class='phone'>{{province}} {{city}}</view>
+      <view class='address'>{{county}} {{address}}</view>
+    </view>
+    <view class='money-box'>
+      <view class='money-title'>本单实付：</view>
+      <view class='money'>
+        <text class='money-num'>{{amount}}</text> 元</view>
+    </view>
+
+  </view>
+  <view class='like'>
+    <view class='liket'>猜你喜欢</view>
+  </view>
+  <view class='caiimageall'>
+    <block wx:for="{{guess}}" wx:key="id">
+      <view class='product' bindtap='guessTap' id="{{item.goods_id}}">
+        <image class='spu-cover' src='{{item.default_image}}'></image>
+        <view class='spu-cb'>会员返{{item.goods_cashback}}元</view>
+        <view class='spu-highlight'>{{item.describe}}</view>
+        <view class='spu-non-key'>{{item.goods_name}}</view>
+        <view class='spu-price'>￥{{item.goods_price}}</view>
+      </view>
+
+    </block>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>
+<view wx:if="{{selectShare}}">
+  <view class='selectShare' catchtap='selectC'>
+    <view class='{{iphonex?"selectShare-content-iphonex":"selectShare-content"}}'>
+      <button class='selectShare-one' open-type="share" bindtap='selectO'>分享给好友</button>
+      <!-- <view class='selectShare-two' bindtap='selectT'>分享到朋友圈</view> -->
+      <view class='selectShare-cancel' bindtap='cancelS'>取消</view>
+    </view>
+  </view>
+</view>

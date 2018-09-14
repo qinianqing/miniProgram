@@ -1,0 +1,301 @@
+/* page/family/create/create.wxss */
+
+.page {
+  background-color: white;
+}
+
+.back {
+  position: absolute;
+  top: 54rpx;
+  left: 30rpx;
+  z-index: 9999;
+}
+
+.back-iphonex {
+  position: absolute;
+  top: 104rpx;
+  left: 30rpx;
+  z-index: 9999;
+}
+
+.back image {
+  width: 33rpx;
+  height: 33rpx;
+}
+
+.back-iphonex image {
+  width: 33rpx;
+  height: 33rpx;
+}
+
+.head {
+  height: 420rpx;
+  width: 750rpx;
+  position: relative;
+}
+
+.head image {
+  height: 420rpx;
+  width: 750rpx;
+}
+
+.middle {
+  position: absolute;
+  top: 143rpx;
+  left: 55rpx;
+  width: 695rpx;
+  height: 126rpx;
+}
+
+.middle-head {
+  width: 100%;
+  height: 126rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.middle-title-0 {
+  height: 60rpx;
+  margin: 40rpx 20rpx 0 0;
+  font-family: PingFangSC-Semibold;
+  color: #fff;
+  font-size: 60rpx;
+}
+
+.middle-title-1 {
+  height: 60rpx;
+  margin: 40rpx 20rpx 0 0;
+  font-family: PingFangSC-Semibold;
+  color: #5a4215;
+  font-size: 60rpx;
+}
+
+.family-vip-0 {
+  position: absolute;
+  top: 267rpx;
+  left: 55rpx;
+  font-family: PingFangSC-Semibold;
+  font-size: 40rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.family-vip-1 {
+  position: absolute;
+  top: 267rpx;
+  left: 55rpx;
+  font-family: PingFangSC-Semibold;
+  font-size: 40rpx;
+  color: #6d4f17;
+  letter-spacing: 0;
+}
+
+.family-expired-0 {
+  position: absolute;
+  top: 335rpx;
+  left: 55rpx;
+  opacity: 0.8;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.family-expired-1 {
+  position: absolute;
+  top: 335rpx;
+  left: 55rpx;
+  opacity: 0.8;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #6d4f17;
+  letter-spacing: 0;
+  text-shadow: 0 2px 4px #c1a567;
+}
+
+.family-entrance-0 {
+  position: absolute;
+  top: 284rpx;
+  right: 55rpx;
+  width: 244rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  border: 2rpx solid #fff;
+  border-radius: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+}
+
+.family-entrance-1 {
+  position: absolute;
+  top: 284rpx;
+  right: 55rpx;
+  width: 244rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  border: 2rpx solid #6d4f17;
+  border-radius: 100rpx;
+  text-align: center;
+  color: #6d4f17;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium;
+}
+
+.middle-already {
+  width: 39rpx;
+  height: 39rpx;
+  margin-top: 46rpx;
+  margin-left: 10rpx;
+}
+
+.middle-already image {
+  width: 36rpx;
+  height: 39rpx;
+  margin-top: 5rpx;
+}
+
+.middle-image {
+  width: 16rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 42rpx;
+}
+
+.middle-image image {
+  width: 16rpx;
+  height: 28rpx;
+}
+
+.middle-line {
+  width: 750rpx;
+  height: 1rpx;
+  background: #d8d8d8;
+}
+
+.middle-content {
+  width: 700rpx;
+  height: 120rpx;
+  position: relative;
+}
+
+.content-title {
+  width: 100%;
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+
+.title-name {
+  width: 101rpx;
+  height: 40rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(86, 86, 86, 1);
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.title-tel {
+  width: 220rpx;
+  height: 40rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(86, 86, 86, 1);
+  font-size: 28rpx;
+}
+
+.middle-address {
+  width: 635rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(86, 86, 86, 1);
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.line-up {
+  margin-top: 23rpx;
+  height: 1rpx;
+  background: #e9e9e9;
+  border-block-end-width: 100%;
+}
+
+.line {
+  margin-top: 43rpx;
+  height: 1rpx;
+  background: #e9e9e9;
+  border-block-end-width: 100%;
+}
+
+.family-member {
+  width: 650rpx;
+  margin: 20rpx 50rpx;
+}
+
+.famliy-title {
+  width: 150rpx;
+  height: 45rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(87, 87, 87, 1);
+  font-size: 32rpx;
+}
+
+.family-entrance {
+  margin-top: 40rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.family-entrance-item {
+  width: 200rpx;
+  height: 147rpx;
+  background-image: url('https://cdn.jiyong365.com/jiaonang.png');
+  background-size: cover;
+  font-family: PingFangSC-Semibold;
+  font-size: 30rpx;
+  color: #543f18;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 114rpx;
+}
+
+.family-avatar {
+  width: 650rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 33rpx;
+}
+
+.avatar-content {
+  width: 116rpx;
+  height: 178rpx;
+  margin-right: 43rpx;
+}
+
+.avatar-image image {
+  width: 116rpx;
+  height: 116rpx;
+}
+
+.avatar-title {
+  width: 56rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  color: rgba(116, 116, 116, 1);
+  font-size: 28rpx;
+  position: relative;
+  left: 25rpx;
+  top: 5rpx;
+}
+
+.footer image {
+  width: 397rpx;
+  height: 115rpx;
+  margin-left: 182rpx;
+  margin-top: 40rpx;
+}

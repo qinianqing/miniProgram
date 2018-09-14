@@ -1,0 +1,100 @@
+/* page/product/comment/showpicture/showpicture.wxss */
+/* 页顶导航 */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.bg {
+  margin-top: 132rpx;
+  background-color: white;
+  width: 750rpx;
+  height: 1000rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bg-iphonex{
+  margin-top: 182rpx;
+    background-color: white;
+  width: 750rpx;
+  height: 1000rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+page {
+  background: white;
+}
+
+.delete {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 50rpx;
+}

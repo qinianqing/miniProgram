@@ -1,0 +1,92 @@
+<!--page/order/reverse/detail/applyafter/applyafter.wxml-->
+<!-- head  -->
+<import src="../../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>申请售后服务</view>
+  </view>
+</view>
+<!-- content  -->
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <!-- goods  -->
+  <!--未发货，直接退款  -->
+  <view wx:if="{{applycancel}}">
+    <!--apply  -->
+    <picker bindchange="bindPickerChanges" value="{{index}}" range="{{applyCancel}}">
+      <view class='apply'>
+        <view class='apply-left'>申请原因</view>
+        <view class='apply-right'>
+          <view class='right-title'>{{applyCancel[index]}}</view>
+          <view class='right-image'>
+            <image src="https://cdn.jiyong365.com/%E8%BF%94%E5%9B%9E%E7%94%B3%E8%AF%B7.png"></image>
+          </view>
+        </view>
+      </view>
+    </picker>
+  </view>
+  <!--发货之后退款  -->
+  <view wx:else>
+    <view class='goods'>
+      <view class='goods-image'>
+        <image src="{{goods.default_image}}"></image>
+      </view>
+      <view class='goods-describe'>
+        <view class='goods-title'>
+          <view class='title-left'>{{goods.goods_name}}</view>
+          <view class='title-right'>x{{goods.num}}</view>
+        </view>
+        <view class='goods-sku'>{{goods.type_id}}</view>
+        <view class='ll'>
+          <view class='goods-price'>￥{{goods.goods_price}}</view>
+          <view class='change-num'>
+            <view class='change-minus{{numApply > 1?"":"-off"}}' id='{{item.id}}' hover-class='{{numApply > 1?"change-btn-hover":"change-btn-hover-off"}}' catchtap='minus'>-</view>
+            <view class='change-v-line'></view>
+            <view class='change-num-detail'>{{numApply}}</view>
+            <view class='change-v-line'></view>
+            <view class='change-plus' id='{{item.id}}' hover-class='change-btn-hover' catchtap='plus'>+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--apply  -->
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{applyReason}}">
+      <view class='apply'>
+        <view class='apply-left'>申请原因</view>
+        <view class='apply-right'>
+          <view class='right-title'>{{applyReason[index]}}</view>
+          <view class='right-image'>
+            <image src="https://cdn.jiyong365.com/%E8%BF%94%E5%9B%9E%E7%94%B3%E8%AF%B7.png"></image>
+          </view>
+        </view>
+      </view>
+    </picker>
+  </view>
+
+  <!--comment  -->
+
+   <view class="section">
+      <textarea placeholder="提出你的建议，我们会努力改进" auto-focus="false" focus="false" bindblur='textvalue' placeholder-class="place">
+      </textarea>
+   <scroll-view scroll-x="true" class='bg'>
+        <view class='huadong'>
+          <view wx:for="{{commentPicArray}}" wx:key="index">
+            <view id='{{item}}' bindtap='turn'>
+              <image bindload src="{{item}}"></image>
+            </view>
+        </view>
+      </view>
+    </scroll-view>
+    <image bindtap='didPressChooseImage' class='photo' src='https://cdn.jiyong365.com/photo.png'></image>
+    <form bindsubmit="formSubmit" report-submit='true' bindreset="formReset">
+      <button formType="submit" class='anniu'>提交</button>
+    </form>
+  </view>
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

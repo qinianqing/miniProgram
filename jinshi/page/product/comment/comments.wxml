@@ -1,0 +1,109 @@
+<!--page/product/goodsdetails/comment/comment.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>商品评价</view>
+  </view>
+</view>
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <view class='banner'>
+    <view class='commentimages'>
+      <view wx:for="{{starImage}}" wx:if="{{index < lengths}}" class="starshow" wx:key='index'>
+        <image src="{{item}}"></image>
+      </view>
+      <view class='commentfen'>{{fen}} 好评</view>
+    </view>
+
+  </view>
+  <view class='linesm'></view>
+  <view class="nav">
+    <view class="{{selected?'red':'default'}}" bindtap="allData">全部
+       <!-- <view class="{{selected?'line':''}}"></view>  -->
+    </view>
+    <view class="{{selected1?'red':'default'}}" bindtap="havepicture">有图
+       <!-- <view class="{{selected1?'line':''}}"></view>  -->
+    </view>
+  </view>
+  <view class='linesm'></view>
+  <view class="{{selected?'show':'hidden'}}">
+    <view wx:if="{{!list.length > 0}}" class='commentImage'>
+      <view wx:if="{{!loading}}">
+        <image src="https://cdn.jiyong365.com/%E8%AF%84%E8%AE%BAzhanwei.png"></image>
+      </view>
+      <view wx:if="{{!loading}}"> 还没有评论哦~</view>
+    </view>
+    <view wx:else>
+      <view wx:if="{{!loading}}" class='commentdetail' wx:for="{{list}}" wx:for-item="pl" wx:key='index'>
+        <view class='left'>
+          <view>
+            <image class="avator" src="{{pl.avatar}}" mode='aspectFill'></image>
+            <view class='username'>{{pl.user_name}}</view>
+            <view class='time'>{{pl.createdAt}}</view>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='w'>
+            <view wx:if="{{index < pl.star_num}}" wx:for="{{starImage}}" class='smimages' wx:key='index'>
+              <image src="{{item}}"></image>
+            </view>
+          </view>
+          <view class='weidao'>{{pl.sku_name}}</view>
+        </view>
+        <view class='conent'>{{pl.comment_content}}</view>
+        <view class='have'>
+          <view wx:for="{{pl.comment_image}}" class='commentpicture' wx:key='index'>
+            <view>
+              <image id='{{item}}' data-pics='{{pl.comment_image}}' mode='aspectFill' src="{{item}}" bindtap='viewImages'></image>
+            </view>
+          </view>
+        </view>
+        <view class='linelg'></view>
+      </view>
+    </view>
+  </view>
+   <view class="{{selected1?'show':'hidden'}}"> 
+    <view wx:if="{{!list.length >0}}" class='commentImage'>
+      <view wx:if="{{!loading}}">
+        <image src="https://cdn.jiyong365.com/%E8%AF%84%E8%AE%BAzhanwei.png"></image>
+      </view>
+      <view wx:if="{{!loading}}"> 还没有有图的评论哦~</view>
+    </view>
+    <view wx:else>
+      <view class='commentdetail' wx:if="{{!loading}}" wx:for="{{list}}" wx:for-item="pl" wx:key='index'>
+        <view class='left'>
+          <view>
+            <image class="avator" src="{{pl.avatar}}" mode='aspectFill'></image>
+            <view class='username'>{{pl.user_name}}</view>
+            <view class='time'>{{pl.createdAt}}</view>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='w'>
+            <view wx:if="{{index < pl.star_num}}" wx:for="{{starImage}}" class='smimages' wx:key='index'>
+              <image src="{{item}}"></image>
+            </view>
+          </view>
+          <view class='weidao'>{{pl.sku_name}}</view>
+        </view>
+        <view class='conent'>{{pl.comment_content}}</view>
+        <view class='have'>
+          <view wx:for="{{pl.comment_image}}" class='commentpicture' wx:key='index'>
+            <view>
+              <image id='{{item}}' data-pics='{{pl.comment_image}}' mode='aspectFill' src="{{item}}" bindtap='viewImages'></image>
+            </view>
+          </view>
+        </view>
+        <view class='linelg'></view>
+      </view>
+    </view>
+
+  </view>
+  <view hidden="{{!loading}}">
+    <template is="loading" data="{{gif}}" />
+  </view>
+</view>

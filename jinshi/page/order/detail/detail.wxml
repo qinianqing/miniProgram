@@ -1,0 +1,157 @@
+<!--page/order/detail/detail.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<view wx:if='{{!loading}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='holder' wx:if="{{iphonex}}"></view>
+  <view class='package'>
+    <view class='{{iphonex?"back-iphonex":"back"}}' bindtap='back'>
+      <image src="https://cdn.jiyong365.com/fanhui8888888.png"></image>
+    </view>
+    <view class='{{iphonex?"head-title-iphonex":"head-title"}}'>
+      <view class='title-left'>{{order.statusName}}</view>
+      <view class='title-right'>{{order.family_name || '临时地址'}}</view>
+    </view>
+    <view class='head-user'>
+      <view class='user-name'>收货人: {{order.contact}}</view>
+      <view class='user-tel'>{{order.phone}}</view>
+    </view>
+    <view class='head-address'>
+      <image src="https://cdn.jiyong365.com/%E5%AE%B6%E5%BA%AD%E5%9C%B0%E5%9D%80.png"></image>{{order.province+order.city+order.county+order.address}}</view>
+  </view>
+  <view class='arrive-time'>
+    <view class='time-title'>订单处理时间</view>
+    <view class='time-details'>{{order.handle_date}}</view>
+  </view>
+  <view class='content' wx:for="{{items}}" wx:key='index'>
+    <view class='contentimage'>
+      <image src="{{item.cover}}"></image>
+    </view>
+    <view class='miaoshu'>
+      <view class='contenttop'>{{item.spu_name}}</view>
+      <view class='contentmi'>{{item.sku_name}}</view>
+      <view class='contentbo'>
+        <view class='newprice'>￥{{item.unit_price}}</view>
+        <view wx:if="{{!reserveS}}">
+          <view class='shouhou-button' wx:if="{{order.reverseShow}}" data-cover="{{item.cover}}" data-spu="{{item.spu_name}}" data-sku="{{item.sku_name}}" data-num="{{item.num}}" data-price="{{item.unit_price}}" data-orderid="{{order.order_id}}" data-skuid="{{item.sku_id}}"
+            bindtap='applyAfter'>申请售后</view>
+        </view>
+        <view wx:else>
+        </view>
+      </view>
+    </view>
+    <view class='shopcar'>
+      <view class='number'> ×{{item.num}}</view>
+      <view class='rebuy-button' bindtap='addCart' data-sku="{{item.sku_id}}" data-spu="{{item.spu_id}}" data-price="{{item.unit_price}}">再次购买</view>
+    </view>
+  </view>
+
+  <view class='shopcar-button' wx:if='{{success}}'>
+    <view class='button-left'>
+      <image src="https://cdn.jiyong365.com/%E8%81%94%E7%B3%BB%E5%AE%A2%E6%9C%8D.png"></image>
+      <button class='customer-btn' open-type='contact' session-from='{{order.order_id}}'></button>
+    </view>
+    <view class="button-right" bindtap='tocomment'>
+      <image src="https://cdn.jiyong365.com/%E5%8E%BB%E8%AF%84%E4%BB%B7.png"></image>
+    </view>
+  </view>
+
+  <view class='shopcar-button' wx:if='{{init}}'>
+    <view class='confirm-button' bindtap='cancel'>取消订单</view>
+    <view class='confirm-button' bindtap='pay'>{{order.main}}</view>
+  </view>
+
+  <view class='shopcar-button' wx:if='{{pending}}'>
+    <view class='confirm-button' bindtap='tuikuan'>退款申请</view>
+  </view>
+
+  <view class='shopcar-button' wx:if='{{delivery}}'>
+    <view class='confirm-button' bindtap='goLogistic'>查看物流</view>
+    <view class='confirm-button' bindtap='confirm'>确认收货</view>
+  </view>
+
+  <view class='zhifu'>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>订单编号:</view>
+      <view class='orderC'>{{order.order_id}}</view>
+    </view>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>下单时间:</view>
+      <view class='orderC'>{{order.createdAt}}</view>
+    </view>
+  </view>
+  <view class='ordersline'></view>
+  <view class='zhifustyle'>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>支付方式：</view>
+      <view class='orderC'>微信支付</view>
+    </view>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>商品合计：</view>
+      <view class='orderC'>￥{{order.goods_total/100}}</view>
+    </view>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>运费：</view>
+      <view class='orderC'>￥{{order.freight/100-order.freight_discount/100 || '0.00'}}</view>
+    </view>
+  </view>
+  <view class='ordersline'></view>
+  <view class='zhifustyle-coupon'>
+  <view class='orderItem'>
+      <view class='ordernumtitles'>优惠券扣减：</view>
+      <view class='orderC'>￥{{order.discount/100 || '0.00'}}</view>
+    </view>
+     <view class='orderItem'>
+      <view class='ordernumtitles'>抵扣返现金：</view>
+      <view class='orderC'>￥{{order.user_balance_consume || '0.00'}}</view>
+    </view>
+  </view>
+  <view class='ordersline'></view>
+  <view class='shifu'>
+    <view class='shifutitle'>实付：</view>
+    <block wx:if="{{order.actual_payment}}">
+      <view class='shifunumber'>￥{{order.actual_payment}} </view>
+    </block>
+    <block wx:else>
+      <view class='shifunumber'>未支付</view>
+    </block>
+  </view>
+  <view class='cashback'>
+    <view class='cashback-title'>获得返现金额:</view>
+    <view class='cashback-money'>￥{{order.cashback /100}}</view>
+  </view>
+  <view class='like'>
+    <view class='liket'>猜你喜欢</view>
+  </view>
+  <view class='caiimageall'>
+    <block wx:for="{{guess}}" wx:key="id">
+      <view class='product' bindtap='guessTap' id="{{item.goods_id}}">
+        <image class='spu-cover' src='{{item.default_image}}'></image>
+        <!-- <view class='spu-cb'>会员返{{item.goods_cashback}}元</view> -->
+        <view class='spu-highlight'>{{item.describe}}</view>
+        <view class='spu-non-key'>{{item.goods_name}}</view>
+        <view class='spu-price'>￥{{item.goods_price}}</view>
+      </view>
+
+    </block>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>
+<!--分享红包  -->
+<view class='share-right-image' catchtap='shareRight' wx:if="{{sendPLuck}}">
+<image src="https://cdn.jiyong365.com/%E7%BA%A2%E5%8C%85%20%281%29.png"></image>
+<view class='share-right-title'>分享</view>
+</view>
+<view wx:if="{{shareW}}">
+<view class='selectShare' catchtap='selectCancel'>
+<button class='{{iphonex?"share-bottom-line-iphonex":"share-bottom-line"}}'open-type="share">
+<view class='share-bottom-image'><image src="https://cdn.jiyong365.com/%E5%BE%AE%E4%BF%A1%20%288%29.png"></image></view>
+<view class='share-bottom-tilte'>分享10个红包</view>
+</button>
+</view>
+</view>

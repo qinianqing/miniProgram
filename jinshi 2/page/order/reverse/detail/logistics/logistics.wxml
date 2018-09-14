@@ -1,0 +1,59 @@
+<!--page/order/reverse/detail/logistics/logistics.wxml-->
+<!-- head  -->
+<import src="../../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>物流信息</view>
+  </view>
+</view>
+<!--apply  -->
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{applyReason}}">
+  <view class='apply'>
+    <view class='apply-left'>物流公司</view>
+    <view class='right-title'>{{applyReason[index]}}</view>
+    <view class='right-image'>
+      <image src="https://cdn.jiyong365.com/%E8%BF%94%E5%9B%9E%E7%94%B3%E8%AF%B7.png"></image>
+    </view>
+  </view>
+</picker>
+<!--单号  -->
+<view class='odd'>
+  <view class='odd-title'>物流单号:</view>
+  <input class='odd-input' bindinput="bindKeyInput" type="number" placeholder="填写物流单号" placeholder-class="odd-place" />
+</view>
+<!--联系号码  -->
+<view class='odd-tel'>
+  <view class='odd-title'>联系电话:</view>
+  <input class='odd-input' bindinput="bindKeyInputOne" type="number" placeholder="填写手机号码" placeholder-class="odd-place" />
+</view>
+<!--退货说明 -->
+<view class='odd-tel'>
+  <view class='odd-title'>退货说明:</view>
+  <input maxlength="20" class='odd-input' bindinput="bindKeyInputTwo" type="text" placeholder="选填" placeholder-class="odd-place" />
+</view>
+<!--上传凭证 -->
+<view class='section'>
+<view class='section-title'>上传凭证：</view>
+ <scroll-view scroll-x="true" class='bg'>
+        <view class='huadong'>
+          <view wx:for="{{commentPicArray}}">
+            <view id='{{item}}' bindtap='turn'>
+              <image bindload="loadImg" src="{{item}}"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <image bindtap='didPressChooseImage' class='photo' src='https://cdn.jiyong365.com/photo.png'></image>
+        <form bindsubmit="formSubmit" report-submit='true' bindreset="formReset">
+        <button formType="submit" class='anniu'>提交</button>
+      </form>
+    </view>
+    </view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

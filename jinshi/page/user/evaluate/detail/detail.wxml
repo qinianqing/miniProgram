@@ -1,0 +1,39 @@
+<!--page/user/evaluate/detail/detail.wxml-->
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>评价详情</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <view class='comment'>
+    <view class='commentimage'>
+      <image src='{{product.cover}}'></image>
+    </view>
+    <view class='title'>
+      <view class='solename'>{{product.spu}}</view>
+      <view class='weidao'>{{product.sku}}</view>
+    </view>
+  </view>
+  <view class='stars'>
+    <block wx:for='{{stars}}' wx:key='index'>
+      <image class='star' src='https://cdn.jiyong365.com/XINGXING%202.png'></image>
+    </block>
+  </view>
+  <view class='prop'>
+    <view class='time'>{{createdAt}}</view>
+    <view class='sku'>{{sku}}</view>
+  </view>
+  <view class='content'>
+    <text class='con-detail'>{{content}}</text>
+  </view>
+  <view class='pics' wx:if='{{pics.length}}'>
+    <block wx:for='{{pics}}' wx:key='index'>
+      <image class='pic' src='{{item}}' mode='aspectFill'></image>
+    </block>
+  </view>
+</view>

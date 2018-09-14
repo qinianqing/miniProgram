@@ -1,0 +1,213 @@
+/* page/subscribe/list/spu_map.wxss */
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.result {
+  margin-top: 70rpx;
+  width: 100%;
+}
+
+.result-iphonex {
+  margin-top: 120rpx;
+  width: 100%;
+}
+
+page {
+  background-color: white;
+}
+
+.container-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.c-head {
+  width: 100%;
+  height: 348rpx;
+  padding-top: 52rpx;
+  background-color: #fff;
+}
+
+.title {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  margin-left: 36rpx;
+  color: #303030;
+  letter-spacing: 0;
+  z-index: 99;
+}
+
+.heng {
+  margin-left: 36rpx;
+  margin-top: -18rpx;
+  background: #ffe67a;
+  width: 164rpx;
+  height: 13rpx;
+  z-index: 0;
+}
+
+.head-banner {
+  margin-top: 28rpx;
+  width: 680rpx;
+  margin-left: 35rpx;
+  height: 200rpx;
+  position: relative;
+}
+
+.head-banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.head-banner-title {
+  position: absolute;
+  top: 50rpx;
+  left: 33rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #6d4f17;
+  letter-spacing: 0;
+}
+
+.head-banner-focus {
+  position: absolute;
+  top: 100rpx;
+  left: 33rpx;
+  opacity: 0.65;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #6d4f17;
+  letter-spacing: 0;
+}
+
+.line {
+  width: 100%;
+  height: 10rpx;
+  background-color: #f6f6f6;
+}
+
+.body {
+  padding-top: 52rpx;
+}
+
+.content {
+  margin-top: 55rpx;
+  margin-left: 35rpx;
+  width: 680rpx;
+}
+
+.item {
+  margin-bottom: 50rpx;
+}
+
+.item-pic {
+  width: 680rpx;
+  height: 320rpx;
+  border-radius: 4rpx;
+}
+
+.item-title {
+  margin-top: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #303030;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.item-focus {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #888;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.calender-en {
+  width: 333rpx;
+  height: 110rpx;
+  background-color: white;
+  padding-left: 209rpx;
+  padding-right: 208rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calender-title {
+  height: 100%;
+  line-height: 110rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+  letter-spacing: 1.22rpx;
+  text-align: left;
+}
+
+.calender-pic {
+  width: 70rpx;
+  height: 70rpx;
+}

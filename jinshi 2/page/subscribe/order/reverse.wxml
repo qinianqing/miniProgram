@@ -1,0 +1,70 @@
+<!--page/subscribe/order/reverse.wxml-->
+<!-- head  -->
+<import src="../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>取消订阅</view>
+  </view>
+</view>
+<!-- content  -->
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <!-- goods  -->
+  <!--未发货，直接退款  -->
+  <!--apply  -->
+  <picker bindchange="bindPickerChanges" value="{{index}}" range="{{applyCancel}}">
+    <view class='apply'>
+      <view class='apply-left'>申请原因</view>
+      <view class='apply-right'>
+        <view class='right-title'>{{applyCancel[index]}}</view>
+        <view class='right-image'>
+          <image src="https://cdn.jiyong365.com/%E8%BF%94%E5%9B%9E%E7%94%B3%E8%AF%B7.png"></image>
+        </view>
+      </view>
+    </view>
+  </picker>
+  <view class='line_'></view>
+  <view class='information'>
+    <view class='information-title'>退款说明</view>
+    <view class='information-detail'>1、取消订阅，将不享受订阅价格，已发货的商品按购买时原价从已付款中扣除</view>
+    <view class='information-detail'>2、如果已发商品价格超过了实付价格，您不需要额外支付费用</view>
+    <view class='information-detail'>3、退款一旦申请，系统审核通过后退款金会立刻返回到您个人的钱包账户中</view>
+    <view class='information-detail'>4、所有未发货商品都会被取消</view>
+  </view>
+  <view class='line'></view>
+  <view class='info'>
+    <view class='info-title'>已发期数</view>
+    <view class='info-detail'>已发{{aStages}}期</view>
+  </view>
+  <view class='line'></view>
+
+  <view class='info'>
+    <view class='info-title'>订阅期数</view>
+    <view class='info-detail'>共{{stages}}期</view>
+  </view>
+  <view class='line'></view>
+
+  <view class='info-price'>
+    <view class='act-info'>
+      <view class='act-title'>实付：</view>
+      <view class='act-detail'>￥{{actPay}}</view>
+    </view>
+    <view class='act-info'>
+      <view class='act-title'>已发商品原价：</view>
+      <view class='act-detail'>￥{{already}}</view>
+    </view>
+    <view class='line'></view>
+    <view class='price'>
+      <view class='act-title'>退款金：</view>
+      <view class='act-detail'>￥{{payBack}}</view>
+    </view>
+  </view>
+
+</view>
+<view class='cancel-btn' bindtap='apply'>提交申请</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

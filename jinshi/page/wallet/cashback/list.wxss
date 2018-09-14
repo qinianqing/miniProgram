@@ -1,0 +1,172 @@
+/* page/wallet/cashback/list.wxss */
+page{
+  overflow: hidden;
+}
+/* 页顶导航 */
+
+.iphonex-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.container-box{
+  margin-top: 128rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  min-height: 100%;
+}
+
+.container-box-iphonex{
+  margin-top: 178rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  min-height: 100%;
+}
+
+.list-box{
+	margin-top: 15rpx;
+	background-color: #FFFFFF;
+}
+
+.list-title{
+	width: 715rpx;
+	height: 102rpx;
+	background: #FFFFFF;
+	position: relative;
+	padding-left: 35rpx;
+	font-family: PingFangSC-Medium;
+	line-height: 102rpx;
+	font-size: 30rpx;
+	color: #565656;
+	letter-spacing: 0;
+}
+
+.line{
+	height: 1rpx;
+	width: 750rpx;
+	background: #F6F6F6;
+}
+
+.list{
+	padding-top: 27rpx;
+	width: 680rpx;
+	padding-left: 35rpx;
+	padding-right: 35rpx;
+	background: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+}
+
+.bill-box{
+	height: 103rpx;
+	width: 680rpx;
+	position: relative;
+}
+
+.bill-title{
+	position: absolute;
+	top: 10rpx;
+	left: 0;
+	font-family: PingFangSR-Regular;
+	font-size: 28rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	color: #535353;
+	letter-spacing: 0;
+}
+
+.bill-time{
+	position: absolute;
+	top: 65rpx;
+	left: 0;
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	color: #AAAAAA;
+	letter-spacing: 0;
+}
+
+.bill-detail{
+	position: absolute;
+	right: 0;
+	top: 38rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	color: #FF7A7A;
+	letter-spacing: 0;
+}
+
+.bill-line{
+	position: absolute;
+	top: 102rpx;
+	left: 0;
+	width: 680rpx;
+	height: 1rpx;
+	background-color: #F6F6F6;
+}

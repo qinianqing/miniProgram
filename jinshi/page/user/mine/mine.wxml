@@ -1,0 +1,101 @@
+<import src="../../../component/hSwiper/hSwiper.wxml" />
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<import src="../../../component/followFwh/followFwh.wxml" />
+<view class='container-box' wx:if="{{!loading}}">
+   <view class='{{iphonex?"back-iphonex":"back"}}' bindtap="back">
+    <!-- <image class='nav' src="https://cdn.jiyong365.com/personback.png"></image> -->
+  </view> 
+  <view class='avatar' bindtap='updateUserInfo'>
+    <view class='avatar-image'>
+    <!-- <open-data type="userAvatarUrl"></open-data> -->
+    <image src="{{user.avatar}}"></image>
+    </view>
+     <view wx:if="{{Ustatus}}"><button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='clikA'>点击设置头像</button> </view>
+     <view wx:else> <view class='avatar-name'>{{user.name}}</view> </view>
+    <!-- <view class='avatar-name'><open-data type="userNickName"></open-data></view> -->
+  </view>
+  <view id='mainContainer'>
+    <template is="hSwiper" data="{{...familyVar}}"></template>
+  </view>
+  <view class='order'>
+    <view class='order-title' id='oall' bindtap='orderEntranceTap'>全部订单</view>
+    <view class='order-list'>
+      <view class='list-style' id='dfk' bindtap='orderEntranceTap'>
+      <view wx:if="{{dfkNum > 0 && dfkNum < 10}}" class='dfk-tag'>{{dfkNum}}</view>
+        <view wx:if="{{dfkNum > 9}}" class='dfk-tags'>...</view>
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/os4.png"></image>
+        </view>
+        <view class='list-title'>待付款</view>
+      </view>
+      <view class='list-style' id='dsh' bindtap='orderEntranceTap'>
+         <view wx:if="{{dshNum > 0 && dshNum < 10}}" class='dsh-tag'>{{dshNum}}</view>
+         <view wx:if="{{dshNum > 9}}" class='dsh-tags'>...</view>
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/os2.png"></image>
+        </view>
+        <view class='list-title'>待收货</view>
+      </view>
+      <view class='list-style' id='dpj' bindtap='orderEntranceTap'>
+       <!-- <view class='dpj-tag'>有奖</view> -->
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/fw2.png"></image>
+        </view>
+        <view class='list-title'>待评价</view>
+      </view>
+      <view class='list-style' id='all' bindtap='orderEntranceTap'>
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/os3.png"></image>
+        </view>
+        <view class='list-title'>退换货</view>
+      </view>
+    </view>
+    <view class='list-line'></view>
+  </view>
+  <view class='service'>
+    <view class='service-title'>我的服务</view>
+    <view class='order-list'>
+      <view class='list-style' bindtap='goWallet'>
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/os1.png"></image>
+        </view>
+        <view class='list-title'>消费流水</view>
+      </view>
+      <view class='list-style' bindtap='goquan'>
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/fw3.png"></image>
+        </view>
+        <view class='list-title'>优惠券</view>
+      </view>
+      <view class='list-style' bindtap='goCollection'>
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/fw1.png"></image>
+        </view>
+        <view class='list-title'>收藏夹</view>
+      </view>
+      <view class='list-style' bindtap='goService'>
+        <view class='list-image'>
+          <image src="https://cdn.jiyong365.com/fw4.png"></image>
+        </view>
+        <view class='list-title'>联系客服</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='footer' bindtap='shareBtn'>
+    <button class='share-btn'></button>
+  </view> -->
+</view>
+<view class='{{iphonex?"fwh-follow-iphonex":"fwh-follow"}}' wx:if='{{!isFwhUser}}'>
+  <view class='fwh-follow-title'>关注服务号，实时推送优惠商品</view>
+  <view class='fwh-follow-btn' bindtap='followFwh'>立即关注</view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>
+<view hidden="{{!showFwhModal}}">
+  <template is="followFwhModal" />
+</view>

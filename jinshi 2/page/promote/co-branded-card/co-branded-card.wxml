@@ -1,0 +1,50 @@
+<!--page/promote/co-branded-card/co-branded-card.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <image class='{{iphonex?"back-to-pre-iphonex":"back-to-pre"}}' bindtap="back" src="https://cdn.jiyong365.com/huidaoshouye.png"></image>
+  <view class='{{iphonex?"title-iphonex":"title"}}'>送你一张锦时卡</view>
+  <image class='cover' src='{{card.cover}}' mode='aspectFill'></image>
+  <view class='right-title'>可享权益</view>
+  <view class='rights'>
+    <view class='right-box'>
+      <image class='right-icon' src='https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%20%2811%29.png'></image>
+      <view class='right-detail'>{{card.days}}天会员</view>
+    </view>
+    <view class='right-box'>
+      <image class='right-icon' src='https://cdn.jiyong365.com/%E5%BF%AB%E9%80%92%20.png'></image>
+      <view class='right-detail'>{{card.fscs}}张邮券</view>
+    </view>
+    <view class='right-box'>
+      <image class='right-icon' src='https://cdn.jiyong365.com/%E5%88%B8%20%286%29.png'></image>
+      <view class='right-detail'>{{card.coupon_amount}}元现金券</view>
+    </view>
+  </view>
+  <view class='{{btn === "立即领取"?"valid":"invalid"}}' bindtap='active'>{{btn}}</view>
+  <view class='line'></view>
+  <view class='rank-title-box'>
+    <view class='rank-title'>人气商品</view>
+    <view class='rank-go' data-id='{{group_id}}' bindtap='groupTap'>
+      <view class='rank-go-title'>更多</view>
+      <image class='nav' src='../../../image/fanhui.png'></image>
+    </view>
+  </view>
+  <view class='rec-ranks' data-id='{{group_id}}' bindtap='groupTap'>
+    <image class='rec-ranks-image' src='../../../image/ranking.png'></image>
+    <view wx:for='{{list}}' wx:key='index' wx:if='{{index<=2}}'>
+      <image src='{{item.default_image}}' id='rank-cover-{{index+1}}' data-id='{{item.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuIdTap'></image>
+      <view id='rank-title-{{index+1}}' data-id='{{item.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuIdTap'>TOP {{index+1}}</view>
+    </view>
+  </view>
+  <view class='right-title'>领取须知</view>
+  <view class='notice-note'>1、每人仅限领取{{card.limit}}次</view>
+  <view class='notice-note'>2、共{{card.num}}张，当前已领{{card.active_num}}张</view>
+</view>
+
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

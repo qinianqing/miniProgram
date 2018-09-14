@@ -1,0 +1,48 @@
+<!--page/subscribe/index.wxml-->
+<import src="../../component/loading/loading.wxml" />
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>订阅商品</view>
+    </view>
+  </view>
+  <view class='{{iphonex?"result-iphonex":"result"}}'>
+    <view class='c-head'>
+      <view class='title'>什么是订阅？</view>
+      <view class='heng'></view>
+      <view class='head-banner' bindtap='about'>
+        <image src='https://cdn.jiyong365.com/banner000.png'></image>
+        <view class='head-banner-title'>一次支付，分期送达</view>
+        <view class='head-banner-focus'>更便宜、更方便、更省心，点击了解更多</view>
+      </view>
+    </view>
+    <view class='line'></view>
+    <view class='calender-en' bindtap='goToCheck'>
+      <view class='calender-title'>进入我的订阅历</view>
+      <image class='calender-pic' src='https://cdn.jiyong365.com/rili.png'></image>
+    </view>
+    <view class='line'></view>
+    <view class='body'>
+      <view class='title'>人气订阅</view>
+      <view class='heng'></view>
+      <view class='content'>
+        <block wx:for='{{list}}' wx:key='index'>
+          <view class='item' id='{{item.id}}' bindtap='itemTap'>
+            <image class='item-pic' src='{{item.cover}}' mode='aspectFill'></image>
+            <view class='item-title'>{{item.title}}</view>
+            <view class='item-focus'>{{item.focus}}</view>
+
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

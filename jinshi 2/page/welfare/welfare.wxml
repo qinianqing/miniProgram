@@ -1,0 +1,155 @@
+<!--page/welfare/welfare.wxml-->
+<import src="../../component/loading/loading.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class='{{iphonex?"head-title-iphonex":"head-title"}}'>{{title}}</view>
+<view class='contain-box' wx:if='{{!loading}}'>
+  <!--活动一  -->
+  <view class='act-first' catchtap='inviteNew'>
+    <view class='first-image'>
+      <image src="{{actFirst.cover}}"></image>
+      <view class='first-name'>{{actFirst.name}}</view>
+      <view class='first-money'>各得
+        <text class='first-money-num'>{{actFirst.money}}</text>元现金券</view>
+      <view class='first-button' catchtap='goShare'>{{actFirst.invite}}</view>
+    </view>
+    <view class='first-title' catchtap='inviteNewRule'>{{actFirst.title}}</view>
+  </view>
+  <!--活动二  -->
+  <view class='act-three' catchtap='vipRuleF'>
+    <view class='first-image'>
+      <image src="{{actThree.cover}}"></image>
+      <view class='three-icon'>
+        <image src="{{actThree.icon}}"></image>
+      </view>
+      <view class='three-name'>{{actThree.name}}</view>
+      <view class='three-money'>得会员价{{actThree.money}}的奖励</view>
+      <view class='three-button' catchtap='goInviteMember'>{{actThree.invite}}</view>
+    </view>
+    <view class='first-title'>{{actThree.title}}</view>
+  </view>
+  <!--活动三  -->
+  <view class='act-four' catchtap='vipRule'>
+    <view class='four-image'>
+      <image src="{{actFour.cover}}"></image>
+      <view class='four-name'>{{actFour.name}}</view>
+      <view class='four-money'>可得超值大礼包~</view>
+      <view class='four-button' catchtap='goVip'>{{actFour.invite}}</view>
+      <view class='four-title'>活动规则</view>
+    </view>
+  </view>
+  <!--活动四  -->
+  <view class='act-second' catchtap='goP'>
+    <view class='second-image'>
+      <image src="{{actSecond.cover}}"></image>
+      <view class='second-name'>{{actSecond.name}}</view>
+      <view class='second-money'>获
+        <text class='second-money-num'>{{actSecond.money}}</text>元现金</view>
+      <view class='second-rule'>{{actSecond.rule}}</view>
+    </view>
+    <!--有拼手气红包  -->
+    <view wx:if="{{status}}">
+      <scroll-view class='second-list' scroll-y>
+        <block wx:for="{{secondList}}" wx:key='index'>
+          <view class='second-content' wx:if="{{item.updatedAt > 0}}">
+            <view class='content-title'>{{item.updatedAt}}张拼手气券</view>
+            <view class='content-time'>来自{{item.createdAt}}的订单</view>
+            <view class='content-share' data-u='{{item.user_id}}' data-o='{{item.order_id}}' catchtap='selsectG'>去分享</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <!--无拼手气红包  -->
+    <view wx:else>
+      <scroll-view class='second-lists' scroll-y>
+        <block wx:for="{{secondLists}}" wx:key='index'>
+          <view class='second-contents'>
+            <view class='content-title'>{{item.title}}</view>
+            <view class='content-time'>{{item.time}}</view>
+            <view class='content-share' catchtap='goShop'>去购物</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class='second-title'>{{actSecond.title}}</view>
+  </view>
+  <!--页面底部  -->
+  <view class='{{iphonex?"act-footer-iphonex":"act-footer"}}'>
+    <view class='footer-left' catchtap='goCash'>我的钱包</view>
+    <view class='footer-line'></view>
+    <view class='footer-right' catchtap='goCoupon'>优惠券</view>
+  </view>
+</view>
+<!--去分享弹层  -->
+<view wx:if="{{selectShare}}">
+  <view class="{{vipStatus? '' :'selectShare'}}" catchtap='selectC'>
+    <view class='{{iphonex?"selectShare-content-iphonex":"selectShare-content"}}'>
+      <button class='selectShare-one' open-type="share">分享给好友</button>
+      <view class='selectShare-cancel' bindtap='cancelS'>取消</view>
+    </view>
+  </view>
+</view>
+<!--加载动画  -->
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<!--10个人弹窗  -->
+<view wx:if="{{getCoupon}}">
+  <view class='selectShare' catchtap='hiddenS'>
+    <view class='coupon-content'>
+      <view class='coupon-money'>5</view>
+      <view class='coupon-yuan'>元</view>
+      <view class='coupon-bottom' catchtap='gomine'>
+        <image src="https://cdn.jiyong365.com/10%E4%BD%8D%E5%A5%BD%E5%8F%8B%E7%8E%B0%E9%87%91%E5%88%B8-07.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--vip 10%返利弹窗  -->
+<view wx:if="{{vipStatus}}">
+  <view class='selectShare' catchtap='hiddenS'>
+   <view class='vip-f-cancel' catchtap='hiddenS'>
+        <image src="https://cdn.jiyong365.com/%E5%8F%96%E6%B6%88-cxc3.png"></image>
+      </view>
+    <view class='vip-f-content'>
+      <view class='vip-f-image'>
+        <image src="https://cdn.jiyong365.com/Group%208.png"></image>
+      </view>
+      <view class='vip-f-title'>活动规则</view>
+      <view class='vip-f-rule'>
+        <block wx:for="{{vipRules}}">
+          <view class="vip-f-rule-content">{{index + 1}}、{{item}} </view>
+        </block>
+      </view>
+      <view class='vip-f-button' catchtap='goInviteMember'>
+        <image src="https://cdn.jiyong365.com/Group%2014vvvvvvvvvv.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--分享手气红包弹窗  -->
+<view wx:if="{{LuckyStatus}}">
+ <view class='selectShare' catchtap='hiddenS'>
+   <view class='vip-f-cancel-p' catchtap='hiddenS'>
+        <image src="https://cdn.jiyong365.com/%E5%8F%96%E6%B6%88-cxc3.png"></image>
+      </view>
+    <view class='vip-f-content-p'>
+      <view class='vip-f-image'>
+        <image src="https://cdn.jiyong365.com/dfdf.png"></image>
+      </view>
+      <view class='vip-f-title-p'>活动规则</view>
+      <view class='vip-f-rule-p'>
+        <block wx:for="{{LuckyRules}}">
+          <view class="vip-f-rule-content">{{index + 1}}、{{item}} </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

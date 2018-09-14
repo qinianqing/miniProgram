@@ -1,0 +1,152 @@
+/* page/promote/coupon/getCoupon.wxss */
+
+.container-box {
+  width: 100%;
+  background: #f09052;
+  padding-bottom: 200rpx;
+}
+
+.share-box {
+  position: fixed;
+  top: 300rpx;
+  right: 0;
+  width: 150rpx;
+  height: 60rpx;
+}
+
+.share-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150rpx;
+  height: 60rpx;
+  opacity: 0;
+}
+
+.share {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150rpx;
+  height: 60rpx;
+  background: rgba(209, 209, 209, 0.7);
+  border-top-left-radius: 60rpx;
+  border-bottom-left-radius: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: white;
+}
+
+.nav {
+  position: fixed;
+  top: 55rpx;
+  left: 30rpx;
+  width: 150rpx;
+  height: 66rpx;
+  z-index: 999;
+}
+
+.nav-iphonex {
+  position: fixed;
+  top: 105rpx;
+  left: 30rpx;
+  width: 150rpx;
+  height: 66rpx;
+  z-index: 999;
+}
+
+.nav-home {
+  position: fixed;
+  top: 59rpx;
+  left: 35rpx;
+  width: 75rpx;
+  height: 75rpx;
+  z-index: 999;
+}
+
+.nav-home-iphonex {
+  position: fixed;
+  top: 99rpx;
+  left: 35rpx;
+  width: 75rpx;
+  height: 75rpx;
+  z-index: 999;
+}
+
+.coupons {
+  width: 546rpx;
+  padding-top: 800rpx;
+  padding-left: 102rpx;
+}
+
+.coupon {
+  width: 546rpx;
+  height: 330rpx;
+  position: relative;
+  margin-bottom: 50rpx;
+}
+
+.coupon-money {
+  position: absolute;
+  top: 60rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 80rpx;
+  font-family: Arial Black;
+  color: #542818;
+}
+
+.coupon-intro {
+  position: absolute;
+  top: 180rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  color: #876218;
+}
+
+.coupon-go {
+  position: absolute;
+  bottom: 20rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  color: #542818;
+}
+
+.info {
+  width: 100%;
+}
+
+.info-title {
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #f09052;
+  text-align: center;
+}
+
+.info-box {
+  margin-top: 30rpx;
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  background-image: url(https://cdn.jiyong365.com/%E6%B4%BB%E5%8A%A8%E8%A7%84%E5%88%99%E6%A8%A1%E5%9D%97@2x.png);
+  background-size: 100% 100%;
+  border-radius: 30rpx;
+}
+
+.info-text-box {
+  padding-bottom: 50rpx;
+  padding-left: 42rpx;
+  padding-right: 42rpx;
+  color: #ffead2;
+  font-size: 28rpx;
+  font-family: PingFangSC-Slim;
+}

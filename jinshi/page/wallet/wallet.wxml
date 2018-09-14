@@ -1,0 +1,47 @@
+<!--page/wallet/wallet.wxml-->
+<import src="../../component/loading/loading.wxml" />
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonex-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/fanhui8888888.png"></image>
+    </view>
+    <view class='head-title'>消费流水</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <!-- <view class='header'> -->
+    <!-- <view class='header-title'>我的余额（元）</view>
+    <view class='total'>{{total}}</view>
+    <view class='notice'>余额可用于支付商品金额</view>
+    <image class='mark' src='https://cdn.jiyong365.com/%E9%97%AE%E9%A2%98%20%281%29fg.png' bindtap='whatiscb'></image> -->
+    <!-- <view class='cashback' bindtap='gocblist'>补贴流水</view> -->
+  <!-- </view> -->
+  <view class='body'>
+    <view class='list-title'>余额明细</view>
+    <view class='line'></view>
+    <view class='list'>
+      <view wx:if='{{list.length}}'>
+        <block wx:for='{{list}}' wx:key='id'>
+          <view class='bill-box'>
+            <view class='bill-title'>{{item.reason}}</view>
+            <view class='bill-time'>{{item.time}}{{item.statusName}}</view>
+            <view class='bill-detail'>{{item.amount}}元</view>
+            <view class='bill-line'></view>
+          </view>
+        </block>
+      </view>
+      <view wx:else>
+        <view class='default-box'>
+          <image class='default-img' src='https://cdn.jiyong365.com/%E6%96%AD%E7%BD%91zhanwei.png'></image>
+          <view class='default-txt'>你还没有交易记录哦~</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

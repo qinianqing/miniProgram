@@ -1,0 +1,710 @@
+/* page/welfare/welfare.wxss */
+
+page {
+  background-color: white;
+}
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  /* background: #fff; */
+  z-index: 99999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background: #fff; */
+  width: 100%;
+  z-index: 99999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 99999;
+}
+
+.nav {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title-iphonex {
+  height: 62rpx;
+  font-size: 44rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  letter-spacing: 0;
+  margin-top: 137rpx;
+  margin-left: 327rpx;
+}
+
+.head-title {
+  height: 62rpx;
+  font-size: 44rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  letter-spacing: 0;
+  margin-top: 87rpx;
+  margin-left: 327rpx;
+}
+
+.contain-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 30rpx;
+  margin-bottom: 150rpx;
+}
+
+.act-first {
+  width: 666rpx;
+  height: 415rpx;
+  box-shadow: 0 3rpx 4rpx 4rpx rgba(0, 0, 0, 0.06);
+  border-radius: 20rpx;
+}
+
+.act-three {
+  margin-top: 40rpx;
+  width: 666rpx;
+  height: 415rpx;
+  box-shadow: 0 3rpx 4rpx 4rpx rgba(0, 0, 0, 0.06);
+  border-radius: 20rpx;
+}
+
+.act-four {
+  width: 688rpx;
+  height: 445rpx;
+  margin-top: 35rpx;
+  /* box-shadow: 0 3rpx 4rpx 4rpx rgba(0, 0, 0, 0.06); */
+  border-radius: 20rpx;
+}
+
+.four-image {
+  width: 688rpx;
+  height: 445rpx;
+  position: relative;
+}
+
+.four-image image {
+  width: 688rpx;
+  height: 445rpx;
+}
+
+.first-image {
+  width: 666rpx;
+  height: 423rpx;
+  position: relative;
+}
+
+.first-image image {
+  width: 666rpx;
+  height: 423rpx;
+}
+
+.first-name {
+  position: absolute;
+  top: 60rpx;
+  left: 335rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(0, 0, 0, 1);
+  font-size: 44rpx;
+  letter-spacing: 0;
+}
+
+.first-money {
+  position: absolute;
+  left: 328rpx;
+  top: 123rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(0, 0, 0, 1);
+  font-size: 44rpx;
+}
+
+.first-money-num {
+  width: 38rpx;
+  font-size: 54rpx;
+  text-align: center;
+  height: 75rpx;
+  line-height: 75rpx;
+  position: relative;
+  left: -5rpx;
+  top: 4rpx;
+}
+
+.three-money {
+  position: absolute;
+  left: 357rpx;
+  top: 132rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #926f2d;
+  letter-spacing: 0;
+}
+
+.three-name {
+  position: absolute;
+  top: 58rpx;
+  left: 357rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 46rpx;
+  color: rgba(146, 111, 45, 1);
+  letter-spacing: 0;
+}
+
+.three-icon {
+  width: 53rpx;
+  height: 46rpx;
+  position: absolute;
+  left: 553.7rpx;
+  top: 66rpx;
+}
+
+.three-icon image {
+  width: 53rpx;
+  height: 46rpx;
+}
+
+.three-button {
+  background-image: linear-gradient(45deg, #fae0a1 0%, #e1c586 100%);
+  border-radius: 100rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 34rpx;
+  color: #543f18;
+  letter-spacing: 0;
+  position: absolute;
+  top: 213rpx;
+  left: 353rpx;
+  width: 266rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  text-align: center;
+  box-shadow: 0 10rpx 20rpx 8rpx rgba(222, 172, 78, 0.30);
+}
+
+.first-button {
+  position: absolute;
+  top: 216rpx;
+  left: 328rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  font-size: 32rpx;
+  background-image: url('https://cdn.jiyong365.com/Bitmap2.png');
+  background-size: cover;
+  width: 288rpx;
+  height: 90rpx;
+  line-height: 85rpx;
+  text-align: center;
+}
+
+.four-title {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #2d2d2d;
+  letter-spacing: 0;
+  text-align: center;
+  position: absolute;
+  left: 267.6rpx;
+  top: 361.1rpx;
+}
+
+.four-button {
+  position: absolute;
+  top: 224.7rpx;
+  left: 342.4rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32rpx;
+  background-image: url('https://cdn.jiyong365.com/%E7%A6%8F%E5%88%A9Buttin.png');
+  background-size: cover;
+  width: 224rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+}
+
+.first-title {
+  width: 666rpx;
+  height: 83rpx;
+  line-height: 83rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  font-size: 32rpx;
+  background-image: url('https://cdn.jiyong365.com/Rectangle%20Copy%202.png');
+  background-size: cover;
+  position: relative;
+  top: -82rpx;
+  border-radius: 0 0 15rpx 0;
+  /* box-shadow: 0 3rpx 4rpx 4rpx rgba(0, 0, 0, 0.06); */
+}
+
+.act-second {
+  width: 666rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 3rpx 4rpx 4rpx rgba(0, 0, 0, 0.06);
+  margin-top: 15rpx;
+  margin-bottom: 200rpx;
+}
+
+.second-image {
+  width: 666rpx;
+  height: 288rpx;
+  position: relative;
+}
+
+.second-image image {
+  width: 666rpx;
+  height: 288rpx;
+}
+
+.second-name {
+  font-family: PingFangSC-Medium;
+  color: rgba(0, 0, 0, 1);
+  font-size: 50rpx;
+  position: absolute;
+  top: 53rpx;
+  left: 313rpx;
+}
+
+.four-name {
+  font-family: PingFangSC-Semibold;
+  font-size: 50rpx;
+  color: #000;
+  letter-spacing: 0;
+  position: absolute;
+  left: 353.5rpx;
+  top: 83.5rpx;
+}
+
+.second-money {
+  font-family: PingFangSC-Medium;
+  color: rgba(0, 0, 0, 1);
+  font-size: 36rpx;
+  letter-spacing: 0;
+  position: absolute;
+  top: 120rpx;
+  left: 313rpx;
+}
+
+.four-money {
+  font-family: PingFangSC-Semibold;
+  font-size: 26rpx;
+  color: #000;
+  letter-spacing: 0;
+  top: 160.8rpx;
+  left: 353.4rpx;
+  position: absolute;
+}
+
+.second-money-num {
+  font-size: 52rpx;
+  position: relative;
+  left: -5rpx;
+  width: 30rpx;
+  top: 5rpx;
+  height: 73rpx;
+  line-height: 73rpx;
+}
+
+.second-rule {
+  font-family: PingFangSC-Light;
+  color: rgba(0, 0, 0, 1);
+  font-size: 26rpx;
+  position: absolute;
+  top: 213rpx;
+  left: 313rpx;
+  width: 300rpx;
+}
+
+.second-list {
+  width: 666rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-top: 42rpx;
+  height: 800rpx;
+  overflow: hidden;
+}
+
+.second-lists {
+  width: 666rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-top: 42rpx;
+  height: 200rpx;
+  overflow: hidden;
+}
+
+.second-content {
+  width: 604rpx;
+  height: 183rpx;
+  background-image: url('https://cdn.jiyong365.com/%E8%92%99%E6%9D%BFact.png');
+  background-size: cover;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.second-contents {
+  width: 604rpx;
+  height: 183rpx;
+  background-image: url('https://cdn.jiyong365.com/Rectangfffle%207.png');
+  background-size: cover;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.content-title {
+  position: absolute;
+  top: 47rpx;
+  left: 50rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  font-size: 36rpx;
+}
+
+.content-time {
+  position: absolute;
+  top: 102rpx;
+  left: 50rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  font-size: 24rpx;
+}
+
+.content-share {
+  background-color: white;
+  position: absolute;
+  top: 52rpx;
+  left: 374rpx;
+  border-radius: 100rpx;
+  width: 190rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  font-size: 36rpx;
+}
+
+.second-title {
+  width: 666rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  color: rgba(45, 45, 45, 1);
+  font-size: 32rpx;
+  background-image: url('https://cdn.jiyong365.com/Rectangle%20Copy%202.png');
+  background-size: cover;
+  margin-top: 50rpx;
+}
+
+.act-footer {
+  width: 100%;
+  height: 100rpx;
+  /* line-height: 100rpx; */
+  background-color: #2d2d2d;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.act-footer-iphonex {
+  width: 100%;
+  height: 100rpx;
+  /* line-height: 100rpx; */
+  background-color: #2d2d2d;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 30rpx;
+  z-index: 999;
+}
+
+.footer-left {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 0;
+  position: absolute;
+  left: 123rpx;
+  top: 28rpx;
+}
+
+.footer-line {
+  width: 2rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 374rpx;
+  top: 27rpx;
+  background-color: white;
+}
+
+.footer-right {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 0;
+  position: absolute;
+  left: 515rpx;
+  top: 28rpx;
+}
+
+.selectShare {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+}
+
+.selectShare-content {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 183rpx;
+  background-color: #f8f8f8;
+  text-align: center;
+   z-index:999999999999;
+}
+
+.selectShare-content-iphonex {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 30rpx;
+  width: 100%;
+  height: 183rpx;
+  background-color: #f8f8f8;
+  text-align: center;
+  z-index:999999999999;
+}
+
+.selectShare-one {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: white;
+  margin-bottom: 5rpx;
+  font-size: 16.5px;
+  margin-top: 0rpx !important;
+  /* position: static !important;  */
+  z-index: 99999;
+}
+
+button::after {
+  border: 0rpx solid white !important;
+}
+
+.selectShare-two {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: white;
+  margin-bottom: 5rpx;
+  z-index: 99999;
+}
+
+.selectShare-cancel {
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: white;
+  z-index: 99999;
+}
+
+.coupon-content {
+  position: fixed;
+  top: 400rpx;
+  left: 95rpx;
+  background-image: url('https://cdn.jiyong365.com/10%E4%BD%8D%E5%A5%BD%E5%8F%8B%E7%8E%B0%E9%87%91%E5%88%B8-06.png');
+  background-size: cover;
+  width: 550rpx;
+  height: 686rpx;
+}
+
+.coupon-bottom {
+  width: 390rpx;
+  height: 85rpx;
+  position: absolute;
+  left: 79rpx;
+  top: 538rpx;
+}
+
+.coupon-bottom image {
+  width: 390rpx;
+  height: 85rpx;
+}
+
+.coupon-money {
+  font-family: PingFangSC-Medium;
+  color: rgba(51, 51, 51, 1);
+  font-size: 80rpx;
+  position: absolute;
+  left: 296rpx;
+  top: 244rpx;
+}
+
+.coupon-yuan {
+  font-family: PingFangSC-Medium;
+  color: rgba(21, 21, 21, 1);
+  font-size: 48rpx;
+  position: absolute;
+  left: 344rpx;
+  top: 282rpx;
+}
+
+.selectShare {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+}
+
+.vip-f-content {
+  width: 546rpx;
+  height: 625rpx;
+  margin-top: 315rpx;
+  margin-left: 102rpx;
+  background-color: white;
+  position: relative;
+  border-radius: 8rpx;
+}
+.vip-f-content-p{
+    width: 546rpx;
+  height: 717rpx;
+  margin-top: 254rpx;
+  margin-left: 102rpx;
+  background-color: white;
+  position: relative;
+  border-radius: 8rpx;
+}
+.vip-f-cancel {
+  width: 66rpx;
+  height: 66rpx;
+  position: absolute;
+  left: 601rpx;
+  top: 247rpx;
+}
+
+.vip-f-cancel image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.vip-f-cancel-p {
+  width: 66rpx;
+  height: 66rpx;
+  position: absolute;
+  left: 594rpx;
+  top: 191rpx;
+}
+
+.vip-f-cancel-p image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.vip-f-image {
+  width:546rpx;
+height:200rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.vip-f-image image {
+  width:546rpx;
+height:200rpx;
+
+}
+
+.vip-f-title {
+  font-family: PingFangSC-Medium;
+font-size: 40rpx;
+color: #333333;
+  position: absolute;
+ top:82rpx;
+left:273rpx;
+
+}
+.vip-f-title-p {
+  font-family: PingFangSC-Medium;
+font-size: 40rpx;
+color: #333333;
+  position: absolute;
+ top:88rpx;
+left:305rpx;
+
+}
+.vip-f-rule {
+  width: 476rpx;
+  position: absolute;
+  top: 240rpx;
+  left: 42rpx;
+}
+.vip-f-rule-p {
+  width: 467rpx;
+  position: absolute;
+  top: 243rpx;
+  left: 44rpx;
+}
+.vip-f-rule-content {
+  font-family: PingFangSC-Regular;
+font-size: 28rpx;
+color: #0A0A0A;
+letter-spacing: 0.5rpx;
+  margin-bottom: 15rpx;
+}
+
+.vip-f-button {
+  position: absolute;
+  top: 500rpx;
+  left: 163rpx;
+}
+
+.vip-f-button image {
+  width: 220rpx;
+  height: 80rpx;
+}
+vip-f-button-p{
+   position: absolute;
+  top: 602rpx;
+  left: 120rpx;
+}
+.vip-f-button-p image {
+  width: 200rpx;
+  height: 60rpx;
+}

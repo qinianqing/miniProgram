@@ -1,0 +1,20 @@
+<!--page/user/mine/invite/activerule/activerule.wxml-->
+<image class='{{iphonex?"back-to-pre-iphonex":"back-to-pre"}}' bindtap="back" src="https://cdn.jiyong365.com/Group%20ss4.png"></image>
+<view class='contain'>
+  <view class='{{iphonex?"head-iphone":"head"}}' >活动规则</view>
+  <view class='contain-content'>
+    <view class='content-one'>
+      <view class='one-list' wx:for="{{listOne}}">
+        {{index + 1}}、{{item}}
+      </view>
+    </view>
+
+    <view class='line'></view>
+    <view class='two-title'>注:</view>
+    <view class='content-two'>
+      <view class='two-list' wx:for="{{listTwo}}">
+        {{index + 1}}、{{item}}
+      </view>
+    </view>
+  </view>
+</view>

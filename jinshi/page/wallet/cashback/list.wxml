@@ -1,0 +1,53 @@
+<!--page/wallet/cashback/list.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonex-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>补贴账单</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <view class='list-box' wx:if='{{onthewayList.length}}'>
+    <view class='list-title'>待到账</view>
+    <view class='line'></view>
+    <view class='list'>
+      <block wx:for='{{onthewayList}}' wx:key='id'>
+        <view class='bill-box'>
+          <view class='bill-title'>{{item.reason}}</view>
+          <view class='bill-time'>{{item.time}}</view>
+          <view class='bill-detail'>{{item.amount}}元</view>
+          <view class='bill-line'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='list-box' wx:if='{{alreadyList.length}}'>
+    <view class='list-title'>已到账</view>
+    <view class='line'></view>
+    <view class='list'>
+      <block wx:for='{{alreadyList}}' wx:key='id'>
+        <view class='bill-box'>
+          <view class='bill-title'>{{item.reason}}</view>
+          <view class='bill-time'>{{item.time}}</view>
+          <view class='bill-detail'>{{item.amount}}元</view>
+          <view class='bill-line'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view wx:if='{{alreadyList.length == 0&&onthewayList.length==0}}'>
+    <view class='default-box'>
+      <image class='default-img' src='https://cdn.jiyong365.com/%E6%96%AD%E7%BD%91zhanwei.png'></image>
+      <view class='default-txt'>没有记录~</view>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

@@ -1,0 +1,82 @@
+<!--page/product/goodsdetails/brand/brand.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<view wx:if='{{!loading}}'>
+
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>品牌</view>
+    </view>
+  </view>
+
+  <view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+    <view class='linelg'></view>
+    <view class='banner'>
+      <view class='lgimage'>
+        <image src="{{brand.from}}"></image>
+      </view>
+      <view class='xinxi'>
+        <view class='title'>{{brand.name}}</view>
+        <view class='detail'>
+
+        </view>
+      </view>
+      <view wx:if="{{la}}">
+        <view class='linessm'></view>
+      </view>
+      <view wx:else>
+        <view class='linessmx'></view>
+      </view>
+      <view wx:if="{{la}}">
+        <view class='introduce' bindtap='xiala'>
+          <view class='pindetail'>
+            <text class='pinjie'>品牌介绍 : </text>{{brand.introduce}}</view>
+          <view class='xiala'>
+            <image src="{{shala}}"></image>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='introducex' wx:if="{{!la}}" bindtap='shangla'>
+          <view class='pinjie'></view>
+          <view class='pindetailx'>
+            <text class='pinjie'>品牌介绍 : </text>{{brand.introduce}}</view>
+          <view class='xiala'>
+            <image src="{{xiala}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{la}}">
+      <view class='lineslg'></view>
+    </view>
+    <view wx:else>
+      <view class='linelgsx'></view>
+    </view>
+    <view class='{{la?"like-la":"like"}}'>
+      <view class='liket'>品牌单品</view>
+    </view>
+    <view class='imageall' wx:if='{{product.length}}'>
+      <view wx:for="{{product}}" class='imageone' wx:key="index">
+        <view class='spu-item' id='{{item.goods_id}}' catchtap='spuTap'>
+          <image class='spu-cover' src='{{item.default_image}}'></image>
+          <view class='spu-cb'>会员返{{item.goods_cashback}}元</view>
+          <view class='spu-highlight'>{{item.describe}}</view>
+          <view class='spu-non-key'>{{item.goods_name}}</view>
+          <view class='spu-price'>￥{{item.goods_price}}</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class='default-box'>
+      <image class='default-img' src='https://cdn.jiyong365.com/%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8Fzhanwei.png'></image>
+      <view class='default-txt'>Oops？品牌下还没有商品~~</view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

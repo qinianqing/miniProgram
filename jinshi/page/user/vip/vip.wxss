@@ -1,0 +1,572 @@
+/* page/user/vip/vip.wxss */
+
+/* 页顶导航 */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+page {
+  background-color: white;
+}
+
+.vip {
+  margin-top: 132rpx;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.vip-iphonex {
+  margin-top: 182rpx;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.vip-bg {
+  width: 750rpx;
+  height: 374rpx;
+  background-image: url('https://cdn.jiyong365.com/Ggroup%2024.png');
+  background-size: cover;
+}
+
+.vip-family {
+  width: 690rpx;
+  height: 159rpx;
+  margin-left: 30rpx;
+  position: relative;
+}
+
+.vip-family-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  background-image: url('https://cdn.jiyong365.com/Ggroup%2021.png');
+  background-size: cover;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.family-select {
+  width: 291rpx;
+  height: 40rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+  padding: 43rpx 0rpx 43rpx 54rpx;
+}
+
+.vip-family-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.family-num {
+  height: 56rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(255, 255, 255, 1);
+  font-size: 40rpx;
+  padding: 30rpx 20rpx 0rpx 0rpx;
+}
+
+.family-image {
+  width: 15rpx;
+  height: 22rpx;
+  padding-top: 35rpx;
+  padding-left: 0;
+  padding-right: 30rpx;
+}
+
+.family-image image {
+  width: 15rpx;
+  height: 22rpx;
+}
+
+.vip-free {
+  width: 619rpx;
+  height: 142rpx;
+  background-image: url('https://cdn.jiyong365.com/Rectangle%20gg8.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  margin-left: 66rpx;
+  border: 2rpx solid #ffc377;
+  border-radius: 15rpx;
+}
+
+.free-title {
+  width: 196rpx;
+  margin-top: 30rpx;
+  margin-left: 41rpx;
+  margin-right: 119rpx;
+}
+
+.title-out {
+  width: 196rpx;
+  height: 40rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(87, 87, 87, 1);
+  font-size: 28rpx;
+}
+
+.title-outnum {
+  width: 189rpx;
+  height: 37rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(127, 127, 127, 1);
+  font-size: 26rpx;
+}
+
+.free-click {
+  width: 180rpx;
+  height: 64rpx;
+  background: #c6c6c6;
+  border-radius: 100rpx;
+  color: white;
+  font-family: PingFangSC-Semibold;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 64rpx;
+  margin-top: 39rpx;
+}
+
+.vip-vone, .vip-vtwo {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  padding-left: 65rpx;
+}
+
+.vone-left {
+  background-image: url('https://cdn.jiyong365.com/Ggroup%205.png');
+  background-size: cover;
+}
+
+.vone-right {
+  background-image: url('https://cdn.jiyong365.com/Ggroup%2018.png');
+  background-size: cover;
+}
+
+.vtwo-left {
+  background-image: url('https://cdn.jiyong365.com/Ggroup%2019.png');
+  background-size: cover;
+}
+
+.vtwo-right {
+  background-image: url('https://cdn.jiyong365.com/Ggroup%2020.png');
+  background-size: cover;
+}
+
+.vone-left, .vone-right, .vtwo-left, .vtwo-right {
+  width: 318rpx;
+  height: 301rpx;
+  text-align: center;
+  padding: 114rpx 27rpx 67rpx 28rpx;
+  box-sizing: border-box;
+  margin-top: 80rpx;
+}
+
+.vtwo-left, .vtwo-right {
+  margin-bottom: 200rpx;
+}
+
+.vone-title {
+  width: 255rpx;
+  height: 45rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(72, 72, 72, 1);
+  font-size: 32rpx;
+}
+
+.vone-out {
+  width: 240rpx;
+  height: 37rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(127, 127, 127, 1);
+  font-size: 26rpx;
+  padding-top: 10rpx;
+}
+
+.vone-button {
+  width: 180rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  background: #fd8075;
+  border-radius: 100rpx;
+  color: white;
+  font-family: PingFangSC-Semibold;
+  font-size: 28rpx;
+  text-align: center;
+  position: relative;
+  left: 30rpx;
+  top: 45rpx;
+}
+
+.footer {
+  width: 750rpx;
+  text-align: center;
+  margin-top: 60rpx;
+}
+
+.footer-title {
+  width: 750rpx;
+  height: 45rpx;
+  font-family: PingFangSC-Medium;
+  color: rgba(97, 97, 97, 1);
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.footer-redeem {
+  background-image: url('https://cdn.jiyong365.com/Rgectangle%208.png');
+  background-size: cover;
+  width: 619rpx;
+  height: 90rpx;
+  text-align: left;
+  margin-left: 66rpx;
+  margin-top: 20rpx;
+  padding-top: 28rpx;
+  padding-left: 55rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(180, 176, 176, 1);
+  font-size: 26rpx;
+  box-sizing: border-box;
+  margin-bottom: 74rpx;
+}
+
+.vip-content-new {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 79rpx;
+  margin-top: 30rpx;
+}
+
+.vip-level {
+  background: #fff;
+  border: 2rpx solid #ffc377;
+  box-shadow: 0 12px 14px 0 rgba(253, 143, 130, 0.08);
+  border-radius: 15rpx;
+  position: relative;
+  margin-bottom: 62rpx;
+  width: 660rpx;
+  height: 273rpx;
+}
+
+.level-title {
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #484848;
+  letter-spacing: 0;
+  position: absolute;
+  left: 130rpx;
+  top: 44rpx;
+}
+
+.level-bg {
+  width: 79rpx;
+  height: 58rpx;
+  position: absolute;
+  left: 50rpx;
+  top: 40rpx;
+}
+
+.level-bg image {
+  width: 79rpx;
+  height: 58rpx;
+}
+
+.level-lose {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #7f7f7f;
+  letter-spacing: 0;
+  position: absolute;
+  left: 50rpx;
+  top: 109rpx;
+}
+
+.level-send {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #ae7a44;
+  letter-spacing: 0;
+  position: absolute;
+  top: 176rpx;
+  left: 50rpx;
+}
+
+.level-image {
+  width: 250rpx;
+  height: 250rpx;
+  position: absolute;
+  left: 385rpx;
+  top: 12rpx;
+}
+
+.level-image image {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.level-tag {
+  width: 53rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  border-radius: 50%;
+  opacity: 0.6;
+  background: #ae7a44;
+  z-index: 5;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #fff;
+  letter-spacing: 0;
+  position: absolute;
+  left: 557rpx;
+  top: 180rpx;
+  text-align: center;
+}
+
+.level-price {
+  background: #fd8075;
+  border-radius: 100rpx;
+  width: 300rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  position: absolute;
+  left: 180rpx;
+  top: 241rpx;
+}
+
+.price-payment {
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #fff;
+  letter-spacing: 0;
+  text-align: center;
+  padding-right: 10rpx;
+}
+
+.price-discount {
+  opacity: 0.7;
+  font-family: PingFangSC-Semibold;
+  font-size: 26rpx;
+  color: #fff;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: line-through;
+}
+
+.level-line {
+  width: 750rpx;
+  height: 5rpx;
+  background-color: #f6f6f6;
+  margin-top: 32rpx;
+}
+
+.level-code-title {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #616161;
+  letter-spacing: 0;
+  margin-top: 35rpx;
+}
+
+.level-code-bg {
+  background: #fff;
+  box-shadow: 0 8rpx 14rpx 0 rgba(255, 106, 89, 0.07);
+  border-radius: 100rpx;
+  width: 619rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-top: 20rpx;
+}
+
+input {
+  width: 564rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 55rpx;
+}
+
+.level-input {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #b4b0b0;
+  letter-spacing: 0;
+}
+
+/*  gift 弹框 */
+
+.gift-box {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.80);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.gift-con {
+  position: fixed;
+  top: 323rpx;
+  left: 105rpx;
+  width: 540rpx;
+  height: 730rpx;
+  border-radius: 20rpx;
+  background: white;
+}
+
+.gift-head {
+  position: fixed;
+  top: 323rpx;
+  left: 105rpx;
+  width: 540rpx;
+  height: 110rpx;
+  margin-bottom: 10rpx;
+  background: #ffde54;
+  font-family: PingFangSC-Semibold;
+  line-height: 110rpx;
+  font-size: 34rpx;
+  color: #2d2d2d;
+  letter-spacing: 0;
+  text-align: center;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.gift-body {
+  position: fixed;
+  top: 433rpx;
+  left: 105rpx;
+  height: 620rpx;
+  width: 540rpx;
+}
+
+.gift-item {
+  height: 170rpx;
+  margin-left: 50rpx;
+  width: 490rpx;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.gift-cover {
+  width: 170rpx;
+  height: 170rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gift-name {
+  position: absolute;
+  top: 26rpx;
+  left: 189rpx;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #575757;
+  letter-spacing: 0;
+}
+
+.gift-describe {
+  position: absolute;
+  top: 66rpx;
+  left: 189rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #ababab;
+  letter-spacing: 0;
+}
+
+.gift-price {
+  position: absolute;
+  top: 108rpx;
+  left: 189rpx;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #575757;
+  letter-spacing: 0;
+}
+
+.gift-close {
+  position: fixed;
+  top: 1073rpx;
+  left: 338rpx;
+  width: 75rpx;
+  height: 75rpx;
+}

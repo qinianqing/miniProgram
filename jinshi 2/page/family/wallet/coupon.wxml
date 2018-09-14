@@ -1,0 +1,47 @@
+<!--page/family/wallet/coupon.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+  <view class='iphonex-blank' wx:if='{{iphonex}}'></view>
+<view class='{{iphonex?"head-iphonex":"head"}}'>
+  <view class='back' bindtap='back'>
+    <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+  </view>
+  <view class='head-title'>{{num}}邮券</view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <!--
+  <view class='banner'>
+    <view class="banner-use {{use ? 'f' : 'g'}}" bindtap='use'>未使用</view>
+    <view class="banner-unuse {{unuse ? 'f' : 'g'}}" bindtap='unuse'>已失效</view>
+  </view>
+  -->
+  <block wx:if="{{uselist.length}}">
+    <view class='list' wx:for="{{uselist}}" wx:key='index'>
+      <view class='list-price'>
+        邮券
+      </view>
+      <view class='list-details'>
+        <view class='details-time'>{{item.activeAt}}-{{item.expiredAt}}</view>
+        <view class='details-button' bindtap='useFsc'>去使用</view>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{unuselist.length}}">
+    <view class='unlist' wx:for="{{unuselist}}" wx:key='index'>
+      <view class='list-price'>
+        邮券
+      </view>
+      <view class='list-details'>
+        <view class='details-time'>{{item.activeAt}}-{{item.expiredAt}}</view>
+        <view class='details-title'>未激活</view>
+      </view>
+    </view>
+  </block>
+  <view class='place-holder' wx:if="{{uselist.length === 0 && unuselist.length === 0}}">
+    <image class='place-holder-img' src='https://cdn.jiyong365.com/littleren.png'></image>
+    <view class='place-holder-txt'>您还没有优惠券哟~</view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

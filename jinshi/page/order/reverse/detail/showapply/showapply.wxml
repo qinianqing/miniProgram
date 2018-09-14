@@ -1,0 +1,19 @@
+ 
+ <import src="../../../../component/login/login.wxml" />
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>预览图片</view>
+    </view>
+  </view>
+
+<view class='{{iphonex?"bg-iphonex":"bg"}}'>
+  <image src="{{imageurl}}" style='width:750rpx;height:{{height}};'></image>
+  <image bindtap='delete' class="delete" src="https://cdn.jiyong365.com/yulan.png"></image>
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

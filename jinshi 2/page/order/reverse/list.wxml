@@ -1,0 +1,72 @@
+<!--page/order/reverse/list.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>退换货</view>
+  </view>
+</view>
+<view class='container-box'>
+
+  <view class='{{iphonex?"top-tab-iphonex":"top-tab"}}'>
+    <view class='tab' id='ing' bindtap='tabTap'>
+      <view class='tab-title{{tab.select[0]}}'>进行中</view>
+      <!--<view class='tab-icon' hidden='{{tab.hidden[0]}}'></view>-->
+    </view>
+    <view class='tab' id='ed' bindtap='tabTap'>
+      <view class='tab-title{{tab.select[1]}}'>已完成</view>
+      <!--<view class='tab-icon' hidden='{{tab.hidden[1]}}'></view>-->
+    </view>
+  </view>
+
+  <view class='{{iphonex?"list-iphonex":"list"}}' wx:if='{{!loading}}'>
+    <view wx:if='{{list.length}}'>
+      <block wx:for='{{list}}' wx:key="id">
+        <view class='order-card' id='{{item.order_id}}' bindtap='goDetail'>
+          <view class='order-id'>订单编号：{{item.order_id}}</view>
+          <!-- <view class='order-del' id='{{item.order_id}}' wx:if='{{item.deleteShow}}' catchtap='goDelete'>删除</view> -->
+          <view class='order-line'></view>
+          <view class='order-main' data-reverse="{{item.reverse_id}}" catchtap='itemGo'>
+            <view class='order-pics'>
+               <block wx:for="{{item.item.goodsdetail.default_image}}" wx:key="pic" wx:for-item="pic"  wx:if="{{index == 0}}"> 
+                <image class='order-pic' src='{{pic}}' mode='aspectFill'></image>
+               </block> 
+            </view>
+            <view class='order-title'>
+            <view class='title-top'>{{item.item.goodsdetail.goods_name}}</view>
+            <view class='title-bottom'>{{item.item.goodsdetail.type_id}}</view>
+            </view>
+            <view class='order-msg'>
+              <view class='order-num'>x{{item.item.goodsdetail.num}}</view>
+              <view class='order-status'>{{item.type}}</view>
+            </view>
+          </view>
+          <view class='order-line'></view>
+          <view class='order-foot'>
+            <view class='order-price'>￥{{item.item.goodsdetail.goods_price}}</view>
+            <view class='order-entrance'>
+               <!-- <view class='order-entrance-left' wx:if='{{item.leftEntrance}}' data-id='{{item.id}}' data-go='{{item.leftEntrance}}' catchtap='itemLeftGo'>{{item.leftEntrance}}</view> -->
+              <view class='order-entrance-right' data-reverse="{{item.reverse_id}}" catchtap='itemGo'>申请进度</view> 
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      <view class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E5%B0%BD%E6%83%85%E6%9C%9F%E5%BE%85zhanwei.png'></image>
+        <view class='default-txt'>没有退换货单</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

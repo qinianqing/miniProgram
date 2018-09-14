@@ -1,0 +1,45 @@
+<!--page/user/family-member/right-info/right-info.wxml-->
+<view class='container-box'>
+<image class='{{iphonex?"back-to-pre-iphonex":"back-to-pre"}}' bindtap= "back" src= "https://cdn.jiyong365.com/Group%20ss4.png" > </image>
+  <image class='banner' src='{{right.banner}}'></image>
+  <view class='rights'>
+    <view class='right-icons'>  
+      <view class='right-item' bindtap='tapA'>
+        <image class='right-icon' src='{{right.icons[0]}}'></image>
+        <view class='{{right.title[0]}}'>专享优惠</view>
+      </view>
+      <view class='right-item' bindtap='tapB'>
+        <image class='right-icon' src='{{right.icons[1]}}'></image>
+        <view class='{{right.title[1]}}'>邮费券</view>
+      </view>
+      <view class='right-item' bindtap='tapC'>
+        <image class='right-icon' src='{{right.icons[2]}}'></image>
+        <view class='{{right.title[2]}}'>精选商品</view>
+      </view>
+      <view class='right-item' bindtap='tapD'>
+        <image class='right-icon' src='{{right.icons[3]}}'></image>
+        <view class='{{right.title[3]}}'>专属客服</view>
+      </view>
+    </view>
+    <!-- <view class='dots'>
+      <view class='dot-{{right.dots[0]}}'></view>
+      <view class='dot-{{right.dots[1]}}'></view>
+      <view class='dot-{{right.dots[2]}}'></view>
+      <view class='dot-{{right.dots[3]}}'></view>
+    </view> -->
+  </view>
+  <view class='describtion'>
+    <view class='condition'>
+      <view class='condition-title'>获取条件</view>
+      <text class='condition-detail'>{{right.condition}}</text>
+    </view>
+    <view class='right'>
+      <view class='right-title'>会员权益</view>
+      <text class='right-detail'>{{right.rights}}</text>
+    </view>
+    <!-- <view class='rules'>
+      <view class='rule-title'>使用说明：</view>
+      <text class='rule-detail'>{{right.talk}}</text>
+    </view> -->
+  </view>
+</view>

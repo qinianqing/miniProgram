@@ -1,0 +1,242 @@
+<!--page/index/index.wxml-->
+<import src="../../component/loading/loading.wxml" />
+<import src="../../component/login/login.wxml" />
+<import src="../../component/newUserModal/newUser.wxml" />
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <!-- banner -->
+  <view class='banner'>
+    <swiper autoplay='true' interval='5000' duration='200' circular='true' bindchange='bannerChange'>
+      <block wx:for='{{banners}}' wx:key='index'>
+        <swiper-item>
+          <image src='{{item.cover}}' id='{{item.cover}}&{{index}}' mode='aspectFill' class='banner-item' catchtap='bannerTap'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='banner-dots' style='margin-left:{{dotsMargin}}rpx;width:{{dotsWidth}}rpx'>
+      <block wx:for='{{bannerDots}}' wx:key='index'>
+        <image src='{{item}}' class='banner-dot-item'></image>
+      </block>
+    </view>
+  </view>
+  <!-- 入口模块 -->
+  <view class='nav'>
+    <view class='nav-background'></view>
+    <view class='navs'>
+      <block wx:for='{{navs}}' wx:key='index'>
+        <view class='nav-item' id='nav&{{index}}' catchtap='navItemTap'>
+          <image class='nav-item-pic' src='{{item.pic}}'></image>
+          <view class='nav-item-title'>{{item.title}}</view>
+        </view>
+      </block>
+    </view>
+    <image class='nav-shadow' src='../../image/sshadow.png'></image>
+  </view>
+  <view class='little-banner'>
+    <view class='rec-banner'>
+      <view class='rec-head'>
+        <view class='rec-title'>{{lba.title || lba.rec_name}}</view>
+        <image class='rec-nav' src='../../image/fanhui.png'></image>
+      </view>
+      <view class='rec-describe'>{{lba.focus}}</view>
+      <!-- 滑动更新小banner  -->
+      <view class='rec-slide'>
+        <image wx:for='{{slides}}' wx:if='{{index < 2}}' wx:key='index' class='rec-slide-cover' id='rec-slide-{{index}}' style='{{slideAnmiation}}position:absolute;top:0;left:{{item.left}}rpx;' bindtouchstart='itemTouchStart' bindtouchmove='itemTouchMove' bindtouchend='itemTouchEnd'
+          src='{{item.cover}}' data-cover='{{item.cover}}' data-id='{{item.cover}}' mode='aspectFit'></image>
+      </view>
+      <!-- 小banner -->
+      <!-- <view class='rec-banners'>
+        <template is="hSwiper" data="{{...indexBVar}}"></template>
+      </view> -->
+    </view>
+  </view>
+  <!-- 快速分类入口  -->
+  <!-- <view class='line'></view> -->
+  <view class='fast-entrance'>
+    <!-- <block wx:for='{{ens}}' wx:key='index'>
+      <view class='en-item' id='en&{{index}}' catchtap='enItemTap'>
+        <view class='en-item-inditor'></view>
+        <image class='en-item-pic' src='{{item.pic}}'></image>
+        <view class='en-item-title'>{{item.title}}</view>
+        <view class='en-item-focus'>{{item.focus}}</view>
+      </view>
+    </block> -->
+  </view>
+  <view class='line'></view>
+  <!-- 推荐与专题 -->
+  <view class='rec'>
+    <block wx:for='{{recs}}' wx:for-item='rec' wx:key='index'>
+      <!-- 横滑小banner -->
+      <!-- <block wx:if='{{rec.type === 0}}'>
+        <view class='rec-banner'>
+          <view class='rec-head'>
+            <view class='rec-title'>{{rec.title || rec.rec_name}}</view>
+            <image class='rec-nav' src='../../image/fanhui.png'></image>
+          </view>
+          <view class='rec-describe'>{{rec.focus}}</view>
+          <view class='rec-banners'>
+            <template is="hSwiper" data="{{...indexBVar}}"></template>
+          </view>
+        </view>
+        <view class='line'></view>
+      </block>  -->
+      <!-- 排行榜 -->
+      <block wx:if='{{rec.type === 1}}'>
+        <view class='rec-rank'>
+          <view class='rec-head' data-id='{{rec.group_id}}' data-title="{{rec.title}}" bindtap='groupTap'>
+            <view class='rec-title'>{{rec.title || rec.rec_name}}</view>
+            <image class='rec-nav' src='../../image/fanhui.png'></image>
+          </view>
+          <view class='rec-ranks' data-id='{{rec.group_id}}' data-title="{{rec.title}}" bindtap='groupTap'>
+            <image class='rec-ranks-image' src='../../image/ranking.png'></image>
+            <view wx:for='{{rec.list}}' wx:key='index' wx:if='{{index<=2}}'>
+              <image src='{{item.default_image}}' id='rank-cover-{{index+1}}' data-id='{{item.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuIdTap'></image>
+              <view id='rank-title-{{index+1}}' data-id='{{item.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuIdTap'>TOP {{index+1}}</view>
+            </view>
+          </view>
+        </view>
+        <view class='line'></view>
+      </block>
+      <!-- 横滑 -->
+      <block wx:if='{{rec.type === 2}}'>
+        <view class='rec-scroll'>
+          <view class='rec-head' data-id='{{rec.group_id}}' bindtap='groupTap'>
+            <view class='rec-title'>{{rec.title || rec.rec_name}}</view>
+            <image class='rec-nav' src='../../image/fanhui.png'></image>
+          </view>
+          <view class='rec-describe' data-id='{{rec.group_id}}' bindtap='groupTap'>{{rec.focus}}</view>
+          <view class='rec-scrolls'>
+            <scroll-view scroll-x='true'>
+              <view class="rec-scroll-item">
+                <view wx:for="{{rec.list}}" wx:for-item='content' wx:key='index' class="dscs">
+                  <!-- <view id='{{order}}'> -->
+                  <view id='{{content.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuTap'>
+                    <image class="rec-scroll-item-cover" src="{{content.default_image}}"></image>
+                    <view class="rec-scroll-item-highlight">{{content.describe}}</view>
+                    <view class="rec-scroll-item-non-key">{{content.goods_name}}</view>
+                    <view class="rec-scroll-item-price">￥{{content.goods_price}}</view>
+                  </view>
+                </view>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+        <view class='line'></view>
+      </block>
+      <!-- 横滑加banner -->
+      <block wx:if='{{rec.type === 3}}'>
+        <view class='rec-scroll-plus'>
+          <view class='rec-head' data-id='{{rec.group_id}}' bindtap='groupTap'>
+            <view class='rec-title'>{{rec.title || rec.rec_name}}</view>
+            <image class='rec-nav' src='../../image/fanhui.png'></image>
+          </view>
+          <image class='rec-scroll-cover' mode='aspectFill' data-id='{{rec.group_id}}' bindtap='groupTap' src='{{rec.cover}}'></image>
+          <view class='rec-scrolls-plus'>
+            <scroll-view scroll-x='true'>
+              <view class="rec-scroll-item">
+                <view wx:for="{{rec.list}}" wx:for-item='content' wx:key='index' class="dscs">
+                  <!-- <view id='{{order}}'> -->
+                  <view id='{{content.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuTap'>
+                    <image class="rec-scroll-item-cover" src="{{content.default_image}}"></image>
+                    <view class="rec-scroll-item-highlight">{{content.describe}}</view>
+                    <view class="rec-scroll-item-non-key">{{content.goods_name}}</view>
+                    <view class="rec-scroll-item-price">￥{{content.goods_price}}</view>
+                  </view>
+                </view>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+        <view class='line'></view>
+      </block>
+      <!-- 四格 -->
+      <block wx:if='{{rec.type === 4}}'>
+        <view class='rec-cube'>
+          <view class='rec-head' data-id='{{rec.group_id}}' bindtap='groupTap'>
+            <view class='rec-title'>{{rec.title || rec.rec_name}}</view>
+            <image class='rec-nav' src='../../image/fanhui.png'></image>
+          </view>
+          <view class='rec-describe' wx:if='{{rec.focus}}' data-id='{{rec.group_id}}' bindtap='groupTap'>{{rec.focus}}</view>
+          <view class='rec-spu-list'>
+            <block wx:for='{{rec.list}}' wx:key='index' wx:if='{{index<=3}}'>
+              <view class='spu-item' id='{{item.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuTap'>
+                <image class='spu-cover' src='{{item.default_image}}'></image>
+                <view class='spu-cb'>会员返{{item.goods_cashback}}元</view>
+                <view class='spu-highlight'>{{item.describe}}</view>
+                <view class='spu-non-key'>{{item.goods_name}}</view>
+                <view class='spu-price'>￥{{item.goods_price}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class='line'></view>
+      </block>
+      <!-- 单品大卡片  -->
+      <block wx:if='{{rec.type === 5}}'>
+        <view class='rec-card'>
+          <view class='rec-head' data-id='{{rec.group_id}}' bindtap='groupTap'>
+            <view class='rec-title'>锦时优鲜</view>
+            <image class='rec-nav' src='../../image/fanhui.png'></image>
+          </view>
+          <!-- <view class='rec-describe' wx:if='{{rec.title}}'>{{rec.title}}</view> -->
+          <block wx:for='{{rec.list}}' wx:key='index' wx:if='{{index === 0}}'>
+            <view class='rec-card-detail' id='{{item.goods_id}}' data-sku='{{item.sku_id}}' catchtap='spuTap'>
+              <view class='rec-card-line'></view>
+              <image class='rec-card-pic' src='{{rec.list_cover || rec.cover ||item.default_image}}' mode='aspectFill'></image>
+              <view class='rec-card-title'>{{rec.focus ||item.goods_name}}</view>
+              <view class='rec-card-focus'>{{rec.describe ||item.describe}}</view>
+              <view class='rec-card-price-t'>限时价:</view>
+              <view class='rec-card-price-d'>￥{{item.goods_price}}</view>
+              <view class='rec-card-go'>购买</view>
+            </view>
+          </block>
+        </view>
+        <view class='line'></view>
+      </block>
+    </block>
+  </view>
+  <!-- 猜你喜欢 -->
+  <view class='guess'>
+    <view class='guess-title'>为你推荐</view>
+    <view class='guess-list'>
+      <block wx:for='{{guessList}}' wx:key='index'>
+        <view class='spu-item' id='{{item.goods_id}}' catchtap='spuTap'>
+          <image class='spu-cover' src='{{item.default_image}}'></image>
+          <view class='spu-cb'>会员返{{item.goods_cashback}}元</view>
+          <view class='spu-highlight'>{{item.describe}}</view>
+          <view class='spu-non-key'>{{item.goods_name}}</view>
+          <view class='spu-price'>￥{{item.goods_price}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 底部导航 -->
+</view>
+
+<view class='{{iphonex?"footer-iphonex":"footer"}}'>
+  <form bindsubmit="formSubmit" report-submit='true' bindreset="formReset" class='from'>
+    <!-- <view class='{{iphonex?"code-iphonex":"code"}}'> -->
+    <view class='footer-car'>
+      <button formType="submit" class='footer-button'>
+        <image src="../../image/cart.png"></image>
+      </button>
+    </view>
+    <!-- </view> -->
+  </form>
+  <view class='footer-heng'>
+    <image src="../../image/sdf.png"></image>
+  </view>
+  <view class='footer-person' catchtap="gomine">
+    <image src="../../image/mine.png"></image>
+  </view>
+</view>
+
+<view hidden="{{!newUser}}">
+  <template is="newUser" data='{{quan}}' />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

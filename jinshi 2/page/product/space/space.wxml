@@ -1,0 +1,133 @@
+<!--page/product/space/space.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <!-- 导航栏  -->
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>家中空间</view>
+    </view>
+  </view>
+  <!-- TAB栏 -->
+  <view class='{{iphonex?"tab-iphonex":"tab"}}'>
+    <block wx:for='{{members}}' wx:key='index'>
+      <view class='member-box' data-index='{{index}}' data-name='{{item.name}}' bindtap='tabClick'>
+        <view class='{{item.select?"tab-s":"tab-ns"}}'>{{item.name}}</view>
+        <view class='tab-indictor' wx:if='{{item.select}}'></view>
+      </view>
+    </block>
+  </view>
+  <!-- 主体内容  -->
+  <view class='{{iphonex?"body-iphonex":"body"}}'>
+    <view class='info'>
+      <image class='info-pic' src='{{current.pic}}'></image>
+      <view class='info-name'>{{current.name}}</view>
+      <view class='info-heng'></view>
+      <view class='info-focus'>{{current.focus}}</view>
+    </view>
+    <view class='list'>
+      <block wx:for="{{list}}" wx:key="sku_id">
+        <view class='goods' data-spu="{{item.goods_id}}" catchtap='goGoods'>
+          <view class='content-image'>
+            <image class='border-r' src='../../../image/tl.png' id='tl'></image>
+            <image class='border-r' src='../../../image/tr.png' id='tr'></image>
+            <image class='border-r' src='../../../image/bl.png' id='bl'></image>
+            <image class='border-r' src='../../../image/br.png' id='br'></image>
+            <!-- <image class='b-shadow' src='../../../image/shadow.png'></image> -->
+            <view class='ff'>
+              <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" data-index='{{index}}' bindchange="swiperChange" interval="{{interval}}" duration="{{duration}}" circular='true' indicator-active-color="rgba(255,145,129,1)" style='height:664rpx;width:630rpx'>
+                <block wx:if='{{item.rank_image &&item.rank_image.length > 0}}'>
+                  <block wx:for="{{item.rank_image}}" wx:key='index'>
+                    <swiper-item>
+                      <image src="{{item}}" />
+                    </swiper-item>
+                  </block>
+                </block>
+                <block wx:else>
+                  <block wx:for="{{item.carousel_image}}" wx:key='index'>
+                    <swiper-item>
+                      <image src="{{item}}" mode='aspectFill' />
+                    </swiper-item>
+                  </block>
+                </block>
+              </swiper>
+
+              <view class="swipe-btn-list" style='margin-left:277rpx' wx:if='{{dotslist[index].length === 2}}'>
+                <view class="{{dotslist[index][0]}}"></view>
+                <view class="{{dotslist[index][1]}}"></view>
+                <view class="{{dotslist[index][2]}}"></view>
+                <view class="{{dotslist[index][3]}}"></view>
+                <view class="{{dotslist[index][4]}}"></view>
+              </view>
+              <view class="swipe-btn-list" style='margin-left:246rpx' wx:if='{{dotslist[index].length === 3}}'>
+                <view class="{{dotslist[index][0]}}"></view>
+                <view class="{{dotslist[index][1]}}"></view>
+                <view class="{{dotslist[index][2]}}"></view>
+                <view class="{{dotslist[index][3]}}"></view>
+                <view class="{{dotslist[index][4]}}"></view>
+              </view>
+              <view class="swipe-btn-list" style='margin-left:216rpx' wx:if='{{dotslist[index].length === 4}}'>
+                <view class="{{dotslist[index][0]}}"></view>
+                <view class="{{dotslist[index][1]}}"></view>
+                <view class="{{dotslist[index][2]}}"></view>
+                <view class="{{dotslist[index][3]}}"></view>
+                <view class="{{dotslist[index][4]}}"></view>
+              </view>
+              <view class="swipe-btn-list" style='margin-left:185rpx' wx:if='{{dotslist[index].length === 5}}'>
+                <view class="{{dotslist[index][0]}}"></view>
+                <view class="{{dotslist[index][1]}}"></view>
+                <view class="{{dotslist[index][2]}}"></view>
+                <view class="{{dotslist[index][3]}}"></view>
+                <view class="{{dotslist[index][4]}}"></view>
+              </view>
+              <view class="swipe-btn-list" style='margin-left:155rpx' wx:if='{{dotslist[index].length === 6}}'>
+                <view class="{{dotslist[index][0]}}"></view>
+                <view class="{{dotslist[index][1]}}"></view>
+                <view class="{{dotslist[index][2]}}"></view>
+                <view class="{{dotslist[index][3]}}"></view>
+                <view class="{{dotslist[index][4]}}"></view>
+              </view>
+              <view class="swipe-btn-list" style='margin-left:124rpx' wx:if='{{dotslist[index].length === 7}}'>
+                <view class="{{dotslist[index][0]}}"></view>
+                <view class="{{dotslist[index][1]}}"></view>
+                <view class="{{dotslist[index][2]}}"></view>
+                <view class="{{dotslist[index][3]}}"></view>
+                <view class="{{dotslist[index][4]}}"></view>
+              </view>
+            </view>
+          </view>
+          <view class='describe-shadow'>
+            <image src="https://cdn.jiyong365.com/fdfdfd.png"></image>
+          </view>
+          <view class='content-describe' bindtap='godetailss' id="{{item.goods_id}}">
+            <view class='describe-contents'>
+              <view class='describe-goodsname'>{{item.goods_name}}</view>
+              <view class='describe-goodsprice' data-spu="{{item.spu_id}}" data-price="{{item.goods_price}}" data-sku="{{item.sku_id}}" wx:if='{{item.sku_id}}' catchtap='addCart'>
+                <image src="https://cdn.jiyong365.com/%E5%8A%A0%E5%85%A5%E8%B4%AD%E7%89%A9%E8%BD%A6%20%281%29.png"></image>
+              </view>
+            </view>
+            <view class='describe-cashback'>
+              <view class='describe-tag'>{{item.describe}}</view>
+            </view>
+            <view class='describe-price-content'>
+              <view class='describe-price-left'>￥
+                <text class='describe-price-left-tag'>{{item.goods_price}}</text>
+              </view>
+              <view class='describe-price-right'>会员返现
+                <text class='describe-price-right-tag'>￥<text class='describe-price-right-tags'>{{item.goods_cashback}}</text></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

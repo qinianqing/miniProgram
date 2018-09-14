@@ -1,0 +1,54 @@
+<!--page/user/collection/collection.wxml-->
+<import src="../../../component/loading/loading.wxml"/>
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>我的收藏</view>
+    </view>
+  </view>
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <view class='tool-box' wx:if='{{list.length}}'>
+    <view class='tool-title-box'>
+      <view class='tool-title'>商品</view>
+      <view class='tool-line'></view>
+    </view>
+    <view class='{{toolClass}}' bindtap='edit'>{{toolString}}</view>
+  </view>
+  <view class='content' wx:if='{{list.length}}'>
+      <block wx:for="{{list}}" wx:key="id">
+      <view class='product' id='{{item.id}}' data-spu='{{item.spu}}' data-collect='{{item.collect}}' bindtap='productTap'>
+        <view class='pic-box'>
+          <image class='cover' src="{{item.cover}}" mode='aspectFill'></image>
+          <image class='pselect' hidden='{{btnBoxHidden}}' src="{{item.select}}"></image>
+        </view>
+        <view class='title{{item.valid}}'>{{item.title}}</view>
+        <view wx:if="{{!item.invalid}}" class='price-box'>
+          <text class='price'>￥{{item.price}}</text>
+          <!-- <text class='crossed-price'>￥{{item.crossedPrice}}</text> -->
+        </view>
+        <view wx:else>
+          <text class='invalid'>{{item.invalid}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+      <view wx:else class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8Fzhanwei.png'></image>
+        <view class='default-txt'>咦？宝贝还没收藏进来哦~~</view>
+      </view>
+  <view class='{{iphonex?"btn-box-iphonex":"btn-box"}}' hidden='{{btnBoxHidden}}'>
+    <image class='select' src="{{allSelectIcon}}" bindtap='allSelectTap'></image>
+    <view class='all-select-txt' bindtap='allSelectTap'>全选</view>
+    <view class='go-box' bindtap='goTap'>
+       <!-- <image class='btn-img' mode='aspectFill' src='https://cdn.jiyong365.com/%E7%9F%A9%E5%BD%A2.png'></image>  -->
+      <view class='btn-txt' catchtap='deleteBatch'>删除所选</view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

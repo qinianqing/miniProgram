@@ -1,0 +1,300 @@
+/* page/promote/coupon/coupon.wxss */
+
+/* 占位图  */
+
+.place-holder {
+  margin-top: 310rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.place-holder-img {
+  width: 213rpx;
+  height: 310rpx;
+}
+
+.place-holder-txt {
+  width: 100%;
+  text-align: center;
+  margin-top: 60rpx;
+  font-family: PingFangSC-Light;
+  font-size: 28rpx;
+  color: #838383;
+  letter-spacing: 0;
+}
+
+/* 页顶导航 */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+page {
+  background-color: white;
+}
+
+.container-box-iphonex {
+  padding-top: 182rpx;
+  width: 100%;
+  padding-bottom: 100rpx;
+}
+
+.container-box {
+  padding-top: 132rpx;
+  width: 100%;
+  padding-bottom: 100rpx;
+}
+
+.banner {
+  width: 750rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.banner-use {
+  width: 168rpx;
+  /* margin: 0rpx 185rpx 29rpx 133rpx; */
+  margin-right: 185rpx;
+  margin-left: 133rpx;
+}
+
+.banner-unuse {
+  width: 168rpx;
+}
+
+.f {
+  color: rgba(254, 149, 137, 1);
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  border-bottom: 10rpx solid rgba(254, 149, 137, 1);
+  padding-bottom: 29rpx;
+}
+
+.g {
+  font-family: PingFangSC-Regular;
+  color: rgba(103, 103, 103, 1);
+  font-size: 32rpx;
+}
+
+.code {
+  position: fixed;
+  top: 132rpx;
+  left: 0;
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  z-index: 9999;
+}
+
+.code-iphonex {
+  position: fixed;
+  top: 182rpx;
+  left: 0;
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  z-index: 9999;
+}
+
+.code-input {
+  box-shadow: 0 8rpx 14rpx 0 rgba(255, 108, 90, 0.07);
+  border-radius: 100rpx;
+  line-height: 100rpx;
+  background-size: cover;
+  width: 480rpx;
+  height: 100rpx;
+  text-align: left;
+  margin-left: 45rpx;
+  margin-top: 20rpx;
+  padding-top: 23rpx;
+  padding-left: 55rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(180, 176, 176, 1);
+  font-size: 26rpx;
+  box-sizing: border-box;
+  /* margin-bottom: 74rpx; */
+  margin-right: 22rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.code-button {
+  width: 149rpx;
+  height: 80rpx;
+  background: rgba(255, 224, 122, 1);
+  border-radius: 100rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: rgba(151, 117, 1, 1);
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  margin-top: 41rpx;
+  box-shadow: 0 4rpx 8rpx 0 rgba(163, 135, 12, 0.15);
+  border: 1rpx solid rgba(255, 206, 122, 0.50);
+}
+
+.list {
+  width: 660rpx;
+  height: 286rpx;
+  margin: 30rpx 45rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.blank-box {
+  height: 130rpx;
+  background: #fff;
+}
+
+.blank-box-iphonex {
+  height: 130rpx;
+  background: #fff;
+}
+
+.unlist {
+  width: 660rpx;
+  height: 286rpx;
+  margin: 30rpx 45rpx;
+  display: flex;
+  flex-direction: row;
+  background-image: url('https://cdn.jiyong365.com/%E4%BC%98%E6%83%A0%E5%88%B8%20shi.png');
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.price-top {
+  position: absolute;
+  top: 60rpx;
+  left: 0;
+  width: 210rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  color: white;
+  font-size: 60rpx;
+}
+
+.price-bottom {
+  position: absolute;
+  top: 172rpx;
+  left: 0;
+  width: 210rpx;
+  height: 40rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+}
+
+.details-time {
+  position: absolute;
+  left: 242rpx;
+  top: 48rpx;
+  text-align: left;
+  color: white;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+}
+
+.details-desrcibe {
+  position: absolute;
+  top: 93rpx;
+  left: 245rpx;
+  text-align: left;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: white;
+}
+
+.details-button {
+  position: absolute;
+  top: 182rpx;
+  left: 301rpx;
+  width: 260rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  background-image: url('https://cdn.jiyong365.com/fdsf.png');
+  background-size: cover;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #fc9b73;
+  text-align: center;
+}
+
+.details-title {
+  width: 195rpx;
+  height: 75rpx;
+  font-family: PingFangSC-Medium;
+  color: white;
+  font-size: 54rpx;
+  margin-top: 18rpx;
+  margin-left: 210rpx;
+}

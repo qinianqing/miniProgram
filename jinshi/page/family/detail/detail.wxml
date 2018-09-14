@@ -1,0 +1,88 @@
+<import src="../../../component/login/login.wxml" />
+
+<view class='{{iphonex?"back-iphonex":"back"}}' bindtap='back'>
+  <image src="https://cdn.jiyong365.com/fanhjiijinui%281%29.png" wx:if='{{vip===0}}'></image>
+  <image src="https://cdn.jiyong365.com/fanhui_black.png" wx:if='{{vip===1 || vip===2}}'></image>
+</view>
+<view class='head'>
+  <image src="https://cdn.jiyong365.com/%E9%9D%9E%E4%BC%9A%E5%91%98%E8%83%8C%E6%99%AF.png" wx:if='{{vip===0}}'></image>
+  <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E8%83%8C%E6%99%AF.png" wx:if='{{vip===1 || vip===2}}'></image>
+  <view class='middle'>
+    <view class='middle-head'>
+      <input class='middle-title-0' focus='{{focus}}' style='width:{{nameWidth}}rpx;' value='{{address.name}}' bindinput='nameInput' bindconfirm='nameConfirm' wx:if='{{vip===0}}'></input>
+      <input class='middle-title-1' focus='{{focus}}' style='width:{{nameWidth}}rpx;' value='{{address.name}}' bindinput='nameInput' bindconfirm='nameConfirm' wx:if='{{vip===1 || vip===2}}'></input>
+      <view class='middle-already' bindtap='editName'>
+        <image src="https://cdn.jiyong365.com/%E4%BF%AE%E6%94%B9%20%281%29.png" wx:if='{{vip===0}}'></image>
+        <image src="https://cdn.jiyong365.com/%E4%BF%AE%E6%94%B9%20%282%29.png" wx:if='{{vip===1 || vip===2}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='family-vip-0' wx:if='{{vip===0}}'>非会员家庭</view>
+  <view class='family-vip-1' wx:if='{{vip===1}}'>超级会员家庭</view>
+  <view class='family-vip-1' wx:if='{{vip===2}}'>试用期会员家庭</view>
+  <view class='family-expired-0' wx:if='{{eAt && vip===0}}'>{{expiredAt}}过期</view>
+  <view class='family-expired-1' wx:if='{{eAt && vip===1 || vip===2}}'>{{expiredAt}}</view>
+  <view class='family-entrance-0' id='{{id}}' catchtap='goVip' wx:if='{{vip===0}}'>开通会员</view>
+  <view class='family-entrance-1' id='{{id}}' catchtap='goVip' wx:if='{{vip===1}}'>会员续费</view>
+  <view class='family-entrance-1' id='{{id}}' catchtap='goVip' wx:if='{{vip===2}}'>开通会员</view>
+</view>
+<view class='body'>
+  <view class='family-member'>
+    <view class='famliy-title'>家庭服务</view>
+    <view class='family-entrance'>
+      <view class='family-entrance-item' id='jijin' catchtap='enTap'>基金</view>
+      <view class='family-entrance-item' id='dingyue' catchtap='enTap'>订阅</view>
+      <view class='family-entrance-item' id='quan' catchtap='enTap'>邮券</view>
+    </view>
+    <view class='line-up'></view>
+  </view>
+  <view class='family-member'>
+    <view class='famliy-title'>家庭地址</view>
+    <view class='middle-content' bindtap='familyMessage'>
+      <view class='content-title'>
+        <view class='title-name'>{{address.contact}}</view>
+        <view class='title-tel'>{{address.phone}}</view>
+      </view>
+      <view class='middle-address'>{{address.province}} {{address.city}} {{address.county}} {{address.address}}</view>
+      <view class='middle-image'>
+        <image src="https://cdn.jiyong365.com/jinrssu.png"></image>
+      </view>
+    </view>
+    <view class='line'></view>
+  </view>
+  <view class='family-member'>
+    <view class='famliy-title'>家庭成员</view>
+    <view class='family-avatar'>
+      <view class='avatar-content'>
+        <view class='avatar-image' bindtap="father">
+          <image src="{{father? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E7%88%B8%E7%88%B82.png' :'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E7%88%B8%E7%88%B8.png'}}"></image>
+        </view>
+        <view class='avatar-title'>爸爸</view>
+      </view>
+      <view class='avatar-content'>
+        <view class='avatar-image' bindtap="mother">
+          <image src="{{mother? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E5%A6%88%E5%A6%882.png':'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E5%A6%88%E5%A6%88.png'}}"></image>
+        </view>
+        <view class='avatar-title'>妈妈</view>
+      </view>
+      <view class='avatar-content'>
+        <view class='avatar-image' bindtap="husband">
+          <image src="{{husband? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%85%AC2.png' :'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%85%AC.png'}}"></image>
+        </view>
+        <view class='avatar-title'>男主</view>
+      </view>
+      <view class='avatar-content'>
+        <view class='avatar-image' bindtap="wife">
+          <image src="{{wife? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%A9%862.png':'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%A9%86.png'}}"></image>
+        </view>
+        <view class='avatar-title'>女主</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='footer' bindtap='update'>
+  <image src="https://cdn.jiyong365.com/cxiugai.png"></image>
+</view> -->
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

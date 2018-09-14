@@ -1,0 +1,342 @@
+/* page/user/collection/collection.wxss */
+
+/* 页顶导航 */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #676767;
+}
+
+.container-box {
+  margin-top: 132rpx;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.container-box-iphonex {
+  margin-top: 182rpx;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.default-img {
+  width: 302rpx;
+  height: 165rpx;
+}
+
+/* tool */
+
+.tool-box {
+  width: 100%;
+  height: 243rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.nav {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.tool-title-box {
+  height: 100%;
+  margin-left: 35rpx;
+}
+
+.tool-title {
+  margin-top: 50rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #303030;
+  letter-spacing: 0;
+}
+
+.tool-line {
+  margin-top: 14rpx;
+  height: 6rpx;
+  width: 80rpx;
+  background-color: #FFE67A;
+}
+
+.edit {
+  position: absolute;
+  left: 595rpx;
+  top: 50rpx;
+  margin-right: 35rpx;
+  height: 60rpx;
+  width: 120rpx;
+  border-radius: 100px;
+  background-color: #FFE67A;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #303030;
+  letter-spacing: 0;
+}
+
+.normal {
+  position: absolute;
+  left: 595rpx;
+  top: 50rpx;
+  margin-right: 35rpx;
+  height: 60rpx;
+  width: 120rpx;
+  border-radius: 100px;
+  background-color: #f4f4f4;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #4a4a4a;
+  letter-spacing: 0;
+}
+
+/* 商品 */
+
+.content {
+  width: 680rpx;
+  margin-top: -60rpx;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  margin-bottom: 90rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 330rpx;
+  margin-bottom: 30rpx;
+  height: 438rpx;
+}
+
+.pic-box {
+  width: 330rpx;
+  height: 330rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.cover {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.pselect {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+
+.title {
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 37rpx;
+  color: #575757;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 347rpx;
+}
+
+.title1 {
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #575757;
+  letter-spacing: 0;
+}
+
+.title0 {
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #b9b9b9;
+  letter-spacing: 0;
+}
+
+.price-box {
+  margin-top: 5rpx;
+}
+
+.price {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #ff7a7a;
+  letter-spacing: 2rpx;
+}
+
+.crossed-price {
+  margin-left: 5rpx;
+  font-size: 22rpx;
+  color: #ababab;
+  letter-spacing: -1.1rpx;
+  text-decoration: line-through;
+}
+
+.invalid {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #b8b8b8;
+  letter-spacing: 0rpx;
+}
+
+/* btn box */
+
+.btn-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+
+.btn-box-iphonex {
+  padding-bottom: 30rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+
+.select {
+  width: 40rpx;
+  height: 40rpx;
+  padding-left: 25rpx;
+}
+
+.all-select-txt {
+  padding-left: 27rpx;
+  width: 60rpx;
+  font-size: 28rpx;
+  color: #6a6a6a;
+  letter-spacing: 0;
+}
+
+.go-box {
+  margin-left: 340rpx;
+  width: 270rpx;
+  height: 90rpx;
+  position: relative;
+}
+
+.btn-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 270rpx;
+  height: 90rpx;
+}
+
+.btn-txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 100%;
+  font-size: 28rpx;
+  color: #303030;
+  letter-spacing: 0;
+  background-color: #FFE67A;
+}

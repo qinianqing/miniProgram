@@ -1,0 +1,44 @@
+<!--page/category/level2/level2.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>{{title}}</view>
+  </view>
+</view>
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <scroll-view scroll-x class='{{iphonex?"brand-tab-iphonex":"brand-tab"}}'>
+    <view wx:for="{{brandType}}" data-index="{{index}}" data-id="{{item.id}}" data-title='{{item.title}}' wx:key="id" class='brand-type-outer-box' bindtap="click">
+      <view class='brand-type-box'>
+        <view class='brand-type-title{{item.select}}'>{{item.title}}</view>
+        <view class='brand-type-indictor' hidden='{{!item.show}}'></view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='content'>
+    <!--<text class='description'>{{description}}</text>-->
+    <view class='product-list' wx:if='{{!loading && list.length}}'>
+      <block wx:for="{{list}}" wx:key="id">
+        <view class='product' bindtap='goProductDetail' id="{{item.goods_id}}">
+          <image class='spu-cover' src='{{item.default_image}}'></image>
+          <view class='spu-cb'>会员返{{item.goods_cashback}}元</view>
+          <view class='spu-highlight'>{{item.describe}}</view>
+          <view class='spu-non-key'>{{item.goods_name}}</view>
+          <view class='spu-price'>￥{{item.goods_price}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      <view class='default-box' wx:if='{{list.length === 0 && !loading}}'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E5%B0%BD%E6%83%85%E6%9C%9F%E5%BE%85zhanwei.png'></image>
+        <view class='default-txt'>没有商品~</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

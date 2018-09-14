@@ -1,0 +1,163 @@
+<!--page/product/ranking/ranking.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<!--标题栏  -->
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <!-- <view class='head-title'>排行榜</view> -->
+  </view>
+</view>
+<!-- 导航栏 -->
+<scroll-view scroll-x class='{{iphonex?"brand-tab-iphonex":"brand-tab"}}'>
+  <view wx:for="{{tabTitleList}}" wx:key='index' class='brand-type-outer-box'>
+    <view class='brand-type-box' catchtap='clickBar' data-index="{{index}}">
+      <view class='brand-type-title{{item.select}}'>{{item.title}}</view>
+      <view class='brand-type-indictor' hidden='{{!item.show}}'></view>
+    </view>
+  </view>
+</scroll-view>
+<!--前三名  -->
+<view class='{{iphonex?"ranking-head-iphonex":"ranking-head"}}'>
+  <view class='ranking-head-cover' wx:if='{{!loading}}'>
+    <image src="https://cdn.jiyong365.com/Group%20dsfsdfd10.png"></image>
+  </view>
+  <view class='ranking-title'>{{tabBarLists.focus}}</view>
+  <view class='ranking-describe'>{{tabBarLists.describe}}</view>
+  <view class='ranking-list'>
+    <block wx:for="{{tabBarLists.list}}" wx:key='index' wx:for-item="i">
+      <view class='ranking-list-first' wx:if="{{index == 0}}" data-spu="{{i.spu_id}}" bindtap='goGoods'>
+        <view class='first-cover'>
+          <image src="{{i.default_image}}"></image>
+        </view>
+        <view class='first-title-c'> <image src="https://cdn.jiyong365.com/TOP%201.png"></image></view>
+      </view>
+      <view class='ranking-list-second' wx:if="{{index == 1}}" data-spu="{{i.spu_id}}" bindtap='goGoods'>
+        <view class='second-cover'>
+          <image src="{{i.default_image}}"></image>
+        </view>
+        <view class='second-title-c'><image src="https://cdn.jiyong365.com/TOP%202.png"></image> </view>
+      </view>
+      <view class='ranking-list-three' wx:if="{{index == 2}}" data-spu="{{i.spu_id}}" bindtap='goGoods'>
+        <view class='three-cover'>
+          <image src="{{i.default_image}}"></image>
+        </view>
+        <view class='three-title-c'><image src="https://cdn.jiyong365.com/TOP%203.png"></image></view>
+      </view>
+    </block>
+  </view>
+
+</view>
+<!--排行榜具体信息  -->
+<view wx:if='{{tabBarLists}}' class='product-list'>
+
+  <block wx:for="{{tabBarLists.list}}" wx:key='index'>
+    <view class='goods' data-spu="{{item.spu_id}}" data-sku='{{item.sku_id}}' catchtap='goGoods'>
+      <view class='content-image'>
+        <image class='border-r' src='../../../image/tl.png' id='tl'></image>
+        <image class='border-r' src='../../../image/tr.png' id='tr'></image>
+        <image class='border-r' src='../../../image/bl.png' id='bl'></image>
+        <image class='border-r' src='../../../image/br.png' id='br'></image>
+        <!-- <image class='b-shadow' src='../../../image/shadow.png'></image> -->
+        <view bindtap='godetailss' id="{{tabBarLists.goods_id}}" class='ff'>
+              <swiper indicator-dots="true" autoplay="{{autoplay}}" data-index='{{index}}' bindchange="swiperChange" interval="{{interval}}" duration="{{duration}}" circular='true' indicator-active-color="#FFCE00" indicator-color='white' style='height:381rpx;width:630rpx'>
+            <block wx:if='{{item.rank_image &&item.rank_image.length > 0}}'>
+              <block wx:for="{{item.rank_image}}" wx:key='index'>
+                <swiper-item>
+                  <image src="{{item}}" />
+                </swiper-item>
+              </block>
+            </block>
+            <block wx:else>
+              <block wx:for="{{item.carousel_image}}" wx:key='index'>
+                <swiper-item>
+                  <image src="{{item}}" mode='aspectFill' />
+                </swiper-item>
+              </block>
+            </block>
+          </swiper>
+          <view class='swiper-top-rank' wx:if="{{index === 0}}">
+            <image src="https://cdn.jiyong365.com/Group%205.png"></image>
+          </view>
+          <view class='swiper-top-rank' wx:if="{{index === 1}}">
+            <image src="https://cdn.jiyong365.com/Group%205%20Copy%202.png"></image>
+          </view>
+          <view class='swiper-top-rank' wx:if="{{index === 2}}">
+            <image src="https://cdn.jiyong365.com/Group%205%20Copy%203.png"></image>
+          </view>
+          <!-- <view class="swipe-btn-list" style='margin-left:277rpx' wx:if='{{dotslist[index].length === 2}}'>
+            <view class="{{dotslist[index][0]}}"></view>
+            <view class="{{dotslist[index][1]}}"></view>
+            <view class="{{dotslist[index][2]}}"></view>
+            <view class="{{dotslist[index][3]}}"></view>
+            <view class="{{dotslist[index][4]}}"></view>
+          </view>
+          <view class="swipe-btn-list" style='margin-left:246rpx' wx:if='{{dotslist[index].length === 3}}'>
+            <view class="{{dotslist[index][0]}}"></view>
+            <view class="{{dotslist[index][1]}}"></view>
+            <view class="{{dotslist[index][2]}}"></view>
+            <view class="{{dotslist[index][3]}}"></view>
+            <view class="{{dotslist[index][4]}}"></view>
+          </view>
+          <view class="swipe-btn-list" style='margin-left:216rpx' wx:if='{{dotslist[index].length === 4}}'>
+            <view class="{{dotslist[index][0]}}"></view>
+            <view class="{{dotslist[index][1]}}"></view>
+            <view class="{{dotslist[index][2]}}"></view>
+            <view class="{{dotslist[index][3]}}"></view>
+            <view class="{{dotslist[index][4]}}"></view>
+          </view>
+          <view class="swipe-btn-list" style='margin-left:185rpx' wx:if='{{dotslist[index].length === 5}}'>
+            <view class="{{dotslist[index][0]}}"></view>
+            <view class="{{dotslist[index][1]}}"></view>
+            <view class="{{dotslist[index][2]}}"></view>
+            <view class="{{dotslist[index][3]}}"></view>
+            <view class="{{dotslist[index][4]}}"></view>
+          </view>
+          <view class="swipe-btn-list" style='margin-left:155rpx' wx:if='{{dotslist[index].length === 6}}'>
+            <view class="{{dotslist[index][0]}}"></view>
+            <view class="{{dotslist[index][1]}}"></view>
+            <view class="{{dotslist[index][2]}}"></view>
+            <view class="{{dotslist[index][3]}}"></view>
+            <view class="{{dotslist[index][4]}}"></view>
+          </view>
+          <view class="swipe-btn-list" style='margin-left:124rpx' wx:if='{{dotslist[index].length === 7}}'>
+            <view class="{{dotslist[index][0]}}"></view>
+            <view class="{{dotslist[index][1]}}"></view>
+            <view class="{{dotslist[index][2]}}"></view>
+            <view class="{{dotslist[index][3]}}"></view>
+            <view class="{{dotslist[index][4]}}"></view>
+          </view> -->
+        </view>
+      </view>
+      <view class='describe-shadow'>
+        <image src="https://cdn.jiyong365.com/fdfdfd.png"></image>
+      </view>
+      <view class='content-describe' bindtap='godetailss' id="{{item.goods_id}}" sku="{{item.sku_id}}">
+        <view class='describe-contents'>
+          <view class='describe-goodsname'>{{item.type_id}}{{item.goods_name}}</view>
+          <view class='describe-goodsprice' data-price="{{item.goods_price}}" data-spu="{{item.spu_id}}" data-sku="{{item.sku_id}}" wx:if='{{item.sku_id}}' catchtap='addCart'>
+            <image src="https://cdn.jiyong365.com/%E5%8A%A0%E5%85%A5%E8%B4%AD%E7%89%A9%E8%BD%A6%20%281%29.png"></image>
+          </view>
+        </view>
+        <view class='describe-cashback'>
+          <view class='describe-tag'>{{item.describe}}</view>
+        </view>
+        <view class='describe-price-content'>
+          <view class='describe-price-left'>￥
+            <text class='describe-price-left-tag'>{{item.goods_price}}</text>
+          </view>
+          <view class='describe-price-right'>会员补贴
+            <text class='describe-price-right-tag'>￥<text class='describe-price-right-tags'>{{item.cashback}}</text></text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </block>
+</view>
+<!--loading  -->
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

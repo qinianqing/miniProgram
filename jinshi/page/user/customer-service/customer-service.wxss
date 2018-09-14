@@ -1,0 +1,235 @@
+/* page/user/customer-service/customer-service.wxss */
+/* 页顶导航 */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+  z-index: 999999；
+}
+
+.container-box{
+  margin-top: 137rpx;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+.container-box-iphonex{
+  margin-top: 187rpx;
+  width: 100%;
+  /* height: 100%; */
+  background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.header{
+  padding-top: 12rpx;
+  padding-bottom: 30rpx;
+  padding-left: 45rpx;
+  padding-right: 45rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.s-item{
+  margin-top: 20rpx;
+  margin-right: 25rpx;
+  height: 75rpx;
+  padding-left: 44rpx;
+  padding-right: 44rpx; 
+  font-family:PingFangSC-Medium;
+  font-size: 28rpx;
+  color: rgba(102,102,102,1);
+  letter-spacing: 0;
+  background-color: rgba(255,230,122,1);
+  line-height: 75rpx;
+  border-radius: 100rpx;
+  text-align: center;
+ font-weight: bold;
+}
+
+.item{
+   text-align: center;
+  margin-top: 20rpx;
+  margin-right: 25rpx;
+  height: 75rpx;
+   padding-left: 44rpx;
+  padding-right: 44rpx; 
+   font-family: PingFangSC-Regular; 
+  font-size: 28rpx;
+  color:rgba(153,153,153,1);
+  letter-spacing: 0;
+  background-color:  rgba(242,242,242,1);
+  line-height: 75rpx;
+  border-radius: 100rpx;
+  font-weight: 400; 
+}
+.line{
+   height: 2rpx;
+  background-color: #DFDFDF;
+  margin-left: 45rpx;
+  margin-right: 45rpx;
+}
+.linec{
+  
+  height: 2rpx;
+  background-color: rgba(238,238,238,0.40);
+}
+.linecs{
+ 
+  height: 1rpx;
+  background-color:rgba(238,238,238,0.40);
+  margin-top: -37rpx;
+}
+.content{
+  padding-left: 45rpx;
+  padding-right: 45rpx;
+  width: 660rpx;
+  overflow: hidden;
+}
+
+.con-title{
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  color: rgba(73,73,73,1);
+  letter-spacing: 0;
+  font-family: PingFangSC-Medium;
+}
+
+.con-body{
+  margin-top: 5rpx;
+  padding-bottom: 170rpx;
+}
+
+.con-text-box{
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #858585;
+  letter-spacing: 0;
+}
+
+.con-text{
+font-family: PingFangSC-Medium;
+color: rgba(73,73,73,1);
+font-size: 32rpx;
+letter-spacing: 0;
+
+}
+.con-texts{
+  font-family: PingFangSC-Regular;
+  color: rgba(153,153,153,1);
+  font-size: 28rpx;
+  margin-top: 25rpx;
+  font-weight:400;
+}
+.main-go-box{
+  width: 330rpx;
+  height: 90rpx;
+  position: relative;
+  left: 35rpx;
+  top: 32rpx;
+}
+
+.main-go-btn{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+}
+
+.main-go{
+  width: 330rpx;
+  height: 90rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ext-go{
+  width: 330rpx;
+  height: 90rpx;
+  position: relative;
+ left: 390rpx;
+  top: -58rpx;
+}
+.kefu-select{
+  width: 100%;
+  background-color: white;
+  height: 95rpx;
+  line-height: 95rpx;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  color: rgba(73,73,73,1);
+  font-size: 32rpx;
+
+}

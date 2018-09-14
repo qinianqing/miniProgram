@@ -1,0 +1,76 @@
+<!--page/index/parcel/history/historycomment/historycomment.wxml-->
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>点评</view>
+    </view>
+  </view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <view class='comment' wx:for="{{list}}" wx:key='index'>
+    <view class='commentimage'>
+      <image src='{{item.image}}'></image>
+    </view>
+    <view class='title'>
+      <view class='solename'>{{item.spu_name}}</view>
+      <view class='weidao'>{{item.type_id}}</view>
+    </view>
+  </view>
+  <view class='comment1-description fen'>
+    <view class="comment1-description1 fentitle">打个分</view>
+    <view class="star-pos" style="display:flex;flex-direction:row;">
+      <view class="stars  {{flag>=1? 'on': ''}}" bindtap="changeColor1"></view>
+      <view class="stars  {{flag>=2? 'on': ''}}" bindtap="changeColor2"></view>
+      <view class="stars  {{flag>=3? 'on': ''}}" bindtap="changeColor3"></view>
+      <view class="stars  {{flag>=4? 'on': ''}}" bindtap="changeColor4"></view>
+      <view class="stars  {{flag>=5? 'on': ''}}" bindtap="changeColor5"></view>
+    </view>
+    <view class='satisfaction'>{{satisfaction}}</view>
+  </view>
+  <view wx:if="{{question}}">
+    <view class='questions'>
+      <view class='questiontitle'>请选择你遇到的问题</view>
+      <view class='questionlist'>
+        <view class="list {{flag1? 'click': ''}}" bindtap="click1">商品问题</view>
+        <view class="list {{flag2? 'click': ''}}" bindtap="click2">客服问题</view>
+        <view class="list {{flag3? 'click': ''}}" bindtap="click3">物流问题</view>
+        <view class="list  {{flag4? 'click': ''}}" bindtap="click4">包装问题</view>
+        <view class="list  {{flag5? 'click': ''}}" bindtap="click5">其他</view>
+      </view>
+    </view>
+    <view class="section">
+      <textarea placeholder="提出你的建议，我们会努力改进" auto-focus="false" focus="false" bindblur='textvalue'>
+      </textarea>
+      <scroll-view scroll-x="true" class='bg'>
+        <view class='huadong'>
+          <view wx:for="{{commentPicArray}}">
+            <image src="{{item}}" id='{{item}}' mode='aspectFill' bindload="loadImg" bindtap='turn'></image>
+          </view>
+        </view>
+      </scroll-view>
+       <!-- <navigator url="../showpicture/showpicture"> -->
+        <image bindtap='didPressChooseImage' class='photo' src='https://cdn.jiyong365.com/photo.png'></image>
+      <!-- </navigator>  -->
+      <view bindtap='goCommit' class='anniu'>提交</view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="section">
+      <textarea placeholder="请填写你对商品高品质的评价吧~" auto-focus="false" focus='false' bindinput='textvalue'></textarea>
+      <scroll-view scroll-x="true" class='bg'>
+        <view class='huadong'>
+          <view wx:for="{{commentPicArray}}" wx:key='index'>
+            <view id='{{item}}' bindtap='turn'>
+              <image bindload="loadImg" mode='aspectFill' src="{{item}}"></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <image bindtap='didPressChooseImage' class='photo' src='https://cdn.jiyong365.com/photo.png'></image>
+      <view bindtap="goCommit" class='anniu'>提交</view>
+    </view>
+  </view>
+</view>

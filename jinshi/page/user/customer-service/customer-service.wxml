@@ -1,0 +1,44 @@
+<!--page/user/customer-service/customer-service.wxml-->
+<import src="../../../component/loading/loading.wxml"/>
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>选择您的问题</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if="{{!loading}}">
+<!-- <view class='kefu-select'>选择您的问题</view>
+ <view class='line'></view> -->
+  <view class='header'>
+    <block wx:for='{{sections}}' wx:key='id'>
+      <view class='{{item.select == true?"s-item":"item"}}' id='{{item.topic_id}}' bindtap='topicTap'>{{item.topic}}</view>
+    </block>
+  </view>
+  <view class='linec'></view>
+   <view class='main-go-box'>
+    <button class='main-go-btn' session-from='联系客服' send-message-title='来自{{user.name}}' send-message-path='/page/user/customer-service/customer-service' send-message-img	='{{user.avatar}}'	show-message-card open-type="contact"></button>
+    <image class='main-go' src='https://cdn.jiyong365.com/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E6%8C%89%E9%92%AE.png'></image>
+  </view>
+  <image class='ext-go' src='https://cdn.jiyong365.com/%E7%94%B5%E8%AF%9D%E5%AE%A2%E6%9C%8D%E6%8C%89%E9%92%AE.png' bindtap='extGo'></image>
+   <view class='linecs'></view>
+  <view class='content'>
+    <view class='con-title'>{{title}}</view>
+    <view class='con-body'>
+      <block wx:for='{{list}}' wx:key='id' wx:for-item='con'>
+        <view class='con-text-box'>
+          <view class='con-text'>{{index + 1}}、{{con.q}}</view>
+          <view class='con-texts'>{{con.a}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+ 
+</view>
+      <view hidden="{{!loading}}">
+        <template is="loading" data="{{gif}}" />
+      </view>

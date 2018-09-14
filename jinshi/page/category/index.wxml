@@ -1,0 +1,63 @@
+<!--page/category/index.wxml-->
+<import src="../../component/loading/loading.wxml" />
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>分类</view>
+    </view>
+  </view>
+  <view class='{{iphonex?"top_bar-iphonex":"top_bar"}}'>
+    <view class='search_box' bindtap='search'>
+      <image class='search_icon' src='https://cdn.jiyong365.com/%E6%90%9C%E7%B4%A2.png'></image>
+      <view class='search_placeholder'>搜索商品</view>
+    </view>
+  </view>
+  <view class='{{iphonex?"content-iphonex":"content"}}'>
+    <scroll-view scroll-y class='index' style='height:{{categoryBoxHeight}}rpx' scroll-top="{{scrollY}}">
+      <block wx:for="{{oneLevelCategory}}" wx:key="title">
+        <view class='one_level_box' id="{{item.id}}" data-title="{{item.title}}" bindtap='indexTap'>
+          <!-- <view class='one_level_select_indictor' hidden='{{!item.show}}'></view> -->
+          <view class='{{item.style}}'>{{item.title}}</view>
+        </view>
+      </block>
+    </scroll-view>
+    <scroll-view scroll-y class='detail' style='height:{{categoryBoxHeight}}rpx' scroll-into-view="{{toView}}" scroll-with-animation='true' scroll-top="{{scrollY}}" bindscroll="scroll">
+      <view class='detail_box'>
+        <block wx:for="{{content}}" wx:key="title">
+          <view id="a{{index}}">
+            <view wx:for="{{item}}" wx:key="index">
+              <view class='content_title'>{{item.title}}</view>
+              <view class='content_box'>
+                <block wx:for="{{item.list}}" wx:key="title" wx:for-item="content">
+                  <block wx:if="{{item.type == 2}}">
+                    <view class='border_box' id='{{content.content}}' data-title="{{content.name}}" bindtap='categoryTap' data-index="{{index}}">
+                      <image class='border_img' src='https://cdn.jiyong365.com/%E8%92%99%E6%9D%BF3.png' mode='aspectFit'></image>
+                      <view class='content_detail_box'>
+                        <image class='content_detail_pic' src='{{content.img}}' mode='aspectFill'></image>
+                        <view class='content_detail_title'>{{content.name}}</view>
+                      </view>
+                    </view>
+                  </block>
+                  <block wx:elif="{{item.type == 1}}">
+                    <image class='topic-pic' id='{{content.content}}' src='{{content.img}}' mode='aspectFill' bindtap='topicTap'></image>
+                  </block>
+                  <block wx:elif="{{item.type == 3}}">
+                    <image id="{{content.content}}" class='brand_pic' src='{{content.img}}' mode="aspectFill" bindtap='brandTap'></image>
+                  </block>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

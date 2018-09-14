@@ -1,0 +1,109 @@
+<!--page/product/goodsgroup/goodsgroup.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <block wx:if="{{haveCoupon}}">
+        <view class='head-title'>{{title}}</view>
+      </block>
+      <block wx:else>
+        <view class='head-title'>{{title}}</view>
+      </block>
+    </view>
+  </view>
+  <view class='{{iphonex?"result-iphonex":"result"}}'>
+    <view wx:if="{{haveCoupon}}">
+      <block wx:if="{{!useCoupon}}">
+        <view class='coupon-content-new' bindtap="getCoupon">
+          <view class='coupon-image'>
+            <image src="https://cdn.jiyong365.com/dsadasd.png"></image>
+          </view>
+          <view class='coupon-title'>{{coupon.title}}</view>
+          <view class='coupon-price'>￥
+            <text class='coupon-price-right'>{{coupon.price}}</text>
+          </view>
+          <view class='coupon-full'>{{coupon.full}}</view>
+          <view class='coupon-limit'>{{coupon.limit}}</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='use-coupon-content'>
+          <!-- <view class='use-coupon-left'>已添{{cart.num}}件商品</view> -->
+          <view class='use-coupon-between'>{{cart.cp>0?'再买'+cart.cp+'元':''}}</view>
+          <view class='use-coupon-right'>可减{{cart.contain}}元</view>
+          <view class='use-coupon-cart' bindtap='goCart'>去购物车</view>
+        </view>
+      </block>
+    </view>
+
+    <view class='{{haveCoupon&&useCoupon?"content-title-uc":"content-title"}}'>
+      <view class='new-title'>{{focus}}</view>
+      <image class='share-img' src='../../../image/group_share.png'>
+        <button class='share' open-type="share"></button>
+      </image>
+    </view>
+    <view wx:if='{{list.length}}' class="product-list">
+      <block wx:for="{{list}}" wx:key="sku_id">
+        <view class='goods' data-spu="{{item.goods_id}}" data-sku='{{item.sku_id}}' catchtap='goGoods'>
+          <view class='content-image'>
+            <image class='border-r' src='../../../image/tl.png' id='tl'></image>
+            <image class='border-r' src='../../../image/tr.png' id='tr'></image>
+            <image class='border-r' src='../../../image/bl.png' id='bl'></image>
+            <image class='border-r' src='../../../image/br.png' id='br'></image>
+            <!-- <image class='b-shadow' src='../../../image/shadow.png'></image> -->
+            <view class='ff'>
+              <swiper indicator-dots="true" autoplay="{{autoplay}}" data-index='{{index}}' bindchange="swiperChange" interval="{{interval}}" duration="{{duration}}" circular='true' indicator-active-color="#FFCE00" indicator-color='white' style='height:381rpx;width:630rpx'>
+                <block wx:if='{{item.rank_image &&item.rank_image.length > 0}}'>
+                  <block wx:for="{{item.rank_image}}" wx:key='index'>
+                    <swiper-item>
+                      <image src="{{item}}" />
+                    </swiper-item>
+                  </block>
+                </block>
+                <block wx:else>
+                  <block wx:for="{{item.carousel_image}}" wx:key='index'>
+                    <swiper-item>
+                      <image src="{{item}}" mode='aspectFill' />
+                    </swiper-item>
+                  </block>
+                </block>
+              </swiper>
+            </view>
+          </view>
+          <view class='describe-shadow'>
+            <image src="https://cdn.jiyong365.com/fdfdfd.png"></image>
+          </view>
+          <view class='content-describe' bindtap='godetailss' id="{{item.goods_id}}">
+            <view class='describe-contents'>
+              <view class='describe-goodsname'>{{item.type_id}}{{item.goods_name}}</view>
+              <view class='describe-goodsprice' data-spu="{{item.spu_id}}" data-sku="{{item.sku_id}}" wx:if='{{item.sku_id}}' data-price="{{item.goods_price}}" catchtap='addCart'>
+                <image src="https://cdn.jiyong365.com/%E5%8A%A0%E5%85%A5%E8%B4%AD%E7%89%A9%E8%BD%A6%20%281%29.png"></image>
+              </view>
+            </view>
+            <view class='describe-cashback'>
+              <view class='describe-tag'>{{item.describe}}</view>
+            </view>
+            <view class='describe-price-content'>
+              <view class='describe-price-left'>￥
+                <text class='describe-price-left-tag'>{{item.goods_price}}</text>
+              </view>
+              <!-- <view class='describe-price-right'>会员补贴
+                <text class='describe-price-right-tag'>￥<text class='describe-price-right-tags'>{{item.cashback}}</text></text>
+              </view> -->
+            </view>
+          </view>
+        </view>
+
+        <!-- <view class='goodsline'></view> -->
+      </block>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

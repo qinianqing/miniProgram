@@ -1,0 +1,10 @@
+<template name="followFwhModal">
+  <view class='loadingModalBG' catchtap=''>
+    <view class='loadingModalView'>
+      <view class='loadingModalHeader'></view>
+      <view class='loadingModalHeaderTitle'>Hi!</view>
+      <view class='loadingModalContent'>在客服消息界面，回复1获取公众号二维码！</view>
+      <button session-from='关注服务号' open-type="contact" bindcontact='followFwhCallback' class='loadingModalButton' >知道啦</button>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,255 @@
+/* page/user/evaluate/evaluate.wxss */
+/* 页顶导航 */
+
+.iphonex-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.container-box{
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  margin-top: -10rpx;
+}
+.default-img{
+  width: 207rpx;
+  height: 293rpx;
+}
+.nav-header{
+  position: fixed;
+  top: 132rpx;
+  left: 0;
+  height: 130rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  z-index: 9999;
+}
+
+.nav-header-iphonex{
+  position: fixed;
+  top: 182rpx;
+  left: 0;
+  height: 130rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  z-index: 9999;
+}
+
+.nav{ 
+  letter-spacing: 0;
+  background: #FFE67A;
+  border-radius: 100px;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #303030;
+  text-align: center;
+  width: 148rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+}
+
+#eva1{
+  margin-left: 182rpx;
+}
+
+.nav_{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #676767;
+  text-align: center;
+  width: 148rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+}
+
+#eva2{
+  margin-right: 182rpx;
+}
+
+.evaluates{
+  margin-top: 275rpx;
+}
+
+.evaluates-iphonex{
+  margin-top: 325rpx;
+}
+
+.eva-box{
+  margin-top: 10rpx;
+  background-color: #FFFFFF;
+  height: 350rpx;
+  width: 100%;
+}
+
+.eva-title{
+  height: 63rpx;
+  width: 100%;
+  position: relative;
+}
+
+.eva-line{
+  height: 1rpx;
+  width: 680rpx;
+  margin-left: 35rpx;
+  background-color: #E9E9E9;
+}
+
+.eva-order-id{
+  position: absolute;
+  top: 13rpx;
+  left: 35rpx;
+  font-family: PingFangSC-Light;
+  font-size: 26rpx;
+  color: #6F6F6F;
+  letter-spacing: 0;
+}
+
+.delete-eva{
+  position: absolute;
+  top: 17rpx;
+  right: 35rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.eva-detail{
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 35rpx;
+}
+
+.cover{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 2rpx;
+}
+
+.eva-product-detail{
+  margin-left: 45rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;  
+}
+
+.spu{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #575757;
+  letter-spacing: 0;
+}
+
+.sku{
+  margin-top: 2rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #B0B0B0;
+  letter-spacing: 0;
+}
+
+.price{
+  margin-top: 16rpx;
+}
+
+.price-d{
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #FF7A7A;
+  letter-spacing: 2.29rpx;
+}
+
+.price-c{
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #B0B0B0;
+  letter-spacing: -1.3rpx;
+}
+
+.eva-go{
+  position: relative;
+}
+
+.eva-btn{
+  position: absolute;
+  top: 12rpx;
+  right: 35rpx;
+  height: 62rpx;
+  width: 152rpx;
+  border-radius: 12rpx;
+  border:2rpx solid #6F6F6F;
+  font-size: 26rpx;
+  color: #6F6F6F;
+  text-align: center;
+  line-height: 62rpx;
+}

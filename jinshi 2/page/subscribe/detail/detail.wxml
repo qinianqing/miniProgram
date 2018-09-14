@@ -1,0 +1,87 @@
+<!--page/subscribe/detail/detail.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/hSwiper/hSwiper.wxml" />
+<import src="../../../component/newUserModal/newUser.wxml" />
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>{{title}}</view>
+    </view>
+  </view>
+  <view class='share' bindtap="shareSelect">
+    <image class='share-pic' src='https://cdn.jiyong365.com/%E5%88%86%E4%BA%AB%20%284%29.png' mode='aspectFill'></image>
+    <view class='share-title' >分享</view>
+  </view>
+  <view class='{{iphonex?"result-iphonex":"result"}}'>
+    <view class='banner'>
+      <image class='banner-pic' bindtap='gogo' src='{{cover}}' mode='aspectFill'></image>
+      <!-- <view class='banner-title'>{{focus}}</view> -->
+    </view>
+    <view class='c-head'>
+      <view class='title'>超值订阅({{waresNum}})</view>
+      <view class='heng'></view>
+      <image class='selectIcon' src='https://cdn.jiyong365.com/ssssssssss.png' mode='aspectFit'></image>
+      <view class='skus'>
+        <template is="hSwiper" data="{{...hSwiperVar}}"></template>
+      </view>
+      <view class='price' catchtap='go'>{{waresName||"每期：￥"+price}}</view>
+    </view>
+    <view class='line'></view>
+    <view class='body'>
+      <view class='title'>订阅方式(￥{{price}}/期)</view>
+      <view class='heng'></view>
+      <view class='content'>
+        <block wx:for='{{prices}}' wx:key='index'>
+          <!-- 订阅周期  -->
+          <view class='price-{{item.select}}' data-index='{{index}}' bindtap='priceTap'>
+            <view class='price-stage'>{{item.name}}</view>
+            <view class='price-discount'>{{item.discount}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='line'></view>
+    <view class='head-banner'>
+      <image src='https://cdn.jiyong365.com/banner000.png'></image>
+      <view class='head-banner-title'>锦时会员订阅商品</view>
+      <view class='head-banner-focus'>享受会员专属优惠，并在免邮期内包邮</view>
+    </view>
+  </view>
+</view>
+<view class='footer-cashbacks' wx:if='{{!loading}}' bindtap='goCreateFamily'>
+  <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A.png"></image>
+  为会员家庭订阅，本单立省￥{{discount}}</view>
+<view class='{{iphonex?"footer-iphonex":"footer"}}' wx:if='{{!loading}}' bindtap='go'>立即下单</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view wx:if="{{shareShow}}">
+  <view class='share-contain' catchtap='hiddenShare'>
+    <canvas canvas-id='codeCanvas' style="height:{{caleh * 520}}px" disable-scroll="true"></canvas>
+  </view>
+  <view wx:if="{{iphonex}}">
+    <view wx:if='{{SwxCode}}' class='share-button' catchtap='wxCreate' style='bottom:160rpx'>保存图片</view>
+  </view>
+  <view wx:else>
+    <view class='share-button' wx:if='{{SwxCode}}' catchtap='wxCreate' style='bottom:{{caleh * 50}}rpx'>保存图片</view>
+  </view>
+</view>
+
+<view wx:if="{{selectShare}}">
+  <view class='selectShare' catchtap='selectC'>
+    <view class='{{iphonex?"selectShare-content-iphonex":"selectShare-content"}}'>
+      <button class='selectShare-one' open-type="share" bindtap='selectO'>分享给好友</button>
+      <view class='selectShare-two' bindtap='selectT'>分享到朋友圈</view>
+      <view class='selectShare-cancel' bindtap='cancelS'>取消</view>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{!newUser}}">
+  <template is="newUser" data='{{quan}}'/>
+</view>

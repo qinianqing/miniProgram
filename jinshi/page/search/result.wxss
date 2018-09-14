@@ -1,0 +1,225 @@
+/* page/search/result.wxss */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 99999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 99999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+  z-index: 10;
+}
+
+.result {
+  margin-top: 132rpx;
+  width: 100%;
+}
+
+.result-iphonex {
+  margin-top: 182rpx;
+  width: 100%;
+}
+
+page {
+  background-color: white;
+}
+
+.container-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.description {
+  z-index: 999;
+  margin-top: 20rpx;
+  width: 750rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #777;
+}
+
+.product-list {
+  z-index: 999;
+  margin-top: 20rpx;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  width: 680rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 330rpx;
+  margin-bottom: 25rpx;
+  /* height: 468rpx; */
+}
+
+.cover {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.title {
+  margin-top: 15rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 37rpx;
+  color: #575757;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.focus {
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 5rpx;
+  font-size: 22rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.price-box {
+  margin-top: -3rpx;
+  height: 40rpx;
+}
+
+.price {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #ff7a7a;
+  letter-spacing: 2rpx;
+  line-height: 40rpx;
+}
+
+.crossed-price {
+  margin-left: 5rpx;
+  font-size: 22rpx;
+  color: #ababab;
+  letter-spacing: -1.1rpx;
+  text-decoration: line-through;
+  line-height: 40rpx;
+}
+
+.spu-cover {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.spu-cb {
+  height: 40rpx;
+  width: 330rpx;
+  background-color: #e3be6b;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.spu-highlight {
+  margin-top: 15rpx;
+  font-family: PingFangSC-Medium;
+  text-align: left;
+  font-size: 26rpx;
+  color: #575757;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 330rpx;
+}
+
+.spu-non-key {
+  margin-top: 3rpx;
+  text-align: left;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 330rpx;
+}
+
+.spu-price {
+  text-align: left;
+  margin-top: 8rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #ff7a7a;
+  letter-spacing: 2rpx;
+  width: 330rpx;
+}

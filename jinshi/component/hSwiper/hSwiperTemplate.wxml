@@ -1,0 +1,92 @@
+<template name="hSwiperItem">
+  <!-- 需要多种情况的模板 -->
+  <view class="itemSelf-{{item.style}}" id="{{item.family_id}}">
+    <block wx:if='{{item.status === "create"}}'>
+      <view class='family-create' catchtap='createFamily'>
+        <view class='family-create-plus'>+</view>
+        <view class='family-create-txt'>创建家庭</view>
+      </view>
+    </block>
+     <!-- <block wx:if='{{item.status === "try"}}'>
+      <view class='head-familyname'>
+        <view class='family-name'>{{item.family_name}}</view>
+        <view class='family-dredge' id='{{item.family_id}}' catchtap='familyVip'>试用期会员</view>
+      </view>
+      <view class='family-balance'>基金：{{item.family_balance}}元</view>
+      <view class='family-time'>
+        <view class='time-title'>截止日期</view>
+        <view class='time-num'>{{item.family_time}}</view>
+      </view>
+      <view class='family-free'>
+        <view class='free-title'>邮券</view>
+        <view class='free-num'>{{item.free_ticket}}张</view>
+        <view class='free-vip'> </view>
+      </view> -->
+      <!-- <view class='vip-describe'>开通家庭会员，平均每年节省￥3129</view> -->
+      <!-- <view class='item-family' id="{{item.family_id}}" catchtap='gofund'>
+        <image src="https://cdn.jiyong365.com/%E5%AE%B6%E5%BA%AD%E5%9F%BA%E9%87%911.png"></image>
+      </view> -->
+  <!-- </block>  -->
+    <!-- <block wx:if='{{item.status === "member"}}'>
+      <view class='head-familyname'>
+        <view class='family-name'>{{item.family_name}}</view>
+        <view class='family-dredge' id='{{item.family_id}}' catchtap='familyVip'>超级会员</view>
+      </view>
+      <view class='family-balance'>基金：{{item.family_balance}}元</view>
+      <view class='family-time'>
+        <view class='time-title'>截止日期</view>
+        <view class='time-num'>{{item.family_time}}</view>
+      </view>
+      <view class='family-free'>
+        <view class='free-title'>邮券</view>
+        <view class='free-num'>{{item.free_ticket}}张</view>
+        <view class='free-vip'> </view>
+      </view> -->
+      <!-- <view class='family-balance'>基金：{{item.family_balance}}元</view>
+      <view class='vip-describe'>平均每年节省家庭开销￥3129</view> -->
+      <!-- <view class='item-family' id="{{item.family_id}}" catchtap='gofund'>
+        <image src="https://cdn.jiyong365.com/%E5%AE%B6%E5%BA%AD%E5%9F%BA%E9%87%911.png"></image>
+      </view> -->
+    <!-- </block> -->
+     <block wx:if='{{item.status != "create"}}'>
+      <view class='head-familyname'>
+        <view class='family-name'>{{item.family_name}}</view>
+        <!-- <view class='family-dredge' id='{{item.family_id}}' catchtap='familyVip'>非会员</view> -->
+      </view>
+       <!-- <view class='family-balance'>地址：{{item.famiy_address}}</view>  -->
+      <!-- <view class='family-time'>
+        <view class='time-title'></view>
+        <view class='time-num'></view>
+      </view> -->
+         <!-- <view class='family-free'>
+          <view class='free-title'>电话:</view>
+          <view class='free-num'>{{item.family_phone}}</view>
+          <view class='free-vip'> </view>
+        </view>   -->
+      <!-- <view class='family-balance'>基金：{{item.family_balance}}元</view>
+      <view class='vip-describe'>开通家庭会员，平均每年节省￥3129</view> -->
+      <!-- <view class='item-family' id="{{item.family_id}}" catchtap='gofund'>
+        <image src="https://cdn.jiyong365.com/%E5%AE%B6%E5%BA%AD%E5%9F%BA%E9%87%911.png"></image>
+      </view> -->
+    </block>
+  </view>
+
+</template>
+<!-- 首页推荐banner  -->
+<template name="recBannerItem">
+  <image src='{{item.cover}}' class='{{item.style}}' id='{{item.cover}}&{{index}}' mode='aspectFill' catchtap='bannerTaps'></image>
+</template>
+<!-- 订阅商品banner  -->
+<template name="subscribeSku">
+  <view class='{{item.style}}'>
+    <view class='sku-box'>
+      <block wx:for='{{item.list}}' wx:for-item='sku' wx:key='index'>
+        <view class='sku-item' id='{{sku.sku_id}}' bindtap='skuTap'>
+          <image class='sku-item-pic' src='{{sku.cover}}' mode='aspectFill'></image>
+          <view class='sku-item-title'>{{sku.goods_name}}</view>
+          <view class='sku-item-detail'>{{sku.type_id}}×{{sku.num}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

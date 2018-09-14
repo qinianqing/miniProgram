@@ -1,0 +1,357 @@
+/* page/promote/co-branded-card/co-branded-card.wxss */
+page{
+  background: white;
+}
+
+.back-to-pre-iphonex {
+  width: 75rpx;
+  height: 75rpx;
+  position: fixed;
+  top: 99rpx;
+  left: 35rpx;
+}
+
+.back-to-pre {
+  width: 75rpx;
+  height: 75rpx;
+  position: fixed;
+  top: 59rpx;
+  left: 35rpx;
+}
+
+.container-box {
+  background: white;
+  padding-bottom: 150rpx;
+}
+
+.title-iphonex {
+  font-family: PingFangSC-Semibold;
+  font-size: 36rpx;
+  color: #000;
+  letter-spacing: 0;
+  padding-top: 136rpx;
+  text-align: center;
+}
+
+.title {
+  font-family: PingFangSC-Semibold;
+  font-size: 36rpx;
+  color: #000;
+  letter-spacing: 0;
+  margin-top: 86rpx;
+  text-align: center;
+}
+
+.cover {
+  width: 660rpx;
+  height: 367rpx;
+  border-radius: 20rpx;
+  box-shadow: 1rpx 7rpx 9rpx 2rpx rgba(0, 0, 0, 0.05);
+  margin-left: 45rpx;
+  margin-top: 32rpx;
+}
+
+.right-title {
+  margin-top: 38rpx;
+  margin-bottom: 20rpx;
+  height: 45rpx;
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #000;
+  letter-spacing: 0;
+  width: 100%;
+  line-height: 45rpx;
+  text-align: center;
+}
+
+.rights {
+  width: 660rpx;
+  margin-left: 45rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-box {
+  width: 200rpx;
+  height: 190rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 3rpx 5rpx 5rpx rgba(0, 0, 0, 0.03);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 25rpx;
+}
+
+.right-detail {
+  margin-top: 15rpx;
+  width: 100%;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #717171;
+  letter-spacing: 0;
+}
+
+.valid {
+  margin-left: 150rpx;
+  margin-top: 45rpx;
+  background: #ffe266;
+  box-shadow: 0 2rpx 4rpx 4rpx rgba(0, 0, 0, 0.03);
+  border-radius: 100rpx;
+  font-family: PingFangSC-Semibold;
+  font-size: 31rpx;
+  color: #000;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 100rpx;
+  width: 450rpx;
+  height: 100rpx;
+}
+
+.invalid {
+  margin-left: 150rpx;
+  margin-top: 45rpx;
+  background: #686868;
+  box-shadow: 0 2rpx 4rpx 4rpx rgba(0, 0, 0, 0.03);
+  border-radius: 100rpx;
+  font-family: PingFangSC-Semibold;
+  font-size: 31rpx;
+  color: white;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 100rpx;
+  width: 450rpx;
+  height: 100rpx;
+}
+
+.line {
+  margin-top: 32rpx;
+  width: 750rpx;
+  height: 2rpx;
+  background-color: #f6f6f6;
+}
+
+.rank-title-box {
+  margin-top: 42rpx;
+  width: 100%;
+  position: relative;
+  height: 45rpx;
+}
+
+.rank-title {
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  color: #303030;
+  position: absolute;
+  top: 0;
+  left: 209rpx;
+  width: 328rpx;
+  height: 45rpx;
+  text-align: center;
+  margin-bottom: 21rpx;
+}
+
+.rank-go {
+  position: absolute;
+  top: 10rpx;
+  right: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.rank-go-title {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #565656;
+  letter-spacing: 0;
+  text-align: center;
+  margin-right: 14rpx;
+}
+
+.nav {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.notice-note {
+  margin-left: 45rpx;
+  margin-bottom: 15rpx;
+  height: 40rpx;
+  width: 660rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #575757;
+  letter-spacing: 0;
+}
+
+/* 排行榜入口  */
+
+.rec-rank {
+  width: 680rpx;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+}
+
+.rec-ranks {
+  width: 670rpx;
+  height: 100%;
+  position: relative;
+  margin-left: 45rpx;
+  margin-top: 21rpx;
+}
+
+.rec-ranks-image {
+  width: 710rpx;
+  height: 348rpx;
+  margin-left: -20rpx;
+  margin-top: 10rpx;
+}
+
+#rank-cover-1 {
+  position: absolute;
+  top: 60rpx;
+  left: 220rpx;
+  width: 230rpx;
+  height: 230rpx;
+}
+
+#rank-cover-2 {
+  position: absolute;
+  top: 105rpx;
+  left: 25rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+#rank-cover-3 {
+  position: absolute;
+  top: 105rpx;
+  right: 25rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+#rank-title-1 {
+  position: absolute;
+  top: 280rpx;
+  left: 238rpx;
+  width: 198rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-family: DINAlternate-Bold;
+  font-size: 34rpx;
+  color: #000;
+  letter-spacing: 0;
+}
+
+#rank-title-2 {
+  position: absolute;
+  top: 260rpx;
+  left: 45rpx;
+  width: 120rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  font-family: DINAlternate-Bold;
+  font-size: 28rpx;
+  color: #000;
+  letter-spacing: 0;
+}
+
+#rank-title-3 {
+  position: absolute;
+  top: 260rpx;
+  right: 40rpx;
+  width: 120rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  font-family: DINAlternate-Bold;
+  font-size: 28rpx;
+  color: #000;
+  letter-spacing: 0;
+}
+
+.rec-rank-top1 {
+  position: relative;
+  width: 680rpx;
+  height: 200rpx;
+}
+
+.rec-rank-top1-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 330rpx;
+  height: 200rpx;
+}
+
+.rec-rank-top1-name {
+  position: absolute;
+  left: 350rpx;
+  top: -4rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #575757;
+  letter-spacing: 0;
+  width: 330rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rec-rank-top1-describe {
+  position: absolute;
+  left: 350rpx;
+  top: 40rpx;
+  width: 330rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.rec-rank-top1-price {
+  position: absolute;
+  top: 158rpx;
+  right: 34rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  width: 330rpx;
+  text-align: right;
+  color: #fc8074;
+  letter-spacing: 0;
+}
+
+.rec-rank-cover-box {
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.rec-rank-cover {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 2rpx;
+  background: #f9f9f9;
+}

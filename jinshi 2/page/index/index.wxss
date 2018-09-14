@@ -1,0 +1,863 @@
+/* page/index/index.wxss */
+
+page {
+  min-height: 100%;
+}
+
+.container-box {
+  width: 750rpx;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+  padding-bottom: 150rpx;
+}
+
+/* banner */
+
+.banner {
+  width: 100%;
+  height: 450rpx;
+  position: relative;
+}
+
+.banner swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-dots {
+  position: absolute;
+  left: 0;
+  bottom: 74rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-dots image {
+  width: 12rpx;
+  height: 12rpx;
+}
+
+/* nav导航入口 */
+
+.nav {
+  position: relative;
+  margin-top: -39rpx;
+  width: 750rpx;
+  height: 205rpx;
+}
+
+.nav-background {
+  position: absolute;
+  background: white;
+  top: -18rpx;
+  left: 0;
+  width: 750rpx;
+  height: 216rpx;
+  border-radius: 67rpx 67rpx 0 0;
+}
+
+.navs {
+  position: absolute;
+  top: -18rpx;
+  left: 125rpx;
+  width: 500rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-item {
+  margin-top: 1rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item-pic {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.nav-item-title {
+  margin-top: 11rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #888;
+  letter-spacing: 0;
+}
+
+.nav-shadow {
+  width: 750rpx;
+  height: 69rpx;
+  position: absolute;
+  left: 0;
+  top: 176rpx;
+}
+
+/* 适配小banner  */
+
+.little-banner {
+  margin-top: -20rpx;
+}
+
+/* 功能快速入口 */
+
+.fast-entrance {
+  position: relative;
+  width: 680rpx;
+  /* height: 120rpx; */
+  margin-left: 35rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.en-item {
+  margin-top: 5rpx;
+  position: relative;
+  width: 322rpx;
+  height: 120rpx;
+  background: #f9f9f9;
+  box-shadow: 0 2rpx 4rpx 0 rgba(0, 0, 0, 0.03);
+  border-radius: 10rpx;
+}
+
+.en-item-inditor {
+  position: absolute;
+  left: 0;
+  top: 25rpx;
+  width: 8rpx;
+  height: 80rpx;
+  background: #ffd939;
+}
+
+.en-item-pic {
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 0;
+  right: 13rpx;
+}
+
+.en-item-title {
+  position: absolute;
+  left: 32rpx;
+  top: 10rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #4f4f4f;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.en-item-focus {
+  position: absolute;
+  left: 32rpx;
+  top: 69rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #4f4f4f;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+/* rec */
+
+.rec {
+  padding-top: 4rpx;
+  width: 100%;
+}
+
+.line {
+  height: 5rpx;
+  width: 100%;
+  background-color: #f6f6f6;
+}
+
+.rec-head {
+  padding-top: 25rpx;
+  width: 675rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rec-title {
+  font-family: PingFangSC-Semibold;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  color: #303030;
+  letter-spacing: 0;
+}
+
+.rec-nav {
+  width: 26rpx;
+  height: 26rpx;
+  padding-left: 45rpx;
+}
+
+.rec-describe {
+  margin-top: 5rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #919191;
+  letter-spacing: 0;
+}
+
+/* 小banner推荐条  */
+.rec-banner {
+  width: 750rpx;
+  overflow: hidden;
+}
+
+.rec-banner .rec-head {
+  width: 715rpx;
+  margin-left: 35rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rec-banner .rec-describe {
+  margin-left: 35rpx;
+  margin-top: 5rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #919191;
+  letter-spacing: 0;
+}
+
+.rec-banner .rec-nav {
+  opacity: 0;
+}
+
+.rec-slide-cover {
+  width: 640rpx;
+  height: 236rpx;
+}
+
+.rec-slide {
+  height: 236rpx;
+  width: 680rpx;
+  margin-top: 19rpx;
+  margin-left: 8rpx;
+  position: relative;
+}
+
+#rec-slide-0 {
+  z-index: 99;
+}
+
+#rec-slide-1 {
+  height: 200rpx;
+  width: 640rpx;
+  margin-left: 80rpx;
+  margin-top: 18rpx;
+  border-radius: 4rpx 12rpx 12rpx 4rpx;
+}
+
+.rec-banners {
+  height: 236rpx;
+  width: 100%;
+  margin-top: 19rpx;
+  margin-bottom: 40rpx;
+}
+
+#mainContainer {
+  width: 100%;
+}
+
+.rec-banner-f {
+  border-radius: 8rpx;
+  width: 640rpx;
+  height: 236rpx;
+}
+
+.rec-banner-b {
+  border-radius: 4rpx;
+  margin-top: 18rpx;
+  width: 500rpx;
+  height: 200rpx;
+}
+
+/* 排行榜  */
+
+.rec-rank {
+  width: 680rpx;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+}
+
+.rec-ranks {
+  width: 670rpx;
+  height: 100%;
+  position: relative;
+  margin-left: 5rpx;
+}
+
+.rec-ranks-image {
+  width: 710rpx;
+  height: 348rpx;
+  margin-left: -20rpx;
+  margin-top: 10rpx;
+}
+
+#rank-cover-1 {
+  position: absolute;
+  top: 60rpx;
+  left: 220rpx;
+  width: 230rpx;
+  height: 230rpx;
+}
+
+#rank-cover-2 {
+  position: absolute;
+  top: 105rpx;
+  left: 25rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+#rank-cover-3 {
+  position: absolute;
+  top: 105rpx;
+  right: 25rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+
+#rank-title-1 {
+  position: absolute;
+  top: 280rpx;
+  left: 238rpx;
+  width: 198rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-family: DINAlternate-Bold;
+  font-size: 34rpx;
+  color: #000;
+  letter-spacing: 0;
+}
+
+#rank-title-2 {
+  position: absolute;
+  top: 260rpx;
+  left: 45rpx;
+  width: 120rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  font-family: DINAlternate-Bold;
+  font-size: 28rpx;
+  color: #000;
+  letter-spacing: 0;
+}
+
+#rank-title-3 {
+  position: absolute;
+  top: 260rpx;
+  right: 40rpx;
+  width: 120rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  font-family: DINAlternate-Bold;
+  font-size: 28rpx;
+  color: #000;
+  letter-spacing: 0;
+}
+
+.rec-rank-top1 {
+  position: relative;
+  width: 680rpx;
+  height: 200rpx;
+}
+
+.rec-rank-top1-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 330rpx;
+  height: 200rpx;
+}
+
+.rec-rank-top1-name {
+  position: absolute;
+  left: 350rpx;
+  top: -4rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #575757;
+  letter-spacing: 0;
+  width: 330rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rec-rank-top1-describe {
+  position: absolute;
+  left: 350rpx;
+  top: 40rpx;
+  width: 330rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.rec-rank-top1-price {
+  position: absolute;
+  top: 158rpx;
+  right: 34rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  width: 330rpx;
+  text-align: right;
+  color: #fc8074;
+  letter-spacing: 0;
+}
+
+.rec-rank-cover-box {
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.rec-rank-cover {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 2rpx;
+  background: #f9f9f9;
+}
+
+/* 横滑  */
+
+.rec-scroll {
+  padding-left: 35rpx;
+  width: 715rpx;
+}
+
+.rec-scrolls {
+  padding-top: 40rpx;
+  width: 100%;
+  padding-bottom: 40rpx;
+  height: 363rpx;
+}
+
+.rec-scroll-item {
+  display: flex;
+  width: 100%;
+}
+
+.dscs {
+  padding-right: 20rpx;
+}
+
+.rec-scroll-item-cover {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.rec-scroll-item-highlight {
+  width: 230rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #575757;
+  white-space: nowrap;
+}
+
+.rec-scroll-item-non-key {
+  width: 230rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 21rpx;
+  font-family: PingFangSC-Regular;
+  color: #ababab;
+}
+
+.rec-scroll-item-price {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  display: inline-block;
+  color: #ff7a7a;
+}
+
+/* 带banner横滑  */
+
+.rec-scroll-plus {
+  padding-left: 35rpx;
+  width: 715rpx;
+}
+
+.rec-scroll-cover {
+  margin-top: 25rpx;
+  width: 680rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+}
+
+.rec-scrolls-plus {
+  padding-top: 15rpx;
+  width: 100%;
+  padding-bottom: 40rpx;
+  height: 363rpx;
+}
+
+/* 四格  */
+
+.rec-cube {
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  width: 680rpx;
+}
+
+.rec-spu-list {
+  padding-bottom: 40rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* 单张大卡片  */
+
+.rec-card {
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  width: 680rpx;
+}
+
+.rec-card-detail {
+  position: relative;
+  height: 274rpx;
+  background: #fff;
+}
+
+.rec-card-line {
+  margin-top: 25rpx;
+  width: 100%;
+  height: 2rpx;
+  opacity: 0.24;
+  background: #d8d8d8;
+}
+
+.rec-card-pic {
+  width: 177rpx;
+  height: 177rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+}
+
+.rec-card-title {
+  position: absolute;
+  top: 30rpx;
+  left: 223rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #252525;
+  letter-spacing: 0;
+}
+
+.rec-card-focus {
+  position: absolute;
+  top: 84rpx;
+  left: 223rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #757575;
+  letter-spacing: 0;
+  width: 420rpx;
+}
+
+.rec-card-price-t {
+  position: absolute;
+  top: 199rpx;
+  left: 223rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #252525;
+  letter-spacing: 0;
+}
+
+.rec-card-price-d {
+  position: absolute;
+  top: 180rpx;
+  left: 325rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 44rpx;
+  color: #f06458;
+  letter-spacing: 0;
+}
+
+.rec-card-go {
+  position: absolute;
+  top: 174rpx;
+  right: 15rpx;
+  width: 155rpx;
+  height: 64rpx;
+  background: #ffe266;
+  border-radius: 100rpx;
+  font-family: PingFangSC-Semibold;
+  line-height: 64rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #2d2d2d;
+  letter-spacing: 0;
+}
+
+/* guess  */
+
+.guess {
+  width: 680%;
+  padding-top: 40rpx;
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+}
+
+.guess-title {
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #303030;
+  letter-spacing: 0;
+  padding-bottom: 8rpx;
+}
+
+.guess-list {
+  width: 680rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.spu-item {
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330rpx;
+}
+
+.spu-cover {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.spu-cb {
+  height: 40rpx;
+  width: 330rpx;
+  background-color: #e3be6b;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.spu-highlight {
+  margin-top: 30rpx;
+  font-family: PingFangSC-Medium;
+  text-align: left;
+  font-size: 26rpx;
+  color: #575757;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 330rpx;
+}
+
+.spu-non-key {
+  margin-top: 3rpx;
+  text-align: left;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 330rpx;
+}
+
+.spu-price {
+  text-align: left;
+  margin-top: 8rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #ff7a7a;
+  letter-spacing: 2rpx;
+  width: 330rpx;
+}
+
+/* 底部悬浮 */
+
+.footer {
+  width: 750rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 -1px 9px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  z-index: 19999;
+}
+
+.footer-button {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  border-radius: 0;
+  width: 200rpx;
+  height: 120rpx;
+  background: none;
+  position: static;
+}
+
+.footer-iphonex {
+  padding-bottom: 30rpx;
+  width: 750rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 -1px 9px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  z-index: 19999;
+}
+
+.footer-heng {
+  width: 2rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.footer-heng image {
+  width: 2rpx;
+  height: 40rpx;
+}
+
+.footer-person {
+  width: 54rpx;
+  height: 54rpx;
+  padding-left: 160rpx;
+  padding-right: 160rpx;
+  padding-top: 15rpx;
+  padding-bottom: 59rpx;
+  z-index: 19999;
+}
+
+.footer-person image {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.footer-car {
+  width: 54rpx;
+  height: 54rpx;
+  padding-left: 85rpx;
+  padding-top: 28rpx;
+  padding-bottom: 59rpx;
+}
+
+.footer-car image {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.rec-rank-detail-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-rank-top {
+  width: 160rpx;
+  height: 30rpx;
+  background: #f9f9f9;
+}
+
+.rec-rank-top1-tag {
+  width: 107rpx;
+  height: 66rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.rec-rank-top1-tag-three {
+  width: 107rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 177rpx;
+  top: 0;
+  z-index: 99;
+}
+
+.rec-rank-top1-tag-two {
+  width: 107rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.rec-rank-top1-tag-four {
+  width: 107rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 348rpx;
+  top: 0;
+  z-index: 99;
+}
+
+.rec-rank-top1-tag-five {
+  width: 107rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 521rpx;
+  top: 0;
+  z-index: 99;
+}

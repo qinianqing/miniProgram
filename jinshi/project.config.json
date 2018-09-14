@@ -1,0 +1,95 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.0",
+	"appid": "wx4bcc5cb5de9dc705",
+	"projectname": "%E9%94%A6%E6%97%B6",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "打开退款详情页",
+					"pathName": "page/order/reverse/detail",
+					"query": "reverse_Id=1523599767986",
+					"scene": "1014"
+				},
+				{
+					"id": 1,
+					"name": "分享调试",
+					"pathName": "page/index/index",
+					"query": "user_Id=bca026ef028d4c2080de5b340911d8ab"
+				},
+				{
+					"id": 2,
+					"name": "拼手气邀请",
+					"pathName": "page/user/mine/invite/send",
+					"query": "order_id=18062732177311&invite_order=jhhiu84quouxhfgs7",
+					"scene": "1008"
+				},
+				{
+					"id": 3,
+					"name": "分享会员",
+					"pathName": "page/user/vip/vip",
+					"query": "invite_user=jhhiu84quouxhfgs7"
+				},
+				{
+					"id": 4,
+					"name": "支付完成",
+					"pathName": "page/order/payresult/payresult",
+					"query": "order_id=18070253722325",
+					"scene": "1008"
+				},
+				{
+					"id": 5,
+					"name": "领红包页面",
+					"pathName": "page/user/mine/invite/send",
+					"query": "invite_order=jhhiu84quouxhfgs7&order_id=18062732177311",
+					"scene": "1008"
+				},
+				{
+					"id": -1,
+					"name": "文章页面",
+					"pathName": "page/article/article",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "联名卡",
+					"pathName": "page/promote/co-branded-card/co-branded-card",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "特定商品",
+					"pathName": "page/product/goodsdetail/goodsdetail",
+					"query": "goods_id=10234"
+				}
+			]
+		}
+	}
+}

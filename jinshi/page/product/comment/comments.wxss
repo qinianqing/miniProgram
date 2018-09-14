@@ -1,0 +1,340 @@
+/* page/product/goodsdetails/comment/comment.wxss */
+/* 页顶导航 */
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.container-box{
+  margin-top: 132rpx;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+}
+
+.container-box-iphonex{
+  margin-top: 182rpx;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+}
+
+/* 页面 */
+page {
+  background-color: white;
+}
+
+.banner {
+  width: 750rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(108, 108, 108, 1);
+  font-size: 28rpx;
+  margin-top: 36rpx;
+  text-align: center;
+}
+
+ .banner image {
+  width: 35.7rpx;
+  height: 34.5rpx;
+  padding: 0rpx 9rpx;
+  display: inline-block;
+} 
+
+.commentfen{
+  font-family:PingFangSC-Medium;
+  color: rgba(153,153,153,1);
+  font-size: 28rpx;
+
+  margin-top: 27rpx;
+}
+
+.commentimages {
+  text-align: center;
+  width: 750rpx;
+  
+
+}
+.commentimages image{
+width: 36rpx;
+height: 36rpx;
+display: inline-block;
+padding: 0rpx 9rpx;
+}
+.starshow{
+  width: 36rpx;
+height: 36rpx;
+display: inline-block;
+padding: 0rpx 9rpx;
+}
+.linesm {
+  width: 100%;
+  height: 2rpx;
+  background-color: #f6f6f6;
+  margin-top: 35rpx;
+}
+
+.nav {
+  width: 750rpx;
+  height: 67rpx;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.default {
+  width: 375rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  color: rgba(153,153,153,1);
+  font-size: 28rpx;
+}
+
+.red {
+  width: 375rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color:rgba(102,102,102,1);
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  background-color: rgba(255,222,117,1);
+  letter-spacing: 0;
+  height: 100rpx;
+}
+.line{
+ width: 120rpx;
+ height: 6rpx;
+ background-color: rgba(255,222,117,1);
+ margin-left: 135rpx;
+
+}
+.show {
+  display: block;
+  text-align: center;
+  
+}
+
+.hidden {
+  display: none;
+  text-align: center;
+
+}
+.avator{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+  position: relative;
+  top:18rpx;
+}
+.haveavatar{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 100%;
+  position: relative;
+  top:18rpx;
+}
+.smimages{
+   
+  display: inline-block;
+}
+.smimages image{
+
+  width:19.8rpx;
+  height: 19.2rpx;
+   display: inline-block;
+}
+.mm{
+  text-align: center;
+  width:43.8rpx;
+  height: 19.2rpx;
+}
+.mm image{
+   width:19.8rpx;
+  height: 19.2rpx;
+  
+    
+}
+.commentdetail{
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* padding-left: 35rpx; */
+  box-sizing: border-box;
+  padding-top: 25rpx;
+}
+.left{
+  width: 350rpx;
+  text-align: left;
+  color: rgba(100,100,100,1);
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  padding-left: 35rpx;
+}
+.haveleft{
+ width: 350rpx;
+  text-align: left;
+  color: rgba(100,100,100,1);
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  padding-left: 35rpx;
+  padding-top: 25rpx;
+
+}
+.right{
+  width: 350rpx;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+  text-align: right;
+}
+.haveright{
+  width: 350rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 220rpx;
+  box-sizing: border-box;
+  padding-top: 65rpx;
+}
+.haveright image{
+  padding-left: 7rpx;
+}
+.right image{
+  padding-left: 4rpx;
+}
+.time{
+  font-family: PingFangSC-Regular;
+  color: rgba(179,179,179,1);
+  font-size: 26rpx;
+
+}
+.havetime{
+  font-family: PingFangSC-Regular;
+  color: rgba(179,179,179,1);
+  font-size: 26rpx;
+}
+.weidao{
+  font-family: PingFangSC-Regular;
+  color: rgba(179,179,179,1);
+  font-size: 26rpx;
+  width: 353rpx;
+  padding-top: 30rpx;
+  text-align: right;
+}
+.conent{
+  width: 100%;
+  word-wrap:break-word;
+  text-align: left;
+  font-family: PingFangSC-Regular;
+  color: rgba(100,100,100,1);
+  font-size: 26rpx;
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  letter-spacing: 0;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+}
+.linelg{
+ width: 100%;
+ height: 10rpx;
+ background-color: #f6f6f6;
+ margin-top: 40rpx;
+ 
+}
+.have{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 750rpx;
+  margin-left: 35rpx;
+  padding-top: 10rpx;
+  }
+  .have image{
+    padding-right: 10rpx;
+  }
+  .have image{
+    width: 170rpx;
+    height: 170rpx;
+  }
+  .username{
+    position: relative;
+    left:90rpx;
+     top:-50rpx;
+
+  }
+  .w {
+    padding-right: 26rpx;
+  }
+   .commentImage image{
+    width:207rpx;
+    height:293rpx;
+
+  } 
+   .commentImage{
+     width: 750rpx;
+     margin-top: 200rpx;
+     font-family: PingFangSC-Light;
+     color: rgba(131,131,131,1);
+     font-size: 28rpx;
+     letter-spacing: 0;
+   }

@@ -1,0 +1,103 @@
+/* page/user/mine/invite/activerule/activerule.wxss */
+
+page {
+  background-color: #ffc073;
+}
+
+.back-to-pre-iphonex {
+  width: 75rpx;
+  height: 75rpx;
+  position: absolute;
+  top: 99rpx;
+  left: 35rpx;
+}
+
+.back-to-pre {
+  width: 75rpx;
+  height: 75rpx;
+  position: absolute;
+  top: 59rpx;
+  left: 35rpx;
+}
+
+.contain {
+  width: 100%;
+  background-image: url('https://cdn.jiyong365.com/Group.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head-iphone {
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #493525;
+  margin-top: 105rpx;
+}
+.head{
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #493525;
+  margin-top: 75rpx;
+}
+
+.contain-content {
+  width: 680rpx;
+  height: 1110rpx;
+  background: #fff;
+  border: 8rpx solid #ed8245;
+  border-radius: 12rpx;
+  margin-top: 40rpx;
+  margin-bottom: 70rpx;
+}
+
+.content-one {
+  width: 595rpx;
+  height: 610rpx;
+  margin-left: 45rpx;
+  margin-top: 56rpx;
+}
+
+.one-list {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #ab3200;
+  letter-spacing: 1rpx;
+  line-height: 36rpx;
+  margin-bottom: 43rpx;
+}
+
+.line {
+  background-color: rgba(171, 50, 0, 1);
+  width: 508rpx;
+  height: 2rpx;
+  margin-top: 32rpx;
+  margin-left: 86rpx;
+}
+
+.two-title {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #ab3200;
+  letter-spacing: 1.14rpx;
+  margin-top: 60rpx;
+  margin-left: 57rpx;
+}
+
+.content-two {
+  width: 595rpx;
+  height: 207rpx;
+  margin-top: 32rpx;
+  margin-left: 45rpx;
+}
+
+.two-list {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #ab3200;
+  letter-spacing: 1rpx;
+  line-height: 36rpx;
+  margin-bottom: 33rpx;
+}

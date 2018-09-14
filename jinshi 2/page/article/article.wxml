@@ -1,0 +1,76 @@
+<!--page/article/article.wxml-->
+<swiper circular="{{circular}}" indicator-active-color="{{indicatorActiveColor}}" class="picture" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" indicator-color="{{indicatorColor}}" duration="{{duration}}">
+  <block wx:for="{{article.carousel_image}}" wx:key="id">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image imagesize" />
+    </swiper-item>
+  </block>
+</swiper>
+<view>
+  <image class='{{iphonex?"back-to-pre-iphonex":"back-to-pre"}}' bindtap="back" src="{{navBack}}"></image>
+</view>
+<!--content  -->
+<view class='content'>
+  <!--作者  -->
+  <view class='content-head'>
+    <view class='content-head-avatar'>
+      <image src="{{article.avatar}}"></image>
+    </view>
+    <view class='content-head-user'>{{article.user}}</view>
+    <view class='content-head-num'>{{article.num}}人喜欢</view>
+    <view class='content-head-zan'>
+      <image src="https://cdn.jiyong365.com/qqqq%E7%82%B9%E8%B5%9E.png"></image>
+    </view>
+  </view>
+  <view class='content-line'></view>
+</view>
+<!--主体  -->
+<view class='article-contents-box'>
+  <view class='article-title'>{{article.title}}</view>
+  <view class='article-title-two'>{{article.titleTwo}}</view>
+  <view class='article-contents'>{{article.content}}</view>
+</view>
+<!--相关商品  -->
+<view class='c-content'>
+  <view class='c-title'>相关商品</view>
+
+  <view class='c-n-image'>
+    <image src="{{goods.image}}"></image>
+  </view>
+  <view class='c-n-title'>{{goods.goods_name}}</view>
+  <view class='c-n-describe'>{{goods.describe}}</view>
+  <view class='c-n-price'>￥{{goods.goods_price}}</view>
+</view>
+<!-- 上下篇 -->
+<view class='s-content'>
+  <view class='s-content-right'>
+    <view class='s-content-right-image'>
+      <image src="{{goods.image}}"></image>
+      <view class='right-image-t'>上一篇</view>
+    </view>
+    <view class='s-content-left-title'>{{article.title}}{{article.titleTwo}}</view>
+  </view>
+  <view class='s-content-right'>
+    <view class='s-content-right-image'>
+      <image src="{{goods.image}}"></image>
+      <view class='right-image-t'>下一篇</view>
+    </view>
+    <view class='s-content-right-title'>{{article.title}}{{article.titleTwo}}</view>
+  </view>
+</view>
+<!--侧边栏  -->
+<view class='silder'>
+  <view class='silder-left'>
+    <view class='silder-left-image'>
+      <image src="https://cdn.jiyong365.com/qqqq%E5%88%86%E4%BA%AB%20.png"></image>
+    </view>
+    <view class='silder-left-name'>分享</view>
+  </view>
+  <view class='silder-line'></view>
+  <view class='silder-right'>
+    <view class='silder-right-image'>
+      <image src="https://cdn.jiyong365.com/qqq%E7%82%B9%E8%B5%9E2.png"></image>
+    </view>
+    <view class='silder-right-name'>喜欢</view>
+  </view>
+</view>

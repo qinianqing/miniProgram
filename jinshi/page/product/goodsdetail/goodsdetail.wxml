@@ -1,0 +1,474 @@
+<!-- page/product/goodsdetails/goodsdetails.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<import src="../../../component/newUserModal/newUser.wxml" />
+
+<!-- <block wx:if='{{scrollTop>=650}}'> -->
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}' style="opacity:{{opacity}}">
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='{{iphonex?"head-iphonex":"head"}}'>
+    <view class='back'>
+      <image bindtap='back' class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>{{list[0].goods_name}}</view>
+  </view>
+</view>
+<!-- </block> -->
+<scroll-view scroll-y="true" bindscroll="scroll" upper-threshold="800" lower-threshold="{{bottom}}" style="height:100%;margin-top:'+scollMarginTop+'rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="{{scrollY}}" scroll-into-view="{{toView}}"
+  scroll-with-animation='true'>
+  <view wx:for="{{list}}" wx:key="index">
+    <view id="shangpin"></view>
+    <swiper circular="{{circular}}" indicator-active-color="{{indicatorActiveColor}}" class="picture" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{item.carousel_image}}" wx:key="id">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image imagesize" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- </block> -->
+
+    <view>
+      <image class='{{iphonex?"back-to-pre-iphonex":"back-to-pre"}}' bindtap="back" src="{{navBack}}"></image>
+    </view>
+    <!--信息  -->
+    <view class='content-new'>
+      <view class='new-price-head'>
+        <block wx:for="{{item.skus}}" wx:key="index" wx:if="{{index == selectindexs}}">
+          <block wx:for="{{list}}" wx:key="index">
+            <view class='new-price'>￥{{item.mini_price}}</view>
+          </block>
+          <!-- <view class='new-cashback' catchtap='goVip'>会员补贴
+            <text class='new-cashback-tag'>￥</text>
+            <text class='new-cashback-price'>{{item.cashback}}</text>
+          </view> -->
+        </block>
+      </view>
+      <view class='new-title'>{{item.goods_name}}</view>
+      <view class='new-describe'>{{item.describe}}</view>
+      <!--标签  -->
+      <view class='new-tag'>
+        <block wx:for="{{list}}" wx:key='index'>
+          <block wx:for="{{item.tag}}" wx:key='index'>
+            <view class='new-lisizes' data-tag='{{item}}' bindtap='tagTap'>#{{item}}</view>
+          </block>
+        </block>
+      </view>
+      <!--收藏  -->
+      <view class='new-collect'>
+        <image class="new-shoucang" bindtap='isShare' data-collectid="{{item.collect_id}}" src="{{item.is_collect?'https://cdn.jiyong365.com/%E5%B7%B2dsdsd%E6%94%B6%E8%97%8F.png':'https://cdn.jiyong365.com/%E6%94%B6%E8%97%8Fcollect.png'}}" data-sku="{{item.sku_id}}"
+          data-spu="{{item.spu_id}}"></image>
+        <block wx:if="{{item.is_collect}}">
+          <text class="new-shoucang-title-a" bindtap='isShare'>已收藏</text>
+        </block>
+        <block wx:else>
+          <text class="new-shoucang-title-b" bindtap='isShare'>收藏</text>
+        </block>
+      </view>
+      <!--评价  -->
+       <view class='new-comment'>
+        <view class='star' id="{{item.goods_id}}" data-sku='{{item.goods_name}}'>
+          <image wx:for="{{startUrls}}" class="starimage" src="{{item}}" wx:key="id" wx:if="{{index < 5}}"></image>
+          <view class='number'>5</view>
+          <view class='pinglun'>推荐指数</view>
+        </view>
+      </view> 
+    </view>
+    <block wx:for="{{item.skus}}" wx:key="index" wx:if="{{index == selectindexs}}">
+      <!--规格  -->
+      <view wx:if="{{sureshop}}">
+        <view class="guige {{subList.length > 0 ? '' : 'new-g'}}" bindtap='addCart'>
+          选择数量规格
+          <image src="https://cdn.jiyong365.com/qqq%E6%9F%A5%E7%9C%8B.png"></image>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="guige" bindtap='addCart'>
+          已选:
+          <text> {{skunames}} {{buyNumber}}件</text>
+          <image src="https://cdn.jiyong365.com/qqq%E6%9F%A5%E7%9C%8B.png"></image>
+        </view>
+      </view>
+
+      <!--订阅  -->
+      <block wx:if="{{subsShow}}">
+        <view class='new-sub' wx:if="{{subList.length > 0}}">
+          <view class='new-sub-title'>订阅组合</view>
+          <view class='new-sub-content'>
+            <scroll-view scroll-x="true" class='new-sub-scroll'>
+              <view class='new-sub-c'>
+                <block wx:for="{{subList}}" wx:key='index'>
+                  <view class='new-sub-w'>
+                    <view class='new-content-item' style="width:{{item.skus.length * 141}}rpx" bindtap='goSub' data-id="{{item.id}}">
+                      <block wx:for="{{item.skus}}" wx:for-item="content" wx:key='index'>
+                        <text wx:if="{{index > 0}}" class="new-content-zeng">+</text>
+                        <image src="{{content.image}}"></image>
+                      </block>
+                    </view>
+                    <view class='new-content-list'>
+                      <!-- <view class='new-list-left'>订阅价
+                      <text class='list-left-price-tag'>￥</text>
+                      <text class='list-left-price'>{{item.sub_price}}</text>
+                    </view> -->
+                      <!-- <view class='new-list-between'>共{{item.num}}期</view> -->
+                      <view class='new-list-right'>低至{{item.note}}
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+      </block>
+      <!--服务  -->
+      <block wx:for="{{list}}" wx:key='index'>
+        <view class="fuwu">
+          <view class='fuwut'>服务</view>
+          <view class='fuwul'>
+            <block wx:for='{{item.service}}' wx:for-item='content' wx:key='index'>
+              <view class='fuwul-detail'> {{content}}</view>
+              <view id="guige"></view>
+            </block>
+            <!-- <view class='fuwul-detail'> 99元包邮（可使用邮券）</view>
+            <view id="guige"></view> -->
+          </view>
+          <view id='xiangqing'></view>
+        </view>
+      </block>
+    </block>
+    <!--好文推荐  -->
+    <block wx:if="{{articleShow}}">
+
+      <view class='article'>
+        <view class='article-title'>好文推荐</view>
+        <block wx:for="{{article}}" wx:key="index">
+          <view class='article-content'>
+            <view class='article-content-image'>
+              <image src="{{item.image}}"></image>
+            </view>
+            <view class='article-contents'>
+              <view class='article-content-title'>{{item.title}}</view>
+              <view class='article-content-title-two'>{{item.titleTwo}}</view>
+              <view class='article-content-describe'>{{item.describe}}</view>
+            </view>
+            <view class='article-avatar'>
+              <image src="{{item.avatar}}"></image>
+            </view>
+            <view class='article-user'>{{item.user}}</view>
+            <view class='article-like'>{{item.num}}人喜欢</view>
+            <view class='article-like-image'>
+              <image src="https://cdn.jiyong365.com/qqqq%E7%82%B9%E8%B5%9E.png"></image>
+            </view>
+          </view>
+
+        </block>
+      </view>
+    </block>
+    <!--详情  -->
+    <block wx:if='{{iphonex}}'>
+      <view class='topnav-iphonex' style="opacity:{{opacity}}">
+        <view class="{{selected?'red':'default'}}" bindtap="selected" data-index='shangpin'>商品
+          <view class="{{selected?'linecc':''}}"></view>
+        </view>
+        <view class="{{selected1?'red ':'default'}}" bindtap="selected1" data-index="guige">详情
+          <view class="{{selected1?'linecc ':''}}"></view>
+        </view>
+        <view class="{{selected2?'red':'default'}}" bindtap="selected2" data-index="pinpai">品牌
+          <view class="{{selected2?'linecc':''}}"></view>
+        </view>
+      </view>
+    </block>
+    <block wx:if='{{!iphonex}}'>
+      <view class='topnav' style="opacity:{{opacity}}">
+        <view class="{{selected?'red':'default'}}" bindtap="selected" data-index='shangpin'>商品
+          <view class="{{selected?'linecc':''}}"></view>
+        </view>
+        <view class="{{selected1?'red':'default'}}" bindtap="selected1" data-index="guige">详情
+          <view class="{{selected1?'linecc':''}}"></view>
+        </view>
+        <view class="{{selected2?'red':'default'}}" bindtap="selected2" data-index="pinpai">品牌
+          <view class="{{selected2?'linecc ':''}}"></view>
+        </view>
+      </view>
+    </block>
+
+    <view class='tudetails'>
+
+      <view class='aa'>
+        <!-- <view class="goods">商品展示</view> -->
+        <image class='ss' wx:for="{{item.details_image}}" mode="widthFix" src="{{item}}" wx:key="index" bindload='detailImageLoad'> </image>
+
+      </view>
+
+      <view class='line'></view>
+    </view>
+    <view class='table'>
+      <block wx:for="{{item.skus}}" wx:key="index" wx:if="{{ index == selectindexs}}">
+        <view class="goods">商品详情</view>
+        <view class='goods-list'>
+          <block wx:for="{{item.specification}}" wx:key='index'>
+            <view class='detail-specif'>
+              <view class='left'>{{item.specification_name}}</view>
+              <view class='right'>{{item.specification_details}}</view>
+            </view>
+
+            <view class='gline'></view>
+
+          </block>
+        </view>
+      </block>
+    </view>
+
+    <view class='line'></view>
+    <view class='pinpai'>
+      <view id="pinpai"></view>
+      <view>品牌介绍</view>
+      <view class='linemidi'></view>
+      <view class='brands' data-brand='{{item.brand_id}}' catchtap='goBrand'>
+        <view class='brandpictrue'>
+          <image src="{{item.from}}"></image>
+        </view>
+        <view class='branddetails'>
+          <image class='brandgo' src="https://cdn.jiyong365.com/34567.png"></image>
+          <view class='club'>{{item.name}}</view>
+          <view class='spinpaidetails'>{{item.introduce}}</view>
+        </view>
+
+      </view>
+    </view>
+    <view>{{correlationList.legnth}}</view>
+    <!--相关商品  -->
+    <view class='linelgs'></view>
+    <view wx:if="{{correlationList.length > 0}}">
+      <view class='correlation-goods'>
+        <view class='correlation-title'>相关商品</view>
+        <view class='correlation-content'>
+          <scroll-view scroll-x="true">
+            <view class='correlation-content-list'>
+              <view wx:for="{{correlationList}}" wx:for-item='content' wx:key='index'>
+                <view class='correlation-image' bindtap="goCorrelation" data-id="{{content.goods_id}}">
+                  <image src="{{content.default_image}}"></image>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <!--返回首页  -->
+    <view wx:if="{{correlationList.length > 0}}" class='linelgs-s'></view>
+    <view class='back-index' catchtap='goIndexs'>
+      <view class='index-content'>
+        <view class='index-image'>
+          <image src="https://cdn.jiyong365.com/%E9%A6%96%E9%A1%B5%20%E9%80%89%E4%B8%AD.png"></image>
+        </view>
+        <view class='index-title'>返回首页</view>
+      </view>
+    </view>
+    <view class='linesss'></view>
+    <view class='like'>
+      <view class='liket'>猜你喜欢</view>
+      <view class='checkall' style='opacity:0 '>查看全部
+        <image src="https://cdn.jiyong365.com/fanhui.png"></image>
+      </view>
+    </view>
+    <view class='imageall'>
+      <view wx:for="{{likeGoods}}" class='imageone' wx:key="id">
+        <view class='spu-item' id='{{item.goods_id}}' catchtap='guessTap'>
+          <image class='spu-cover' src='{{item.default_image}} '></image>
+          <!-- <view class='spu-cb'>会员返{{item.goods_cashback}}元</view> -->
+          <view class='spu-highlight'>{{item.describe}}</view>
+          <view class='spu-non-key'>{{item.goods_name}}</view>
+          <view class='spu-price'>￥{{item.goods_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class='{{iphonex? "bfooter-iphonex": "bfooter"}}' hidden="{{loading}}">
+  <view class='footers'>
+    <view class='kefu' catchtap='{{kefu}}'>
+      <image class='mi' src="https://cdn.jiyong365.com/%E7%94%BB%E6%9D%BF%2024.png"></image>
+    </view>
+    <view class='share' catchtap="shareSelect">
+      <image class='mi' src='https://cdn.jiyong365.com/%E7%94%BB%E6%9D%BF%2024%20%E5%89%AF%E6%9C%AC.png'></image>
+    </view>
+    <view class='car' catchtap='gocart'>
+      <image class='mi mz' src='https://cdn.jiyong365.com/%E7%94%BB%E6%9D%BF%2024%20%E5%89%AF%E6%9C%AC%202.png'></image>
+    </view>
+    <view class='addcar' catchtap='addCart'></view>
+  </view>
+  <view class='footer'>
+    <view class='kefu' catchtap='{{kefu}}'>
+      <button session-from='联系客服' class='main-go-btn' send-message-title='{{item.sku_name}}' send-message-path='/page/product/goodsdetail/goodsdetail' send-message-img='{{item.default_image}}' show-message-card open-type="contact"></button>
+      <view></view>
+    </view>
+    <view class='share' catchtap="shareSelect">
+      <button class='main-go-btns '></button>
+      <view></view>
+    </view>
+    <view class='car' catchtap='gocart'></view>
+    <view class='adcar' catchtap='addCart' class="{{addshow?'addshow':'adcar'}}">
+      <block wx:if="{{isDirect}}">
+        <view class='carfont '>立即购买 </view>
+      </block>
+      <block wx:else>
+        <view class='carfont'> 加入购物车 </view>
+      </block>
+      <view class="{{addshow?'container':''}}" catchtap='dl'>
+        <view class="{{addshow?'popup-contents ':'none'}}" catchtap='none'>
+          <view class="suoall" wx:for="{{list}}" wx:if="{{index == 0}}" wx:key='index'>
+            <view class='dl' catchtap='dl'>
+              <image src="https://cdn.jiyong365.com/%E5%88%A0%E9%99%A4delete.png"></image>
+            </view>
+            <block wx:for="{{item.skus}}" wx:if="{{index == selectindexs}}" wx:key='index'>
+              <view class='suocontent'>
+                <view class='suoimage'>
+                  <image src='{{item.image}}'></image>
+                </view>
+                <view class='suoprice'>
+                  <view class='lgprice'>
+                    <view class='lg-price'>价格:</view>
+                    <block wx:if="{{xuanzhong}}">
+                      <view class='pricelg'>￥{{item.price}}</view>
+                    </block>
+                    <block wx:else>
+                      <view class='pricelg'>￥{{item.price}}
+                      </view>
+                    </block>
+                    <!-- <view class='dlprice '>￥{{item.discount_price}}</view> -->
+                  </view>
+                  <view class='selectprice'>
+                    <view class='selsect-price'> 已选:</view>
+                    <view class='selectdetail'>{{skunames}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <view class='linesku'></view>
+            <scroll-view class='guige-list' scroll-y="true">
+              <block wx:for="{{item.styles}}" wx:for-item="itemName" wx:if="{{index == 0}}" wx:key='index'>
+                <view class='guigeming'>{{itemName.name}}</view>
+                <view class='spu' id='{{itemName.name}}' bindtap='selectSection'>
+                  <block wx:for="{{itemName.namelist}}" wx:key='index'>
+                    <view data-skuvalue="{{item}}" class="{{item == skuvalues? 'guigesku' :'guigedefault'}} {{item == contrast1 ? 'noselect' : ''}}" bindtap="selectskuone" data-index="{{index}}">
+                      {{item}}
+                    </view>
+                  </block>
+                </view>
+                <view class='linesku'></view>
+              </block>
+              <block wx:for="{{item.styles}}" wx:for-item="itemName" wx:if="{{index == 1}}" wx:key='index'>
+                <view class='guigeming'>{{itemName.name}}</view>
+                <view class='spu' id='{{itemName.name}}' bindtap='selectSection'>
+                  <block wx:for="{{itemName.namelist}}" wx:key='index'>
+                    <view data-skuvalueones="{{item}}" class="{{item == skuvalues1? 'guigesku' :'guigedefault'}}  {{item  == contrast? 'noselect' : ' '}}" bindtap="selectskuone1" data-index="{{index}}">
+                      {{item}}
+                    </view>
+                  </block>
+                </view>
+                <view class='linesku'></view>
+              </block>
+              <block wx:for="{{item.styles}}" wx:for-item="itemName" wx:if="{{index == 2}}" wx:key='index'>
+                <view class='guigeming'>{{itemName.name}}</view>
+                <view class='spu' id='{{itemName.name}}' bindtap='selectSection'>
+                  <block wx:for="{{itemName.namelist}}">
+                    <view data-skuvaluetwo="{{item}}" class="{{item == skuvalues2 ? 'guigesku' :'guigedefault'}}" bindtap="selectskuone2" data-index="{{index}}">
+                      {{item}}
+                    </view>
+                  </block>
+                </view>
+                <view class='linesku'></view>
+              </block>
+              <block wx:for="{{item.styles}}" wx:for-item="itemName" wx:if="{{index == 3}}" wx:key='index'>
+                <view class='guigeming'>{{itemName.name}}</view>
+                <view class='spu' id='{{itemName.name}}' bindtap='selectSection'>
+                  <block wx:for="{{itemName.namelist}}">
+                    <view data-skuvaluethree="{{item}}" class="{{item == skuvalues3? 'guigesku' :'guigedefault'}}" bindtap="selectskuone3" data-index="{{index}}">
+                      {{item}}
+                    </view>
+                  </block>
+                </view>
+                <view class='linesku'></view>
+              </block>
+              <block wx:for="{{item.styles}}" wx:for-item="itemName" wx:if="{{index == 4}}" wx:key='index '>
+                <view class='guigeming '>{{itemName.name}}</view>
+                <view class='spu ' id='{{itemName.name}}' bindtap='selectSection'>
+                  <block wx:for="{{itemName.namelist}}">
+                    <view data-skuvaluefour="{{item}}" class="{{item == skuvalues4? 'guigesku' :'guigedefault'}}" bindtap="selectskuone4" data-index="{{index}}">
+                      {{item}}
+                    </view>
+                  </block>
+                </view>
+                <view class='linesku'></view>
+              </block>
+            </scroll-view>
+            <view class='shuliang'>
+              <view class='shuliangt'>数量</view>
+              <view class='shopkuang'>
+                <view class='xuanze'>
+                  <view class='jian' bindtap='numJianTap'>－</view>
+                  <view class="liang">
+                    <input type="number" value="{{buyNumber}}" disabled/>
+                  </view>
+                  <view class='jia' bindtap='numJiaTap'>＋</view>
+                </view>
+                <block wx:for="{{item.skus}}" wx:if="{{index == 0}}" wx:key='index'>
+                  <view class='lowshop' wx:if='{{skunames != "    "}}'>({{startnum}}件起购)</view>
+                </block>
+              </view>
+            </view>
+            <view class='linesku '></view>
+            <view class='{{iphonex? "footer-adcars-iphonex-box": "footer-adcars-box"}} ' wx:if="{{notice}}">
+              <view class='footer-adcars'>暂时无货</view>
+            </view>
+            <view wx:else catchtap='t'>
+
+              <form bindsubmit="formSubmit" report-submit='true ' bindreset="formReset">
+                <view class='{{iphonex? "footer-adcar-iphonex-box": "footer-adcar-box"}}'>
+                  <block wx:if="{{isDirect}}">
+                    <button class='footer-adcar' formType="submit">立即购买</button>
+                  </block>
+                  <block wx:else>
+                    <button class='footer-adcar' formType="submit">确认加入</button>
+                  </block>
+                </view>
+              </form>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>
+<view wx:if="{{shareShow}}">
+  <view class='share-contain' catchtap='hiddenShare'>
+    <canvas canvas-id='codeCanvas' style="height:{{caleh * 510}}px;background-color:white;"></canvas>
+  </view>
+  <view wx:if="{{iphonex}}">
+    <view class='share-button' catchtap='wxCreate' style='bottom:180rpx'>保存图片</view>
+  </view>
+  <view wx:else>
+    <view class='share-button' catchtap='wxCreate' style='bottom:{{caleh * 50}}rpx'>保存图片</view>
+  </view>
+</view>
+<view wx:if="{{selectShare}}">
+  <view class='selectShare' catchtap='selectC'>
+    <view class='{{iphonex? "selectShare-content-iphonex": "selectShare-content"}}'>
+      <button class='selectShare-one' open-type="share" catchtap='selectO'>分享给好友</button>
+      <view class='selectShare-two' catchtap='selectT'>分享到朋友圈</view>
+      <view class='selectShare-cancel' catchtap='cancelS'>取消</view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!newUser}}">
+  <template is="newUser" data='{{quan}}' />
+</view>

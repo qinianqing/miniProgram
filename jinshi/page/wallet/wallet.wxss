@@ -1,0 +1,252 @@
+/* page/wallet/wallet.wxss */
+
+page {
+  overflow: hidden;
+}
+
+/* 页顶导航 */
+
+.iphonex-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #ffe67a;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #ffe67a;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffe67a;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 20rpx;
+  height: 33rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.container-box {
+  margin-top: 128rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  min-height: 100%;
+}
+
+.container-box-iphonex {
+  margin-top: 178rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  min-height: 100%;
+}
+
+.header {
+  margin-top: 5rpx;
+  height: 260rpx;
+  width: 100%;
+  background-color: #ffe67a;
+  /*background-image: linear-gradient(-133deg, #FFB784 0%, #FF9595 100%);*/
+  position: relative;
+}
+
+.header-title {
+  position: absolute;
+  left: 35rpx;
+  top: 44rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #303030;
+  letter-spacing: 0;
+}
+
+.total {
+  position: absolute;
+  left: 35rpx;
+  top: 96rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 60rpx;
+  color: #303030;
+  letter-spacing: 0;
+}
+
+.notice {
+  position: absolute;
+  top: 200rpx;
+  left: 35rpx;
+  opacity: 0.7;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #303030;
+  letter-spacing: 0;
+}
+
+.mark {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 50rpx;
+  right: 35rpx;
+}
+
+.cashback {
+  position: absolute;
+  top: 175rpx;
+  right: 35rpx;
+  height: 50rpx;
+  width: 180rpx;
+  border: 2rpx solid #303030;
+  border-radius: 100rpx;
+  text-align: center;
+  color: #303030;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+
+.body {
+  margin-top: 10rpx;
+  background-color: #fff;
+  min-height: 1200rpx;
+}
+
+.list-title {
+  width: 715rpx;
+  height: 102rpx;
+  background: #fff;
+  position: relative;
+  padding-left: 35rpx;
+  font-family: PingFangSC-Medium;
+  line-height: 102rpx;
+  font-size: 30rpx;
+  color: #565656;
+  letter-spacing: 0;
+}
+
+.line {
+  height: 1rpx;
+  width: 750rpx;
+  background: #dadada;
+}
+
+.default-box {
+  margin-bottom: 200rpx;
+}
+
+.default-img {
+  margin-top: 100rpx;
+  width: 297.3rpx;
+  height: 283.9rpx;
+}
+
+.list {
+  padding-top: 27rpx;
+  width: 680rpx;
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  background: #fff;
+  padding-bottom: 100rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.bill-box {
+  height: 103rpx;
+  width: 680rpx;
+  position: relative;
+}
+
+.bill-title {
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  font-family: PingFangSR-Regular;
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #535353;
+  letter-spacing: 0;
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bill-time {
+  position: absolute;
+  top: 65rpx;
+  left: 0;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #aaa;
+  letter-spacing: 0;
+}
+
+.bill-detail {
+  position: absolute;
+  right: 0;
+  top: 38rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #ff7a7a;
+  letter-spacing: 0;
+}
+
+.bill-line {
+  position: absolute;
+  top: 102rpx;
+  left: 0;
+  width: 680rpx;
+  height: 1rpx;
+  background-color: #dadada;
+}

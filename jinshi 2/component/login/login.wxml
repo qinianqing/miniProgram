@@ -1,0 +1,11 @@
+<template name="loginModal">
+  <view class='loadingModalBG' catchtap=''>
+    <view class='loadingModalView'>
+      <view class='loadingModalHeader'></view>
+      <view class='loadingModalHeaderTitle'>提示</view>
+      <view class='loadingModalContent'>您还未登录</view>
+      <button class='loadingModalButton' open-type='getUserInfo' bindgetuserinfo='goReLogin'>立即登陆</button>
+      <!-- <view class='loadingModalButton' catchtap='goReLogin'>立即登录</view> -->
+    </view>
+  </view>
+</template>

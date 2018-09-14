@@ -1,0 +1,64 @@
+<!--page/index/rec.wxml-->
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <view class='page-title'>推荐</view>
+  <block wx:for='{{contents}}' wx:key='index'>
+    <view class='goods' data-id="{{item.id}}" data-t='{{item.t}}' catchtap='goContent'>
+      <view class='content-image'>
+        <image class='border-r' src='../../../image/tl.png' id='tl'></image>
+        <image class='border-r' src='../../../image/tr.png' id='tr'></image>
+        <image class='border-r' src='../../../image/bl.png' id='bl'></image>
+        <image class='border-r' src='../../../image/br.png' id='br'></image>
+        <!-- <image class='b-shadow' src='../../../image/shadow.png'></image> -->
+        <view class='ff'>
+          <image src="{{item.cover}}" mode='aspectFill'/>
+          <block wx:if='{{item.t === 2}}'>
+            <view class='ff-tag'>拍卖</view>
+          </block>
+          <block wx:if='{{item.t === 3}}'>
+            <view class='ff-tag'>抽奖</view>
+          </block>
+          <block wx:if='{{item.t === 4}}'>
+            <view class='ff-tag'>众筹</view>
+          </block>
+          <block wx:if='{{item.t === 5}}'>
+            <view class='ff-tag'>商品</view>
+          </block>
+          <block wx:if='{{item.t === 0}}'>
+            <view class='ff-tag'>图文</view>
+          </block>
+          <block wx:if='{{item.t === 1}}'>
+            <view class='ff-tag'>视频</view>
+          </block>
+        </view>
+      </view>
+      <view class='describe-shadow'>
+        <image src="https://cdn.jiyong365.com/fdfdfd.png"></image>
+      </view>
+      <view class='content-describe' bindtap='goContent' data-id="{{item.id}}" data-t='{{item.t}}'>
+        <view class='describe-contents'>
+          <view class='describe-goodsname'>{{item.name}}</view>
+          <!-- 加入购物车按钮，将来能适配多商品  -->
+          <!-- <view class='describe-goodsprice' data-spu="{{item.spu_id}}" data-sku="{{item.sku_id}}" wx:if='{{item.sku_id}}' data-price="{{item.goods_price}}" catchtap='addCart'>
+            <image src="https://cdn.jiyong365.com/%E5%8A%A0%E5%85%A5%E8%B4%AD%E7%89%A9%E8%BD%A6%20%281%29.png"></image>
+          </view> -->
+        </view>
+        <view class='describe-cashback'>
+          <view class='describe-tag'>{{item.describe}}</view>
+        </view>
+        <view class='describe-price-content'>
+          <view class='new-tag'>
+            <block wx:for="{{item.tag}}" wx:key='index'>
+              <view class='new-lisizes' data-tag='{{item}}' bindtap='tagTap'>#{{item}}</view>
+            </block>
+          </view>
+          <!-- <view class='describe-price-left'>￥
+            <text class='describe-price-left-tag'>{{item.goods_price}}</text>
+          </view> -->
+          <!-- <view class='describe-price-right'>会员补贴
+                <text class='describe-price-right-tag'>￥<text class='describe-price-right-tags'>{{item.cashback}}</text></text>
+              </view> -->
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

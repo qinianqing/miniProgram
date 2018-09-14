@@ -1,0 +1,5 @@
+<!--page/webview/webview.wxml-->
+<image class='{{iphonex?"back-to-pre-iphonex":"back-to-pre"}}' bindtap="back" src="{{navBack}}"></image>
+
+<view class='holder'>返回请右滑</view>
+<web-view src="{{url}}"></web-view>

@@ -1,0 +1,58 @@
+<view class='{{iphonex?"back-iphonex":"back"}}' bindtap='back'>
+  <image src="https://cdn.jiyong365.com/Group%20ss4.png"></image>
+</view>
+<view class='head'>
+  <image src="https://cdn.jiyong365.com/Bitssmap.png"></image>
+</view>
+<view class='middle'>
+  <view class='middle-head' bindtap='{{noAuth?"familyMessage":"familyMessage"}}'>
+    <view class='middle-title'>{{noAuth?"重新获取家庭地址":"创建家庭地址"}}</view>
+    <view class='middle-image'>
+      <image src="https://cdn.jiyong365.com/jinrssu.png"></image>
+    </view>
+  </view>
+  <view class='middle-line'></view>
+</view>
+<view class='middle-content' wx:if='{{userName}}'>
+  <view class='content-title'>
+    <view class='title-name'>{{userName}}</view>
+    <view class='title-tel'>{{telNumber}}</view>
+  </view>
+  <view class='middle-address'>{{provinceName}} {{cityName}} {{countyName}} {{detailInfo}}</view>
+</view>
+<view class='family-member'>
+  <view class='famliy-title'>家庭成员</view>
+  <view class='family-avatar'>
+    <view class='avatar-content'>
+      <view class='avatar-image' bindtap="father">
+        <image src="{{father? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E7%88%B8%E7%88%B82.png' :'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E7%88%B8%E7%88%B8.png'}}"></image>
+      </view>
+      <view class='avatar-title'>爸爸</view>
+    </view>
+    <view class='avatar-content'>
+      <view class='avatar-image' bindtap="mother">
+        <image src="{{mother? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E5%A6%88%E5%A6%882.png':'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E5%A6%88%E5%A6%88.png'}}"></image>
+      </view>
+      <view class='avatar-title'>妈妈</view>
+    </view>
+    <view class='avatar-content'>
+      <view class='avatar-image' bindtap="husband">
+        <image src="{{husband? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%85%AC2.png' :'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%85%AC.png'}}"></image>
+      </view>
+      <view class='avatar-title'>男主</view>
+    </view>
+    <view class='avatar-content'>
+      <view class='avatar-image' bindtap="wife">
+        <image src="{{wife? 'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%A9%862.png':'https://cdn.jiyong365.com/%E9%94%A6%E6%97%B6_%E8%80%81%E5%A9%86.png'}}"></image>
+      </view>
+      <view class='avatar-title'>女主</view>
+    </view>
+  </view>
+</view>
+<view class='footer' bindtap='goCreate'>
+  <image src="https://cdn.jiyong365.com/%E5%88%9B%E5%BB%BA.png"></image>
+</view>
+<view class='showTryModal' wx:if='{{showTryModal}}' catchtap='backTo'>
+  <image class='showTryModalImage' src='https://cdn.jiyong365.com/%E5%BC%B9%E7%AA%97.png'></image>
+  <view class='showTryModalTap' bindtap='navIndex'></view>
+</view>

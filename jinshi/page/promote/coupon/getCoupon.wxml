@@ -1,0 +1,41 @@
+<!--page/promote/coupon/getCoupon.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<view class='container-box' wx:if='{{!loading}}' style='background-image: url({{background}});background-size: 100% 100%;'>
+  <view class='share-box'>
+    <view class='share'>分享好友</view>
+    <button class='share-btn' open-type='share'></button>
+  </view>
+  <image class='{{iphonex?"nav-iphonex":"nav"}}' wx:if='{{navBack === "https://cdn.jiyong365.com/%E8%BF%94%E5%9B%9E%E6%8C%89%E9%92%AE@2x.png"}}' src='{{navBack}}' bindtap='back'></image>
+  <image class='{{iphonex?"nav-home-iphonex":"nav-home"}}' wx:if='{{navBack === "https://cdn.jiyong365.com/huidaoshouye.png"}}' src='{{navBack}}' bindtap='backHome'></image>
+  <view class='coupons'>
+    <!-- wx:if='{{list.length}}' -->
+    <block wx:for='{{list}}' wx:key='index'>
+      <view class='coupon' id='{{item.coupon_id}}' data-s='{{item.statusName}}' bindtap='couponTap' style='background-image: url({{item.background}});background-size: 100% 100%;'>
+        <view class='coupon-money'>{{item.price}}</view>
+        <view class='coupon-intro'>- {{item.fitInfo}}{{item.priceInfo}} -</view>
+        <view class='coupon-go'>{{item.statusName}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='info'>
+    <view class='info-title'>使用说明</view>
+    <view class='info-box'>
+      <view class='info-text-box'>
+        <text class='info-text'>
+          1、领取成功后可在个人中心-优惠券中查询
+          2、不同券使用规则不同，使用前请明确优惠券的使用说明
+          3、分享给好友后，好友也可以领取
+          4、优惠券仅限在线下单使用
+          5、未尽事宜，请至个人中心-客服中心中咨询客服
+      </text>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

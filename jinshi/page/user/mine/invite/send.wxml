@@ -1,0 +1,88 @@
+<!--page/user/mine/invite/send.wxml-->
+  <import src="../../../../component/loading/loading.wxml" />
+  <import src="../../../../component/login/login.wxml" />
+  <image class='{{iphonex?"nav-home-iphonex":"nav-home"}}' src='https://cdn.jiyong365.com/huidaoshouye.png' bindtap='backHome'></image>
+
+<view class="{{Status? 'contian-old' :'contian'}}">
+  <!--头部  -->
+  <view wx:if="{{!Status}}">
+    <view class='header'>
+    <view wx:if="{{Already}}">
+     <view class='header-money'>{{moneyGet}}</view>
+    </view>
+    <view wx:else>
+     <view class='header-money'>{{money.num}}</view>
+    </view>
+      <view class='header-yuan'>元</view>
+      <view class='header-discount'>{{money.discount}}</view>
+      <view class="header-time">{{money.time}}</view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='header-old'>
+      <view class='header-moneys'>{{newMoney.num}}</view>
+      <view class='header-yuans'>元</view>
+      <view class='header-discount'>{{newMoney.discount}}</view>
+      <view class="header-time">{{newMoney.time}}</view>
+    </view>
+    <view class='header-new'>
+      <view class='header-money'>{{money.num}}</view>
+      <view class='header-yuan'>元</view>
+      <view class='header-discount'>{{money.discount}}</view>
+      <view class="header-time">{{money.time}}</view>
+    </view>
+  </view>
+  <!-- 使用按钮-->
+  <view class='use-button' bindtap='goIndex'>
+    <image src="https://cdn.jiyong365.com/750%2A1334-04.png"></image>
+  </view>
+  <!--朋友手气  -->
+  <view class='friend'>
+    <view class='friend-left'></view>
+    <view class='friend-title'>朋友手气</view>
+    <view class='friend-right'></view>
+  </view>
+  <view class='friend-head'>
+    <image src="https://cdn.jiyong365.com/10%E4%BD%8D%E5%A5%BD%E5%8F%8B%E7%8E%B0%E9%87%91%E5%88%B8-14ggg.png"></image>
+  </view>
+  <view class='friend-content'>
+    <view class='content-header'>
+      <image src="https://cdn.jiyong365.com/22.png"></image>
+    </view>
+    <view class='friend-content-detail'>
+      <scroll-view style="height:412rpx;overflow:hidden;" scroll-y>
+        <block wx:for="{{list}}" wx:key='index'>
+          <view class='detail-list'>
+            <view class='detail-avatar'>
+              <image src="{{item.user_avatar}}"></image>
+            </view>
+            <view class='detail-name'>{{item.user_name}}</view>
+            <view class="detail-yuan">{{item.invite_money}}元</view>
+          </view>
+          <view class='line'></view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <!--活动规则  -->
+  <view class='rule'>
+    <view class='rule-left'></view>
+    <view class='rule-title'>活动规则</view>
+    <view class='rule-right'></view>
+  </view>
+  <view class='rule-bg'>
+    <view class='rule-font'>
+      <view wx:for="{{rule}}" wx:key='index'>
+        <view class='rule-detail'>
+          {{index + 1}}、{{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

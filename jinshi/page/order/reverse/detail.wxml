@@ -1,0 +1,186 @@
+<!--page/order/reverse/detail.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<!-- head  -->
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>售后进度</view>
+  </view>
+</view>
+<!--banner  -->
+<!--未发货直接退款  -->
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <view wx:if="{{apply == 'auto'}}">
+    <view class='banner'>
+      <view class='banner-image'>
+        <image src="https://cdn.jiyong365.com/Group%202hhh.png"></image>
+      </view>
+      <view class='banner-describe'>
+        <view class='describe-titles'>退款成功</view>
+        <view class='describe-goods'>交易已关闭</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{apply == 'success'}}">
+    <view class='banner'>
+      <view class='banner-image'>
+        <image src="https://cdn.jiyong365.com/Group%202hhh.png"></image>
+      </view>
+      <view class='banner-describe'>
+        <view class='describe-titles'>退款成功</view>
+        <view class='describe-goods'>订单已关闭</view>
+      </view>
+    </view>
+    <!--apply-head -->
+  </view>
+  <!--退款受理  -->
+  <view wx:if="{{apply == 'apply'}}">
+    <view class='banner'>
+      <view class='banner-image'>
+        <image src="https://cdn.jiyong365.com/Group%202hhh.png"></image>
+      </view>
+      <view class='banner-describe'>
+        <view class='describe-titles'>{{reserverMessage.typeName}}正在受理</view>
+        <view class='describe-goods'>请等待处理</view>
+      </view>
+    </view>
+    <!--apply-head -->
+  </view>
+  <!--物流发货  -->
+  <view wx:if="{{apply == 'logistics'}}">
+    <view class='banner'>
+      <view class='banner-image'>
+        <image src="https://cdn.jiyong365.com/Group%202hhh.png"></image>
+      </view>
+      <view class='banner-describe'>
+        <view class='describe-titles'>退款正在受理</view>
+        <view class='describe-goods'>正等待退货</view>
+      </view>
+    </view>
+    <view class='apply'>
+      <view class='apply-title'>客服已同意退款，请您尽快按退货地址退货~</view>
+      <view class='apply-image'>
+        <image src="https://img0.jiyong365.com/%E9%AA%8C%E8%AF%81%E6%88%90%E5%8A%9F2app.png"></image>
+      </view>
+    </view>
+    <!--apply   -->
+    <view wx:if="{{apply == 'apply'}}">
+      <view class='apply'>
+        <view class='apply-title'>你已成功提交退款申请，请耐心等待客服处理~</view>
+        <view class='apply-image'>
+          <image src="https://cdn.jiyong365.com/%E9%AA%8C%E8%AF%81%E6%88%90%E5%8A%9Fapp.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--撤销退款  -->
+  <view wx:if="{{apply == 'cancel'}}">
+    <view class='banner'>
+      <view class='banner-image'>
+        <image src="https://cdn.jiyong365.com/Group%202hhh.png"></image>
+      </view>
+      <view class='banner-describe'>
+        <view class='describe-titles'>已撤销申请</view>
+        <view class='describe-goods'>退款服务关闭</view>
+      </view>
+    </view>
+  </view>
+  <!--apply-describe -->
+  <!--申请物流  -->
+  <view wx:if="{{apply == 'logistics'}}">
+    <view class='logistics'>
+      <view class='logistics-title'>退货地址:</view>
+      <view class='logistics-address'>{{address}}</view>
+      <view class='logistics-title'>联系方式:</view>
+      <view class='logistics-maddress'>{{contact}} {{phone}}</view>
+      <view class='button-repeals' catchtap='cancelApply'>撤销申请</view>
+      <view class='logistics-button' bindtap='mail'>我已寄出</view>
+    </view>
+  </view>
+  <!--退款受理  -->
+  <view wx:if="{{apply == 'apply'}}">
+    <view class='apply-describe'>
+      <block wx:for="{{applyDescribe}}">
+        <view class='describe-title'>{{item}}</view>
+      </block>
+      <view class='describe-button'>
+        <button session-from='联系客服' class='button-kefu' send-message-title='{{goods.goods_name}}' send-message-path='/page/order/reverse/detail' send-message-img='{{goods.default_image}}' show-message-card open-type="contact">联系客服</button>
+        <button class='button-repeal' catchtap='cancelApply'>撤销申请</button>
+      </view>
+    </view>
+    <!--apply-goods  -->
+    <view class='goods-titles'>退款商品信息</view>
+    <view class='goods'>
+      <view class='goods-image'>
+        <image src="{{goods.default_image}}"></image>
+      </view>
+      <view class='goods-describe'>
+        <view class='goods-title'>
+          <view class='title-left'>{{goods.goods_name}}</view>
+          <view class='title-right'>x{{goods.num}}</view>
+        </view>
+        <view class='goods-sku'>{{goods.type_id}}</view>
+        <view class='goods-price'>￥{{goods.goods_price}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <!--未发货退款  -->
+  <view wx:if="{{apply == 'auto'}}">
+    <view wx:if='{{auto.length}}' class='items'>
+      <block wx:for='{{auto}}'>
+        <!-- 多条目 -->
+        <view class='item'>
+          <view class="item-icon {{item.status? 'red' :'black'}}"></view>
+          <view wx:if="{{index < auto.length -1}}" class='item-line'></view>
+
+          <view class='item-time'>{{item.day}}</view>
+          <view class='item-detail'>【订单】{{item.details}}</view>
+
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      <!-- 物流信息未更新 -->
+      <view class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E9%82%AE%E5%8C%85zhanwei.png'></image>
+        <view class='default-txt'>还没有售后信息~</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <!--申请流程信息  -->
+    <view wx:if='{{reserverMessage.messages.length}}' class='items'>
+      <block wx:for='{{reserverMessage.messages}}'>
+        <!-- 多条目 -->
+        <view class='item'>
+          <view class="item-icon {{item.status? 'red' :'black'}}"></view>
+          <view wx:if="{{index < reserverMessage.messages.length -1 }}" class='item-line'></view>
+
+          <view class='item-time'>{{item.time}}</view>
+          <view class='item-detail'>【订单】{{item.msg}}</view>
+
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      <!-- 物流信息未更新 -->
+      <view class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E9%82%AE%E5%8C%85zhanwei.png'></image>
+        <view class='default-txt'>还没有售后信息~</view>
+      </view>
+    </view>
+
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

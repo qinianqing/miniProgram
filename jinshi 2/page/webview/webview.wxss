@@ -1,0 +1,33 @@
+/* page/webview/webview.wxss */
+.back-to-pre{
+  width: 75rpx;
+  height: 75rpx;
+  position:fixed;
+  top:59rpx;
+  left: 35rpx;
+  z-index: 999999;
+}
+
+.back-to-pre-iphonex{
+  width: 75rpx;
+  height: 75rpx;
+  position:fixed;
+  top:99rpx;
+  left: 35rpx;
+  z-index: 999999;
+}
+
+.holder{
+  width: 100%;
+  margin-top: 400rpx;
+  font-size: 45rpx;
+  color: gray;
+  text-align: center;
+  letter-spacing: 2rpx;
+}
+
+web-view{
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+}

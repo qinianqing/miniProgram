@@ -1,0 +1,54 @@
+<!--page/user/evaluate/evaluate.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonex-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>我的评价</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"nav-header-iphonex":"nav-header"}}'>
+  <view class='{{status == 1?"nav":"nav_"}}' id='eva1' bindtap='selectGo'>待评价</view>
+  <view class='{{status == 1?"nav_":"nav"}}' id='eva2' bindtap='selectEd'>已评价</view>
+</view>
+
+<view class='container-box' wx:if='{{!loading}}'>
+  <view class='{{iphonex?"evaluates-iphonex":"evaluates"}}'>
+    <view wx:if='{{list.length}}'>
+      <block wx:for='{{list}}' wx:key='id'>
+        <view class='eva-box'>
+          <view class='eva-title'>
+            <view class='eva-order-id'>订单：{{item.order_id}}</view>
+            <!--<image class='delete-eva' id='{{item.sku_id}}' src='https://cdn.jiyong365.com/%E5%88%A0%E9%99%A4%20%285%29.png' catchtap='deleteEva'></image>-->
+          </view>
+          <view class='eva-line'></view>
+          <view class='eva-detail' id='{{item.sku_id}}' data-spu='{{item.spu}}' catchtap='goDetail'>
+            <image class='cover' src='{{item.cover}}' mode='aspectFill'></image>
+            <view class='eva-product-detail'>
+              <view class='spu'>{{item.spu_name}}</view>
+              <view class='sku'>{{item.sku}}</view>
+            </view>
+          </view>
+          <view class='eva-line'></view>
+          <view class='eva-go'>
+            <view class='eva-btn' id='{{item.sku_id}}' data-spu='{{item.spu}}' data-oid='{{item.object_id}}' catchtap='{{status==1?"goEva":"readEva"}}'>{{status==1?'去评价':'查看评价'}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      <view class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E8%AF%84%E8%AE%BAzhanwei.png'></image>
+        <view class='default-txt'>快来评价吧，等你好久啦~~</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

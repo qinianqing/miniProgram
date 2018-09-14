@@ -1,0 +1,117 @@
+<!--page/user/vip/vip.wxml-->
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>会员中心</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"vip-iphonex":"vip"}}'>
+  <view class='vip-bg' catchtap='goVip'>
+
+  </view>
+
+  <picker class='vip-family' bindchange='fSelect' value="{{fIndex}}" range="{{fNames}}">
+    <view class='vip-family-box'>
+      <view class='family-select'>选择绑定的会员家庭</view>
+      <view class='vip-family-info'>
+        <view class='family-num'>{{fNames[fIndex]}}</view>
+        <view class='family-image'>
+          <image src="https://cdn.jiyong365.com/fanhuijs.png"></image>
+        </view>
+      </view>
+    </view>
+  </picker>
+  <view wx:if="{{Status}}">
+    <!--免费试用  -->
+    <view class='vip-free'>
+      <view class='free-title'>
+        <view class='title-out'>免费试用15天</view>
+        <view class='title-outnum'>(2张邮券)</view>
+      </view>
+      <view class='free-click'>
+        已试用
+      </view>
+    </view>
+    <!-- 开通会员等级 -->
+    <view class='vip-content-new'>
+      <view class='vip-level' wx:for="{{vipLevel}}" wx:key='index' id='{{item.id}}' bindtap='payMember'>
+        <view class='level-bg'>
+          <image src="{{item.bg}}"></image>
+        </view>
+        <view class='level-title'>{{item.title}}</view>
+        <view class='level-lose'>{{item.lose}}个月实效 {{item.num}}张邮券</view>
+        <view class='level-send'>送价值 ￥{{item.send}}礼包</view>
+        <view class='level-image' data-index='{{index}}' catchtap='checkGift'>
+          <image src="{{item.image}}"></image>
+        </view>
+        <view class='level-price'>
+          <text class='price-payment'>￥{{item.payment}}</text>
+          <text class='price-discount'>￥{{item.discount}}</text>
+        </view>
+        <view class='level-tag'>送</view>
+      </view>
+      <view class='level-line'></view>
+      <view class='level-code-title'>我有兑换码</view>
+      <view class='level-code-bg'>
+        <input placeholder="输入兑换码" placeholder-class="level-input" bindconfirm='codeRequest'></input>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='vip-free'>
+      <view class='free-title'>
+        <view class='title-out'>免费试用一个月</view>
+        <view class='title-outnum'>(4张邮券)</view>
+      </view>
+      <view class='free-click'>
+        已试用
+      </view>
+    </view>
+    <view class='vip-vone'>
+      <view class='vone-left' id='q' bindtap='payMember'>
+        <view class='vone-title'>季度会员</view>
+        <view class='vone-out'>3个月 (15张邮券)</view>
+        <view class='vone-button'>￥81.00</view>
+      </view>
+      <view class='vone-right' id='h' bindtap='payMember'>
+        <view class='vone-title'>半年会员</view>
+        <view class='vone-out'>6个月 (30张邮券)</view>
+        <view class='vone-button'>￥144.00</view>
+      </view>
+    </view>
+
+    <view class='vip-vtwo'>
+      <view class='vtwo-left' id='y' bindtap='payMember'>
+        <view class='vone-title'>年度会员</view>
+        <view class='vone-out'>12个月 (60张邮券)</view>
+        <view class='vone-button'>￥252.00</view>
+      </view>
+      <view class='vtwo-right' id='y2' bindtap='payMember'>
+        <view class='vone-title'>双年会员</view>
+        <view class='vone-out'>24个月 (130张邮券)</view>
+        <view class='vone-button'>￥432.00</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='gift-box' wx:if='{{showGift}}' catchtap='closeGiftTap'>
+  <view class='gift-con'>
+    <view class='gift-head'>价值￥{{worth}}组合礼品包含</view>
+    <scroll-view class='gift-body'>
+      <block wx:for='{{gifts}}' wx:key='index'>
+        <view class='gift-item' id='{{item.sku_id}}' catchtap='skuTap'>
+          <image class='gift-cover' src='{{item.cover}}'></image>
+          <view class='gift-name'>{{item.name}}</view>
+          <view class='gift-describe'>{{item.describe}}</view>
+          <view class='gift-price'>￥{{item.price}}×{{item.num}}件</view>
+        </view>
+      </block>
+    </scroll-view>
+    <image class='gift-close' src='https://cdn.jiyong365.com/xxxxxxxxxxxx.png' catchtap='closeGiftTap'></image>
+  </view>
+</view>

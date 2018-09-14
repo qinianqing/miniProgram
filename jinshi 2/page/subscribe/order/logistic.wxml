@@ -1,0 +1,49 @@
+<!--page/subscribe/order/logistic.wxml-->
+<import src="../../../component/loading/loading.wxml"/>
+<import src="../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>物流信息</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <view class='header'>
+    <image class='pic' src='https://cdn.jiyong365.com/%E7%AE%B1%E5%AD%90%20%281%29.png'></image>
+    <view class='name'>{{name}}</view>
+    <view class='express-id'>快递单号：{{express_id}}</view>
+    <view class='express-brand'>快递公司：{{express_brand}}</view>
+  </view>
+  <view class='msg-box'>
+    <view class='msg-title'>物流信息</view>
+    <view wx:if='{{items.length}}' class='items'>
+      <block wx:for='{{items}}'>
+        <!-- 多条目 -->
+        <view class='item'>
+          <image class='item-icon' src='https://cdn.jiyong365.com/%E5%AE%9A%E4%BD%8D.png'></image>
+          <view class='item-line' wx:if='{{index < items.length-1}}'></view>
+          <view class='item-time'>{{item.Date}}</view>
+          <view class='item-detail'>{{item.StatusDescription}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      <!-- 物流信息未更新 -->
+      <view class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E9%82%AE%E5%8C%85zhanwei.png'></image>
+        <view class='default-txt'>还没有物流信息~</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>
+

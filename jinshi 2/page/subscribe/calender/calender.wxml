@@ -1,0 +1,51 @@
+<!--page/subscribe/calender/calender.wxml-->
+<view class='container-box' wx:if='{{!loading}}'>
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>选择配送周（{{year}}年）</view>
+    </view>
+  </view>
+  <view class='{{iphonex?"content-iphonex":"content"}}'>
+    <scroll-view scroll-y class='index' style='height:{{categoryBoxHeight}}rpx' scroll-into-view="{{toIndex}}" scroll-top="{{scrollY}}">
+      <view class='index-box'>
+        <block wx:for="{{months}}" wx:key="index">
+          <view class='one_level_box' id="i{{index}}" data-title="{{item.title}}" bindtap='indexTap'>
+            <view class='{{item.style}}'>{{item.title}}</view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-y class='detail' style='height:{{categoryBoxHeight}}rpx' scroll-into-view="{{toView}}" scroll-with-animation='true' scroll-top="{{scrollY}}" bindscroll="scroll">
+      <view class='detail_box'>
+        <block wx:for="{{weeks}}" wx:key="index">
+          <view class='week-box' id='d{{index}}'>
+            <view class='week-content'>
+              <view class='week-content-box' wx:for='{{item}}' wx:for-item='content' data-index='{{content.sequence}}' data-i='{{index}}' id='{{content.weekSign}}' wx:key='index' bindtap='weekTap'>
+                <view class='{{content.select?"week-c":"week-c-ns"}}'>
+                  <view class='week-c-m'>{{content.monday}}</view>
+                  <view class='week-c-'></view>
+                  <view class='week-c-s'>{{content.sunday}}</view>
+                </view>
+                <view class='{{content.select?"week-s-box":"week-ns-box"}}'>
+                  <view class='{{content.select?"week-s":"week-ns"}}'>第{{content.weekIndex}}周</view>
+                  <view class='week-select-sign' wx:if='{{content.select}}'>已选</view>
+                </view>
+              </view>
+            </view>
+            <view class='line'></view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='week-title-bar'>
+  <view class='week-title' id='title1'>星期一</view>
+  <view class='week-title' id='title2'>星期日</view>
+  <view class='week-title' id='title3'>配送</view>
+</view>
+<view class='{{iphonex?"footer-iphonex":"footer"}}' bindtap='commit'>完成</view>

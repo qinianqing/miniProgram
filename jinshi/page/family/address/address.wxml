@@ -1,0 +1,44 @@
+<!--page/family/address/address.wxml-->
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <!-- <view class='head-title'>{{create?"创建地址":"修改地址"}}</view> -->
+  </view>
+</view>
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}'>
+  <view class='head-title-new'>{{create?"创建地址":"修改地址"}}</view>
+  <view class='head-title-line'></view>
+  <view class='info-box'>
+    <view class='info-title'>联系人</view>
+    <input class='info-input' placeholder='名字' value='{{address.contact}}' maxlength='10' bindinput='inputName'></input>
+  </view>
+  <view class='info-box'>
+    <view class='info-title'>手机号码</view>
+    <input class='info-input' placeholder='11位手机号' value='{{address.phone}}' maxlength='11' bindinput='inputTel'></input>
+  </view>
+  <view class='info-box'>
+    <view class='info-title'>选择地区</view>
+    <picker mode='multiSelector' bindcolumnchange="bindRegionChange" value='{{index}}' range="{{region}}">
+      <block wx:if='{{!init}}'>
+        <view class="picker">{{address.province}} {{address.city}} {{address.county}}</view>
+      </block>
+      <block wx:else>
+        <view class="picker" id="text" bindtap='tapPick'>省份 城市 地区</view>
+      </block>
+    </picker>
+  </view>
+  <view class='info-box'>
+    <view class='info-title'>详细地址</view>
+     <input class='info-input' placeholder='街道门牌信息'  value='{{address.address}}' bindinput='inputDetail'></input>
+    <!-- <block wx:if='{{address.address}}'>
+      <textarea class='info-input-a' placeholder='街道门牌信息' value='{{address.address}}' bindinput='inputDetail' placeholder-style='position:relative;top:-90rpx'></textarea>
+    </block>
+    <block wx:else>
+      <textarea class='info-input-b' placeholder='街道门牌信息' value='{{address.address}}' bindinput='inputDetail' placeholder-style='position:relative;top:-90rpx'></textarea>
+    </block> -->
+  </view>
+  <view class='{{iphonex?"c-confirm-iphonex":"confirm"}}' catchtap='confirm'>完成</view>
+</view>

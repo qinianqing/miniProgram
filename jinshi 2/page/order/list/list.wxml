@@ -1,0 +1,77 @@
+<!--page/order/list/list.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>我的订单</view>
+  </view>
+</view>
+
+<view class='container-box'>
+
+  <view class='{{iphonex?"top-tab-iphonex":"top-tab"}}'>
+    <view class='tab' id='a' bindtap='tabTap'>
+      <view class='tab-title{{tab.select[0]}}'>待付款</view>
+      <!--<view class='tab-icon' hidden='{{tab.hidden[0]}}'></view>-->
+    </view>
+    <view class='tab' id='b' bindtap='tabTap'>
+      <view class='tab-title{{tab.select[1]}}'>待收货</view>
+      <!--<view class='tab-icon' hidden='{{tab.hidden[1]}}'></view>-->
+    </view>
+    <view class='tab' id='c' bindtap='tabTap'>
+      <view class='tab-title{{tab.select[2]}}'>全部</view>
+      <!--<view class='tab-icon' hidden='{{tab.hidden[2]}}'></view>-->
+    </view>
+  </view>
+
+  <view class='{{iphonex?"list-iphonex":"list"}}' wx:if='{{!loading}}'>
+    <view wx:if='{{list.length}}'>
+      <block wx:for='{{list}}' wx:key="id">
+        <view class='order-card' id='{{item.id}}' bindtap='goDetail'>
+          <view class='order-id'>订单编号：{{item.id}}</view>
+          <view class='order-del' id='{{item.id}}' wx:if='{{item.deleteShow}}' catchtap='goDelete'>删除</view>
+          <view class='order-line'></view>
+          <view class='order-main'>
+            <scroll-view scroll-x class='order-pics'>
+              <block wx:for="{{item.pics}}" wx:key="pic" wx:for-item="pic">
+                <image class='order-pic' src='{{pic}}' mode='aspectFill'></image>
+              </block>
+            </scroll-view>
+            <view class='order-msg'>
+              <view class='order-num'>{{item.num}}</view>
+              <view class='order-status'>{{item.status}}</view>
+            </view>
+          </view>
+          <view class='order-line'></view>
+          <view class='order-foot'>
+            <view class='order-price'>￥{{item.price}}</view>
+            <view class='order-entrance'>
+              <view wx:if="{{item.status == '待发货'}}" class='order-entrance-left' catchtap='goApply' id='{{item.id}}' data-pics="{{item.pics}}" data-num="{{item.num}}" data-price="{{item.price}}">发起退款</view>
+              <view class='order-entrance-left' wx:if='{{item.leftEntrance}}' data-id='{{item.id}}' data-go='{{item.leftEntrance}}' catchtap='itemLeftGo'>{{item.leftEntrance}}</view>
+            
+              <view class='order-entrance-right' id='{{item.id}}' data-go='{{item.mainEntrance}}' catchtap='itemGo'>{{item.mainEntrance}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else>
+      <view class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E5%B0%BD%E6%83%85%E6%9C%9F%E5%BE%85zhanwei.png'></image>
+        <view class='default-txt'>快去添加订单吧</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+
+  <template is="loginModal" />
+
+</view>

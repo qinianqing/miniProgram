@@ -1,0 +1,280 @@
+/* page/subscribe/calender/check.wxss */
+
+.container-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 132rpx;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.content-iphonex {
+  position: fixed;
+  top: 185rpx;
+  left: 0;
+  height: 100%;
+  background-color: #f9f9f9;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  position: fixed;
+  top: 247rpx;
+  left: 0;
+  height: 100%;
+  background-color: #f9f9f9;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/* 头部  */
+
+.brand-tab {
+  position: fixed;
+  top: 132rpx;
+  left: 10rpx;
+  padding-left: 35rpx;
+  height: 101rpx;
+  width: 715rpx;
+  background-color: #fff;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.brand-tab-iphonex {
+  position: fixed;
+  top: 182rpx;
+  left: 0;
+  padding-left: 35rpx;
+  height: 101rpx;
+  width: 715rpx;
+  background-color: #fff;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.brand-type-outer-box {
+  display: inline-block;
+  margin-left: 40rpx;
+}
+
+.brand-type-box {
+  width: 160rpx;
+  height: 101rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.brand-type-title1 {
+  width: 100%;
+  height: 97rpx;
+  line-height: 97rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #ff9080;
+}
+
+.brand-type-title0 {
+  width: 100%;
+  height: 97rpx;
+  line-height: 97rpx;
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #676767;
+}
+
+.brand-type-indictor {
+  height: 8rpx;
+  background-color: #f86d66;
+  width: 60rpx;
+}
+
+/* 第二层tab  */
+
+.week-tab-iphonex {
+  position: fixed;
+  top: 288rpx;
+  left: 0;
+  height: 167rpx;
+  width: 750rpx;
+  background-color: #fff;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.week-tab {
+  position: fixed;
+  top: 238rpx;
+  left: 0;
+  height: 167rpx;
+  width: 750rpx;
+  background-color: #fff;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.a {
+  display: inline-block;
+  margin-top: 45rpx;
+  margin-left: 65rpx;
+  margin-right: 65rpx;
+  padding-left: 45rpx;
+  padding-right: 45rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #303030;
+  letter-spacing: 0;
+  text-align: center;
+  background: #ffe67a;
+  border-radius: 100rpx;
+  width: 160rpx;
+}
+
+.na {
+  display: inline-block;
+  margin-top: 45rpx;
+  padding-left: 45rpx;
+  padding-right: 45rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #787878;
+  letter-spacing: 0;
+  width: 160rpx;
+}
+
+/* 列表  */
+
+.body-iphonex {
+  margin-top: 270rpx;
+  width: 100%;
+}
+
+.body {
+  margin-top: 160rpx;
+  width: 100%;
+}
+
+.order-item {
+  width: 100%;
+  height: 254rpx;
+  background-color: white;
+  margin-top: 10rpx;
+}
+
+.order-head {
+  padding-top: 30rpx;
+  margin-left: 35rpx;
+  margin-right: 40rpx;
+  width: 675rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-title {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #565656;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+.order-seq {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #666;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.order-skus {
+  margin-top: 24rpx;
+  height: 130rpx;
+  margin-left: 35rpx;
+  width: 715rpx;
+}
+
+.order-item image {
+  width: 130rpx;
+  height: 130rpx;
+  background: #F9F9F9;
+  border-radius: 2rpx;
+  margin-right: 10rpx;
+}
+
+.default-img{
+  margin-top: 150rpx;
+}

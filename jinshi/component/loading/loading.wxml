@@ -1,0 +1,8 @@
+<template name="loading">
+  <view class='loadingBG' catchtap=''>
+    <view class='loadingView'>
+      <image class='loadingGif' src='{{gif}}'></image>
+      <view class='loadingTxt'>拼命加载中...</view>
+    </view>
+  </view>
+</template>

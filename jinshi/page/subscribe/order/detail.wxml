@@ -1,0 +1,120 @@
+<!--page/subscribe/order/detail.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+<import src="../../../component/login/login.wxml" />
+<view wx:if='{{!loading}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='holder' wx:if="{{iphonex}}"></view>
+  <view class='package'>
+    <view class='{{iphonex?"back-iphonex":"back"}}' bindtap='back'>
+      <image src="https://cdn.jiyong365.com/fanhui8888888.png"></image>
+    </view>
+    <view class='{{iphonex?"head-title-iphonex":"head-title"}}'>
+      <view class='title-left'>{{order.status}}</view>
+      <view class='title-right'>{{order.family.name}}</view>
+    </view>
+    <view class='head-user'>
+      <view class='user-name'>收货人: {{order.family.contact}}</view>
+      <view class='user-tel'>{{order.family.phone}}</view>
+    </view>
+    <view class='head-address'>
+      <image src="https://cdn.jiyong365.com/%E5%9C%B0%E5%9D%8000000000.png"></image>{{order.family.province+order.family.city+order.family.county+order.family.address}}</view>
+  </view>
+  <!-- <view class='weeks'>
+    <view class='week-title'>配送中</view>
+    <view class='week-box'>
+      <block wx:for='{{iList}}' wx:key='index'>
+        <view class='week-ing'>{{item}}</view>
+      </block>
+    </view>
+  </view> -->
+  <view class='weeks' wx:if='{{nList.length}}'>
+    <view class='week-title'>待发货</view>
+    <view class='week-box'>
+      <block wx:for='{{nList}}' wx:key='index'>
+        <view class='week-ing' id='a{{item.week}}' catchtap='packTap'>{{item.sign}}</view>
+      </block>
+    </view>
+  </view>
+  <view class='weeks' wx:if='{{aList.length}}'>
+    <view class='week-title'>已执行</view>
+    <view class='week-box'>
+      <block wx:for='{{aList}}' wx:key='index'>
+        <view class='week-already' id='a{{item.week}}' catchtap='packTap'>{{item.sign}}</view>
+      </block>
+    </view>
+  </view>
+  <view class='ordersline'></view>
+  <view class='arrive-time'>
+    <view class='time-title'>订阅期数</view>
+    <view class='time-details'>共{{order.stages}}期/每期{{order.num}}件</view>
+  </view>
+  <view class='content' wx:for="{{order.sku_detail}}" wx:key='index'>
+    <view class='contentimage'>
+      <image src="{{item.cover}}"></image>
+    </view>
+    <view class='miaoshu'>
+      <view class='contenttop'>{{item.goods_name}}</view>
+      <view class='contentmi'>{{item.type_id}}</view>
+      <view class='contentbo'>
+        <view class='newprice'>原价：￥{{item.price}}</view>
+      </view>
+    </view>
+    <view class='shopcar'>
+      <view class='number'> 每期：×{{item.num}}</view>
+      <view class='rebuy-button' bindtap='addCart' data-sku="{{item.sku_id}}" data-spu="{{item.spu_id}}" data-price="{{item.price}}">购买</view>
+    </view>
+  </view>
+
+  <view class='zhifu'>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>订单编号:</view>
+      <view class='orderC'>{{order.subs_order_id}}</view>
+    </view>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>下单时间:</view>
+      <view class='orderC'>{{order.createdAt}}</view>
+    </view>
+  </view>
+  <view class='ordersline'></view>
+  <view class='zhifustyle'>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>支付方式：</view>
+      <view class='orderC'>微信支付</view>
+    </view>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>商品合计：</view>
+      <view class='orderC'>￥{{order.price}}</view>
+    </view>
+    <view class='orderItem'>
+      <view class='ordernumtitles'>运费：</view>
+      <view class='orderC'>￥{{order.freight}}</view>
+    </view>
+  </view>
+  <view class='ordersline'></view>
+  <view class='shifu'>
+    <view class='shifutitle'>实付：</view>
+    <view class='shifunumber'>￥{{order.actual_payment || '未支付'}}</view>
+  </view>
+  <view class='cancel-btn' wx:if='{{!loading && order.status === "进行中"}}' bindtap='cancel'>取消订阅</view>
+  <view class='like'>
+    <view class='liket'>猜你喜欢</view>
+  </view>
+  <view class='caiimageall'>
+    <block wx:for="{{guess}}" wx:key="id">
+      <view class='product' bindtap='guessTap' id="{{item.goods_id}}">
+        <image class='spu-cover' src='{{item.default_image}}'></image>
+        <view class='spu-cb'>会员返{{item.goods_cashback}}元</view>
+        <view class='spu-highlight'>{{item.describe}}</view>
+        <view class='spu-non-key'>{{item.goods_name}}</view>
+        <view class='spu-price'>￥{{item.goods_price}}</view>
+      </view>
+
+    </block>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>
+<view hidden="{{!showLoginModal}}">
+  <template is="loginModal" />
+</view>

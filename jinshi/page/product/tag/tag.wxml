@@ -1,0 +1,38 @@
+<!--page/product/tag/tag.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<!--page/search/result.wxml-->
+<view class='container-box'>
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>{{tag}}</view>
+    </view>
+  </view>
+  <view class='{{iphonex?"result-iphonex":"result"}}'>
+
+    <view wx:if='{{list.length}}' class='product-list'>
+      <block wx:for="{{list}}" wx:key="index">
+        <view class='product' bindtap='goProductDetail' id="{{item.goods_id}}">
+          <image class='spu-cover' src='{{item.default_image}}'></image>
+          <view class='spu-cb'>会员返{{item.goods_cashback}}元</view>
+          <view class='spu-highlight'>{{item.describe}}</view>
+          <view class='spu-non-key'>{{item.goods_name}}</view>
+          <view class='spu-price'>￥{{item.goods_price}}</view>
+        </view>
+      </block>
+    </view>
+    <block wx:if='{{list.length === 0}}'>
+      <view class='default-box'>
+        <image class='default-img' src='https://cdn.jiyong365.com/%E6%96%AD%E7%BD%91zhanwei.png'></image>
+        <view class='default-txt'>该标签下没有商品~</view>
+      </view>
+    </block>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

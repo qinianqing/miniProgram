@@ -1,0 +1,173 @@
+<!--page/subscribe/order/confirm.wxml-->
+<view class='container-box'>
+  <view class='contain'>
+  </view>
+  <view class='{{iphonex?"back-iphonex":"back"}}' bindtap='back'>
+    <image src="https://cdn.jiyong365.com/fanhui8888888.png"></image>
+  </view>
+
+  <view class='{{iphonex?"content-iphonex":"content"}}'>
+    <view class='head'>
+      <view class='head-order'>
+        <view class='order-title'>订单配送至</view>
+        <picker bindchange='bindPickerChange' value="{{index}}" range="{{familylist}}">
+          <view class="group">
+            <block wx:if="{{status == 400}}">
+              <view class="family-vip" style='margin-right:60rpx'>
+                <image src=""></image>
+              </view>
+              <view class='family-unamess'>{{familylist[index]}}</view>
+              <view class='xiala'>
+                <image src="https://cdn.jiyong365.com/%E4%B8%8B%E6%8B%89%E9%80%89%E6%8B%A9-010101.png"></image>
+              </view>
+            </block>
+            <block wx:elif="{{status == 1}}">
+              <view class="family-vip">
+                <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A.png"></image>
+              </view>
+              <view class='family-namess'>{{familylist[index]}}</view>
+              <view class='xiala'>
+                <image src="https://cdn.jiyong365.com/%E4%B8%8B%E6%8B%89%E9%80%89%E6%8B%A9-010101.png"></image>
+              </view>
+            </block>
+            <block wx:elif="{{status == 2}}">
+              <view class="family-vip">
+                <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A%E7%BD%AE%E7%81%B0.png"></image>
+              </view>
+              <view class='family-namess'>{{familylist[index]}}</view>
+              <view class='xiala'>
+                <image src="https://cdn.jiyong365.com/%E4%B8%8B%E6%8B%89%E9%80%89%E6%8B%A9-010101.png"></image>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="family-vip">
+                <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A%E7%BD%AE%E7%81%B0.png"></image>
+              </view>
+              <view class='family-namess'>{{familylist[index]}}</view>
+              <view class='xiala'>
+                <image src="https://cdn.jiyong365.com/%E4%B8%8B%E6%8B%89%E9%80%89%E6%8B%A9-010101.png"></image>
+              </view>
+            </block>
+          </view>
+        </picker>
+      </view>
+      <block wx:if="{{status == 400}}">
+        <view class='head-name' bindtap='updateAddress'>
+          <view class='name-ming'>{{laddress.user_name}}</view>
+          <view class='name-phone'>{{laddress.tel}}</view>
+        </view>
+        <view class='address-update' bindtap='updateAddress'>
+          <view class='update-address'>{{laddress.province}} {{laddress.city}} {{laddress.county}} {{laddress.address}}</view>
+          <view class='update-image'>
+            <image src="https://cdn.jiyong365.com/%E8%AF%84%E8%AE%BA-2.png"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='head-name'>
+          <view class='name-ming'>{{address.user_name}}</view>
+          <view class='name-phone'>{{address.tel}}</view>
+        </view>
+        <view class='head-address'>{{address.province}} {{address.city}} {{address.county}} {{address.address}}</view>
+      </block>
+    </view>
+    <block wx:if='{{weeks.length}}'>
+      <!-- 发货周列表  -->
+      <view class='weeks-box'>
+        <view class='weeks-head'>
+          <view class='coupon' bindtap='selectWeeks'>
+            <view class='coupon-title'>配送周（每周六发货）</view>
+            <view class='coupon-content'>
+              <view class="coupon-image">
+                <image src="https://cdn.jiyong365.com/jsdddd.png"></image>
+              </view>
+            </view>
+          </view>
+          <view class='weeks-content-box'>
+            <block wx:for='{{weeks}}' wx:key='index'>
+              <view class='a-week'>{{item}}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='coupon' bindtap='selectWeeks'>
+        <view class='coupon-title'>配送周（每周六发货）</view>
+        <view class='coupon-content'>
+          <view class="coupon-image">
+            <image src="https://cdn.jiyong365.com/jsdddd.png"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='orderparcel'>
+      <view class='parcel-title'>订阅期数</view>
+      <view class='parcel-pay'>{{stages}}期</view>
+    </view>
+    <view class='orderparcel'>
+      <view class='parcel-title'>每期数量</view>
+      <view class='parcel-pay-'>
+        <!-- 数量选择框  -->
+        <view class='change-num'>
+          <view class='change-minus{{num > 1?"":"-off"}}' hover-class='{{num > 1?"change-btn-hover":"change-btn-hover-off"}}' catchtap='minus'>-</view>
+          <view class='change-v-line'></view>
+          <view class='change-num-detail'>{{num}}</view>
+          <view class='change-v-line'></view>
+          <view class='change-plus' hover-class='change-btn-hover' catchtap='plus'>+</view>
+        </view>
+      </view>
+    </view>
+    <view class='freight-box'>
+      <view class='freight-title-box'>
+        <view class='freight-title'>邮费</view>
+        <view class='freight-title-'>（会员订阅免邮费，不包括试用会员）</view>
+      </view>
+      <view class='freight-price-box'>
+        <view class='freight-price'>￥{{freight}}</view>
+        <view class='freight-price-'>会员可省运费￥{{freight}}</view>
+      </view>
+    </view>
+    <view class='product-list'>
+      <block wx:for='{{list}}' wx:key='id'>
+        <view class='sku-box'>
+          <image class='cover' src='{{item.cover}}' mode='aspectFill'></image>
+          <view class='spu'>{{item.goods_name}}</view>
+          <view class='sku'>{{item.type_id}}</view>
+          <view class='price'>原价:￥{{item.price}}</view>
+          <view class='num'>每期：×{{item.num}}</view>
+        </view>
+        <view class='sku-line'></view>
+      </block>
+    </view>
+    <view class='{{iphonex?"footer-iphonex":"footer"}}'>
+      <view class='footer-price'>应付￥{{total}}</view>
+      <view class='footer-title' bindtap='pay'>去支付</view>
+    </view>
+    <block wx:if="{{status == 400}}">
+      <view class='footer-cashbacks' bindtap='goVipCenter'>
+        <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A.png"></image>
+        成为会员家庭，本单可再省￥{{cashback}}</view>
+    </block>
+    <block wx:elif="{{status == 0}}">
+      <view class='footer-cashbacks' bindtap='goVipCenter'>
+        <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A.png"></image>
+        成为会员家庭，本单可省￥{{cashback}}</view>
+    </block>
+    <block wx:elif="{{status == 1}}">
+      <view class='footer-cashbacks' bindtap='goVipCenter'>
+        <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A.png"></image>
+        本单已省￥{{cashback}}</view>
+    </block>
+    <block wx:elif="{{status == 2}}">
+      <view class='footer-cashbacks' bindtap='goVipCenter'>
+        <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A.png"></image>
+        成为正式会员，本单可省￥{{cashback}}</view>
+    </block>
+    <!-- <block wx:else>
+      <view class='footer-cashback' bindtap='goVipCenter'>
+        <image src="https://cdn.jiyong365.com/%E4%BC%9A%E5%91%98%E6%9D%83%E7%9B%8A.png"></image>
+        成为会员家庭，本单可再省￥{{cashback}}</view>
+    </block> -->
+  </view>
+</view>

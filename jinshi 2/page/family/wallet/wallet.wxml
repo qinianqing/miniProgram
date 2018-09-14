@@ -1,0 +1,60 @@
+<!--page/family/wallet/wallet.wxml-->
+<import src="../../../component/loading/loading.wxml" />
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonex-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav-icon' src="https://cdn.jiyong365.com/fanhui8888888.png"></image>
+    </view>
+    <view class='head-title'>家庭钱包</view>
+  </view>
+</view>
+
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <view class='content'>
+    <view class='fund'>
+      <view class='fund-title'>家庭基金(元)</view>
+      <view class='fund-image' bindtap='whatiscb'>
+        <image src="https://cdn.jiyong365.com/%E9%97%AE%E9%A2%98%20%281%29fg.png"></image>
+      </view>
+    </view>
+    <view class='fund-money'>{{balance}}</view>
+    <view class='cashback'>
+      <view class='cashback-desrcibe'>余额可用于支付商品订单</view>
+      <view class='cashback-button' bindtap='gocblist'>补贴流水</view>
+    </view>
+  </view>
+  <!-- <view class='free' bindtap='gofreecoupon'>
+    <view class='free-title'>家庭邮券</view>
+    <view class='free-image'>
+      <image src="https://cdn.jiyong365.com/fanjihui.png"></image>
+    </view>
+  </view> -->
+  <view class='balance' wx:if='{{list.length}}'>
+    <view class='balance-title'>余额明细</view>
+    <view>
+      <block wx:for="{{list}}" wx:key='index'>
+        <view class='balance-list'>
+          <view class='list-item'>
+            <view class='list-title'>
+              <view class='title-name'>{{item.detail}}</view>
+              <view class='title-time'>{{item.createdAt}}</view>
+            </view>
+            <view class='list-price'>{{item.amount}}元</view>
+          </view>
+        </view>
+        <view class='line'></view>
+      </block>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='default-box'>
+      <image class='default-img' src='https://cdn.jiyong365.com/%E6%96%AD%E7%BD%91zhanwei.png'></image>
+      <view class='default-txt'>暂无交易记录哦~</view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

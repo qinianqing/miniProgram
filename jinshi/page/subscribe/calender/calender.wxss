@@ -1,0 +1,346 @@
+/* page/subscribe/calender/calender.wxss */
+
+.container-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 132rpx;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+/* 底部悬浮  */
+
+.footer-iphonex {
+  font-size: 36rpx;
+  background-color: #ffe67a;
+  width: 100%;
+  height: 100rpx;
+  padding-bottom: 30rpx;
+  color: #303030;
+  font-family: PingFangSC-Medium;
+  line-height: 100rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.footer {
+  font-size: 36rpx;
+  background-color: #ffe67a;
+  width: 100%;
+  height: 100rpx;
+  color: #303030;
+  font-family: PingFangSC-Medium;
+  line-height: 100rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+/* 星期导航  */
+
+.week-title-bar {
+  position: fixed;
+  top: 185rpx;
+  right: 0;
+  width: 570rpx;
+  height: 90rpx;
+  background-color: white;
+  z-index: 999;
+}
+
+.week-title {
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #cbcbcb;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+#title1 {
+  position: absolute;
+  top: 42rpx;
+  left: 100rpx;
+}
+
+#title2 {
+  position: absolute;
+  top: 42rpx;
+  left: 241rpx;
+}
+
+#title3 {
+  position: absolute;
+  top: 42rpx;
+  right: 98rpx;
+}
+
+/* category */
+
+.content-iphonex {
+  position: fixed;
+  top: 185rpx;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  position: fixed;
+  top: 247rpx;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.index {
+  margin-top: 10rpx;
+  width: 178rpx;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+.one_level_box {
+  height: 105rpx;
+  width: 173rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.index-box {
+  padding-bottom: 330rpx;
+}
+
+.lta {
+  width: 100%;
+  height: 100%;
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #303030;
+  background-color: #f5f5f5;
+  letter-spacing: 0;
+  line-height: 105rpx;
+  text-align: center;
+}
+
+.lt {
+  width: 100%;
+  height: 100%;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #888;
+  letter-spacing: 0;
+  line-height: 120rpx;
+  text-align: center;
+  background-color: #fff;
+}
+
+.one_level_select_indictor {
+  height: 60rpx;
+  width: 8rpx;
+  background-color: #f86d66;
+}
+
+.detail {
+  width: 550rpx;
+  margin-top: 115rpx;
+}
+
+.detail_box {
+  padding-bottom: 300rpx;
+  padding-left: 34rpx;
+  padding-right: 35rpx;
+  width: 481rpx;
+}
+
+.week-box {
+  position: relative;
+  width: 100%;
+}
+
+.week-content {
+  margin-top: 40rpx;
+}
+
+.line {
+  background-color: #e9e9e9;
+  margin-right: 110rpx;
+  margin-left: 98rpx;
+  width: 364rpx;
+  height: 1rpx;
+}
+
+.week-content-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.week-c {
+  height: 105rpx;
+  width: 322rpx;
+  background: rgba(255, 230, 122, 0.80);
+  border-radius: 4rpx;
+  position: relative;
+}
+
+.week-c-ns {
+  height: 105rpx;
+  width: 322rpx;
+  background: #f5f5f5;
+  border-radius: 4rpx;
+  position: relative;
+}
+
+.week-c-m {
+  position: absolute;
+  top: 28rpx;
+  right: 215rpx;
+  text-align: right;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #666;
+  letter-spacing: 0;
+}
+
+.week-c- {
+  position: absolute;
+  top: 51rpx;
+  right: 147rpx;
+  width: 20rpx;
+  height: 3rpx;
+  background-color: #999;
+}
+
+.week-c-s {
+  position: absolute;
+  top: 28rpx;
+  left: 207rpx;
+  text-align: left;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #666;
+  letter-spacing: 0;
+}
+
+.week-s-box {
+  width: 140rpx;
+  height: 105rpx;
+  background: #ffe67a;
+  border-radius: 4rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.week-ns-box {
+  width: 140rpx;
+  height: 105rpx;
+  background-color: #f5f5f5;
+  border-radius: 4rpx;
+}
+
+.week-s {
+  margin-top: 19rpx;
+  opacity: 0.6;
+  font-family: PingFangSC-Medium;
+  font-size: 20rpx;
+  width: 100%;
+  text-align: center;
+  color: #666;
+  letter-spacing: 0;
+}
+
+.week-ns {
+  width: 100%;
+  height: 100%;
+  line-height: 105rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #666;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.week-select-sign {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  width: 100%;
+  text-align: center;
+  color: #303030;
+  letter-spacing: 0;
+}

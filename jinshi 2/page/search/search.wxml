@@ -1,0 +1,47 @@
+<!--page/search/search.wxml-->
+<!-- @author by gaoxueyang -->
+<import src="../../component/loading/loading.wxml" />
+
+<view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+  <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+  <view class='head'>
+    <view class='back' bindtap='back'>
+      <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+    </view>
+    <view class='head-title'>搜索</view>
+  </view>
+</view>
+  <view class='{{iphonex?"search-bar-iphonex":"search-bar"}}"'>
+    <view class='search-box'>
+      <input bindconfirm='searchFromInput' value='{{value}}' cursor='80' placeholder-class='search-input-placeholder' class='search-input' focus='true' placeholder='搜索商品' type='text'></input>
+      <image class='search-icon' src='https://cdn.jiyong365.com/%E6%90%9C%E7%B4%A2-22222222.png'></image>
+      <image class="close" catchtap='las' src="https://cdn.jiyong365.com/%E5%85%B3%E9%97%AD.png"></image>
+    </view>
+    <view bindtap='fanhui' class="cancel">取消</view>
+  </view>
+<view class='{{iphonex?"container-box-iphonex":"container-box"}}' wx:if='{{!loading}}'>
+  <view class='titile-box'>
+    <view class='title-icon'></view>
+    <view class='title-name'>热门搜索</view>
+  </view>
+  <view class='hot-box'>
+    <view class="hot" id='{{item}}' bindtap='searchFromWord' wx:for="{{array}}" wx:key='index'>{{item}}</view>
+  </view>
+  <view class='titile-box' wx:if='{{history.length}}'>
+    <view class='title-icon'></view>
+    <view class='title-name'>历史搜索</view>
+  </view>
+  <view class='history-box'>
+    <view wx:for="{{history}}" wx:if='{{history.length}}' class="history" wx:key='index'>
+      <view class="xiangyan" id='{{item}}' bindtap='searchFromHistory'>
+        <image class="tory" src="https://cdn.jiyong365.com/%E5%8E%86%E5%8F%B2%20.png"></image>
+        <view class="font">{{item}}</view>
+        <image class="torys" id='{{item}}' src="https://cdn.jiyong365.com/%E5%8F%96%E6%B6%88.png" catchtap='deleteHistory'></image>
+      </view>
+      <view class="font2"></view>
+    </view>
+  </view>
+</view>
+<view hidden="{{!loading}}">
+  <template is="loading" data="{{gif}}" />
+</view>

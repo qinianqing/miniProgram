@@ -1,0 +1,222 @@
+/* page/subscribe/order/logistic.wxss */
+
+/* 页顶导航 */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.container-box {
+  margin-top: 132rpx;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+}
+
+.container-box-iphonex {
+  margin-top: 182rpx;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+}
+
+.default-img {
+  margin-top: 200rpx;
+  width: 297.3rpx;
+  height: 283.9rpx;
+}
+
+.default-txt {
+  margin-top: 65.5rpx;
+  margin-bottom: 200rpx;
+  width: 100%;
+  text-align: center;
+  font-family: PingFangSC-Light;
+  font-size: 28rpx;
+  color: #838383;
+  letter-spacing: 0;
+}
+
+.header {
+  height: 210rpx;
+  width: 100%;
+  background: #fff;
+  position: relative;
+}
+
+.pic {
+  width: 61rpx;
+  height: 64rpx;
+  position: absolute;
+  top: 68rpx;
+  left: 45rpx;
+}
+
+.name {
+  width: 600rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #575757;
+  letter-spacing: 0;
+  position: absolute;
+  top: 30rpx;
+  left: 141rpx;
+}
+
+.express-id {
+  width: 600rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #b0b0b0;
+  letter-spacing: 0;
+  position: absolute;
+  top: 85rpx;
+  left: 141rpx;
+}
+
+.express-brand {
+  width: 600rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #808080;
+  letter-spacing: 0;
+  position: absolute;
+  top: 130rpx;
+  left: 141rpx;
+}
+
+.msg-box {
+  margin-top: 20rpx;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  margin-bottom: 52rpx;
+  width: 680rpx;
+  background-color: #fff;
+  box-shadow: -1px 4px 7px 1px rgba(123, 123, 123, 0.04);
+}
+
+.msg-title {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #fd8075;
+  letter-spacing: 0;
+  margin-top: 35rpx;
+  margin-left: 35rpx;
+}
+
+.items {
+  margin-top: 35rpx;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  height: 158rpx;
+  width: 610rpx;
+  position: relative;
+}
+
+.item-icon {
+  width: 29rpx;
+  height: 36rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.item-line {
+  position: absolute;
+  top: 46rpx;
+  left: 14rpx;
+  height: 97rpx;
+  width: 2rpx;
+  border-left: 1px dotted #c0c0c0;
+}
+
+.item-time {
+  width: 576rpx;
+  position: absolute;
+  left: 69rpx;
+  top: 0;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #b0b0b0;
+  letter-spacing: 0;
+}
+
+.item-detail {
+  width: 560rpx;
+  position: absolute;
+  top: 43rpx;
+  left: 69rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #575757;
+  letter-spacing: 0;
+}

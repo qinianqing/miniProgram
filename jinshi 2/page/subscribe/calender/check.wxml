@@ -1,0 +1,76 @@
+<!--page/subscribe/calender/check.wxml-->
+<view class='container-box' wx:if='{{!loading}}'>
+  <view class='{{iphonex?"c-box-iphonex":"c-box"}}'>
+    <view class='iphonx-blank' wx:if='{{iphonex}}'></view>
+    <view class='head'>
+      <view class='back' bindtap='back'>
+        <image class='nav' src="https://cdn.jiyong365.com/%E8%B4%AD%E7%89%A9%E8%BD%A6%E8%BF%94%E5%9B%9E%20%282%29.png"></image>
+      </view>
+      <view class='head-title'>订阅日历</view>
+    </view>
+  </view>
+  <view class='{{iphonex?"content-iphonex":"content"}}'>
+    <scroll-view scroll-x class='{{iphonex?"brand-tab-iphonex":"brand-tab"}}'>
+      <view wx:for="{{familyList}}" data-index="{{index}}" data-id="{{item.family_id}}" wx:key="index" class='brand-type-outer-box' bindtap="familyClick">
+        <view class='brand-type-box'>
+          <view class='brand-type-title{{item.select}}'>{{item.name}}</view>
+          <view class='brand-type-indictor' hidden='{{!item.show}}'></view>
+        </view>
+      </view>
+    </scroll-view>
+    <scroll-view scroll-x class='{{iphonex?"week-tab-iphonex":"week-tab"}}'>
+      <view class='{{allSelectClass}}' bindtap='allClick'>进行中订单</view>
+      <view wx:for="{{weekList}}" data-index="{{index}}" data-id="{{item.week}}" wx:key="index" class='{{item.class}}' bindtap="weekClick">{{item.alias}}</view>
+      <view class='{{weekPickerClass}}'>
+        <picker bindchange="bindWeekPick" value="{{weekIndex}}" range="{{weekArray}}">
+          <view class="Fpicker">{{weekArray[weekIndex]}}</view>
+        </picker>
+      </view>
+      <view class='{{edSelectClass}}' bindtap='edClick'>已完成订单</view>
+    </scroll-view>
+    <view class='{{iphonex?"body-iphonex":"body"}}'>
+      <block wx:if='{{showOrder}}'>
+        <block wx:for='{{list}}' wx:for-item='item' wx:key='index'>
+          <view class='order-item' data-id='{{item.subs_order_id}}' bindtap='goOrderDetail'>
+            <view class='order-head'>
+              <view class='order-title'>订单号:{{item.subs_order_id}}</view>
+              <view class='order-seq'>{{item.exec_stages}}/{{item.stages}}期</view>
+            </view>
+            <scroll-view class='order-skus' scroll-x>
+              <block wx:for='{{item.sku_detail}}' wx:for-item='content' wx:key='index'>
+                <image src='{{content.cover}}' data-id='{{content.sku_id}}' bindtap='skuTap'></image>
+              </block>
+            </scroll-view>
+          </view>
+        </block>
+        <block wx:if='{{list.length === 0}}'>
+          <view class='default-box'>
+            <image class='default-img' src='https://cdn.jiyong365.com/%E5%B0%BD%E6%83%85%E6%9C%9F%E5%BE%85zhanwei.png'></image>
+            <view class='default-txt'>什么都没有</view>
+          </view>
+        </block>
+      </block>
+      <block wx:else>
+        <block wx:for='{{list}}' wx:key='index'>
+          <view class='order-item' data-id='{{item.subs_order_id}}' data-week='{{item.week}}' bindtap='goPackageDetail'>
+            <view class='order-head'>
+              <view class='order-title'>订单号:{{item.subs_order_id}}</view>
+              <view class='order-seq'>第{{item.index}}期×{{item.num}}套</view>
+            </view>
+            <scroll-view class='order-skus' scroll-x>
+              <block wx:for='{{item.sku_detail}}' wx:for-item='content' wx:key='index'>
+                <image src='{{content.cover}}' data-id='{{content.sku_id}}' bindtap='skuTap'></image>
+              </block>
+            </scroll-view>
+          </view>
+        </block>
+        <block wx:if='{{list.length === 0}}'>
+          <view class='default-box'>
+            <image class='default-img' src='https://cdn.jiyong365.com/%E5%B0%BD%E6%83%85%E6%9C%9F%E5%BE%85zhanwei.png'></image>
+            <view class='default-txt'>什么都没有</view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+</view>

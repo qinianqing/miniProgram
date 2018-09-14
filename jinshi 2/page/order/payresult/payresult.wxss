@@ -1,0 +1,583 @@
+/* page/order/payresult/payresult.wxss */
+
+/* 页顶导航 */
+
+.iphonx-blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50rpx;
+  background: #fff;
+}
+
+.c-box-iphonex {
+  position: fixed;
+  top: 50rpx;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+}
+
+.c-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+.head {
+  width: 750rpx;
+  height: 132rpx;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 100%;
+  z-index: 999;
+}
+
+.nav-icon {
+  width: 19.6rpx;
+  height: 32.7rpx;
+  padding: 64rpx 234.9rpx 27.3rpx 41rpx;
+}
+
+.head-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 45rpx;
+  padding-top: 59rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #303030;
+}
+
+.container-box {
+  width: 100%;
+  height: 5700rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 130rpx;
+  overflow: hidden;
+}
+
+.container-box-iphonex {
+  margin-top: 182rpx;
+  width: 100%;
+  height: 5700rpx;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.notice {
+  height: 65rpx;
+  width: 100%;
+  background-image: linear-gradient(-220deg, #ff6363 0%, #ffc090 100%);
+  line-height: 65rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+/* .mark{
+	height: 455rpx;
+	width: 750rpx;
+	background: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+   overflow: hidden;
+} */
+
+.success {
+  /* margin-top: 122rpx; */
+  height: 280rpx;
+  width: 280rpx;
+}
+
+.success-title {
+  /* margin-top: 28rpx; */
+  font-family: PingFangSC-Regular;
+  font-size: 48rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.parcel-notice {
+  margin-top: 10rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.gap {
+  background: #f6f6f6;
+  height: 2rpx;
+  width: 100%;
+}
+
+.invite-share {
+  width: 679rpx;
+  height: 136.5rpx;
+  margin-left: 35rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  overflow: hidden;
+}
+
+.invite-share image {
+  width: 679rpx;
+  height: 136.5rpx;
+}
+
+.message {
+  margin-top: 10rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+.address-box {
+  position: relative;
+  height: 130rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+
+.contact {
+  position: absolute;
+  left: 35rpx;
+  top: 25rpx;
+  width: 150rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+  letter-spacing: 0;
+}
+
+.phone {
+  position: absolute;
+  left: 185rpx;
+  top: 27rpx;
+  width: 180rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: rgba(85, 85, 85, 1);
+  letter-spacing: 0;
+  font-weight: bolder;
+}
+
+.address {
+  position: absolute;
+  left: 185rpx;
+  top: 69rpx;
+  width: 615rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: rgba(85, 85, 85, 1);
+  letter-spacing: 0;
+  font-weight: bolder;
+}
+
+.money-box {
+  width: 100%;
+  height: 90rpx;
+  border-bottom: 7rpx solid #f6f6f6;
+  position: relative;
+}
+
+.money-title {
+  position: absolute;
+  top: 25rpx;
+  left: 35rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+  letter-spacing: 0;
+}
+
+.money {
+  position: absolute;
+  top: 25rpx;
+  left: 185rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: rgba(37, 37, 37, 1);
+  letter-spacing: 0;
+}
+
+.money-num {
+  color: rgba(85, 85, 85, 1);
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  font-weight: bolder;
+}
+
+.btn-box {
+  /* margin-top: 59rpx; */
+  width: 650rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  margin-bottom: 60.8rpx;
+  height: 95.2rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.go {
+  width: 300rpx;
+  height: 89.2rpx;
+  border-radius: 100rpx;
+  line-height: 89.2rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #303030;
+  border: 2rpx solid #666;
+}
+
+.like {
+  width: 100%;
+  display: flex;
+  /* margin-top: 10rpx; */
+  position: relative;
+  margin-bottom: 30rpx;
+  background-color: white;
+  padding-top: 35rpx;
+}
+
+.like image {
+  width: 12rpx;
+  height: 20rpx;
+}
+
+.liket {
+  color: rgba(88, 88, 88, 1);
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  padding-left: 35rpx;
+  margin-top: -3rpx;
+}
+
+.caiimageall {
+  display: flex;
+  flex-direction: row;
+  width: 750rpx;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0 35rpx 100rpx 35rpx;
+  overflow: hidden;
+  margin-top: -35rpx;
+  padding-top: 35rpx;
+  background-color: white;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 330rpx;
+  margin-bottom: 25rpx;
+  /* height: 468rpx; */
+  position: relative;
+}
+
+.spu-cover {
+  width: 330rpx;
+  height: 330rpx;
+}
+
+.spu-cb {
+  height: 40rpx;
+  width: 330rpx;
+  background-color: #e3be6b;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.spu-highlight {
+  margin-top: 30rpx;
+  font-family: PingFangSC-Medium;
+  text-align: left;
+  font-size: 26rpx;
+  color: #575757;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 330rpx;
+}
+
+.spu-non-key {
+  margin-top: 3rpx;
+  text-align: left;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 330rpx;
+}
+
+.spu-price {
+  text-align: left;
+  margin-top: 8rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #ff7a7a;
+  letter-spacing: 2rpx;
+  width: 330rpx;
+}
+
+.share-contain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-button {
+  width: 400rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  /* margin-top: 60rpx; */
+  background-color: #ffb05a;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  position: fixed;
+  /* top: 1399rpx; */
+  left: 170rpx;
+  text-align: center;
+  color: white;
+  z-index: 9999;
+}
+
+.selectShare {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+}
+
+.selectShare-content {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 183rpx;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.selectShare-content-iphonex {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 30rpx;
+  width: 100%;
+  height: 183rpx;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.selectShare-one {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: white;
+  margin-bottom: 5rpx;
+  font-size: 16.5px;
+  margin-top: 0rpx !important;
+  /* position: static !important;  */
+  z-index: 99999;
+}
+
+button::after {
+  border: 0rpx solid white !important;
+}
+
+.selectShare-two {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: white;
+  margin-bottom: 5rpx;
+  z-index: 99999;
+}
+
+.selectShare-cancel {
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: white;
+  z-index: 99999;
+}
+
+.notice {
+  height: 65rpx;
+  width: 100%;
+  background-image: linear-gradient(-220deg, #ff6363 0%, #ffc090 100%);
+  line-height: 65rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.mark {
+  height: 468rpx;
+  width: 750rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parcel-notice {
+  margin-top: 10rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #a5a5a5;
+}
+
+.gap {
+  background: #f6f6f6;
+  height: 10rpx;
+  width: 100%;
+}
+
+.message {
+  margin-top: 10rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+.address-box {
+  position: relative;
+  height: 150rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+
+.contact {
+  position: absolute;
+  left: 35rpx;
+  top: 33rpx;
+  width: 150rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #565656;
+  letter-spacing: 0;
+}
+
+.phone {
+  position: absolute;
+  left: 185rpx;
+  top: 33rpx;
+  width: 180rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #565656;
+  letter-spacing: 0;
+}
+
+.address {
+  position: absolute;
+  left: 35rpx;
+  top: 80rpx;
+  width: 615rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 37rpx;
+  line-height: 37rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #565656;
+  letter-spacing: 0;
+}
+
+.money-box {
+  width: 100%;
+  height: 110rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+  position: relative;
+}
+
+.money-title {
+  position: absolute;
+  top: 35rpx;
+  left: 35rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #565656;
+  letter-spacing: 0;
+}
+
+.money {
+  position: absolute;
+  top: 35rpx;
+  left: 159rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #565656;
+  letter-spacing: 0;
+}
